@@ -43,4 +43,7 @@ dist/
 .env*
 !.env.example
 
+# Graphify Knowledge Graph (Local only)
+graphify-out/
+
 
