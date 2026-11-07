@@ -21,3 +21,11 @@ stok_gudang.db
 # OS generated files
 .DS_Store
 Thumbs.db
+
+# AI Agent & IDE automation configs (Local only)
+.agents/
+AGENTS.md
+AGENT.md
+GEMINI.md
+h.md
+
