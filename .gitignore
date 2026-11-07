@@ -1,0 +1,23 @@
+# __pycache__ & bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments & IDE
+.venv/
+env/
+venv/
+ENV/
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Database & Runtime files
+*.db
+*.sqlite3
+stok_gudang.db
+
+# OS generated files
+.DS_Store
+Thumbs.db
