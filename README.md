@@ -1,6 +1,6 @@
-# Stokku Desktop 📦
+# Stokku Desktop
 
-> **Aplikasi Manajemen Persediaan & Mutasi Stok Gudang UMKM Berbasis Python (Offline-First)**
+> Aplikasi manajemen persediaan dan pencatatan mutasi stok gudang berbasis Python (berjalan secara luring / offline-first).
 
 [![Python Version](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
 [![Database](https://img.shields.io/badge/Database-SQLite3-green.svg)](https://www.sqlite.org/)
@@ -9,138 +9,142 @@
 
 ---
 
-## 📌 Informasi Akademik
+## Informasi Akademik
 
-Proyek ini dikembangkan untuk memenuhi penilaian **Ujian Tengah Semester (UTS - P08)** dan **Final Project Ujian Akhir Semester (UAS - P11–P16)** pada mata kuliah **Dasar Pemrograman (Python - 894)**:
+Proyek ini dikembangkan untuk penilaian Ujian Tengah Semester (UTS, P08) dan Tugas Akhir Ujian Akhir Semester (UAS, P11-P16) pada mata kuliah Dasar Pemrograman (Python, Kode: 894):
 
-- **Perguruan Tinggi:** Universitas Bina Sarana Informatika (UBSI)
-- **Program Studi / Kelas:** Teknik Informatika / 15.1C.30
-- **Dosen Pengampu:** Ali Mustopa, M.Kom (Kode Dosen: AOP)
-- **Kelompok:** 4 (Empat)
+- Perguruan Tinggi: Universitas Bina Sarana Informatika (UBSI)
+- Program Studi / Kelas: Teknik Informatika / 15.1C.30
+- Dosen Pengampu: Ali Mustopa, M.Kom (Kode Dosen: AOP)
+- Kelompok: 4 (Empat)
 
-### 👥 Anggota Tim Pengembang
+### Anggota Tim Pengembang
+
 | No | NIM | Nama Lengkap | Peran Utama |
 | :---: | :---: | :--- | :--- |
 | 1 | **15260767** | **YUKEN VELINO** | Project Lead, Backend Logic & Data Validation |
 | 2 | **15260673** | **MAHARDIKA ATHAILLAH** | Frontend UI & Presentation Designer |
 | 3 | **15260847** | **RENKYNA AFTANIA NASUTION** | Reporting Module (Pandas P7) & Academic Documentation |
-| 4 | **15260722** | **PRISILA HUTAJULU** | *Status: Sementara / Tentatif — Test Runner & Notulen* |
+| 4 | **15260722** | **PRISILA HUTAJULU** | *Status: Sementara / Tentatif - Test Runner & Notulen* |
 
 ---
 
-## 🎯 Latar Belakang & Masalah
+## Latar Belakang
 
-Sebagian besar pelaku Usaha Mikro, Kecil, dan Menengah (UMKM) masih mengandalkan pencatatan buku fisik untuk mengelola persediaan barang. Masalah yang sering dihadapi meliputi:
-- Ketidaktahuan jumlah sisa stok fisik secara riil tanpa menghitung ulang (*stock opname*).
-- Keterlambatan pengadaan ulang (*restock*) ketika barang habis di etalase.
-- Terjadinya selisih stok akibat barang rusak, kedaluwarsa, atau pemakaian internal yang tidak tercatat.
-- Kesulitan menghitung total estimasi modal aset yang tertanam di gudang.
+Pencatatan persediaan barang pada toko kelontong atau gudang UMKM sering kali masih dilakukan manual pada buku tulis. Cara manual ini menimbulkan beberapa kendala:
+- Jumlah stok fisik tidak terpantau sebelum dilakukan penghitungan ulang fisik (stock opname).
+- Keterlambatan memesan kembali barang yang sudah habis di rak penyimpanan.
+- Selisih stok akibat barang rusak, kedaluwarsa, atau pemakaian sendiri yang terlewat dicatat.
+- Kesulitan mengetahui total modal belanja yang masih tersimpan dalam bentuk barang di gudang.
 
-**Stokku Desktop** hadir sebagai aplikasi desktop lokal mandiri (*zero external dependency*) yang ringan, cepat, dan mudah dioperasikan tanpa membutuhkan koneksi internet maupun biaya server.
+Stokku Desktop dibangun untuk membantu pencatatan barang dan mutasi keluar-masuk secara rapi tanpa membutuhkan koneksi internet atau server eksternal.
 
 ---
 
-## ✨ Fitur Utama
+## Fitur Pokok
 
-1. **Dashboard & Ringkasan Eksekutif:**
-   - 4 Kartu Metrik: Total Jenis Produk (SKU), Total Kuantitas Fisik, Estimasi Nilai Modal Aset Gudang (Rupiah), dan Jumlah Barang Kritis.
-   - Peringatan dini otomatis visual (`[KRITIS / RESTOCK]`) jika stok $\le$ batas minimum aman.
-2. **Master Data Barang (Inventory Management):**
-   - Tambah barang baru dengan validasi kode alfanumerik unik (*case-insensitive*).
-   - Edit informasi produk (nama, kategori, satuan, harga beli, harga jual, minimum stok).
-   - Hapus data barang dengan dialog konfirmasi aman.
-   - Live Search pencarian instan berdasarkan nama produk atau kode barang.
-3. **Transaksi Barang Masuk (Restock):**
-   - Penambahan stok fisik dari pemasok/supplier lengkap dengan pencatatan keterangan sumber.
-4. **Transaksi Barang Keluar (Anti-Stok Minus):**
+1. **Ringkasan Data Persediaan:**
+   - Menampilkan total jenis barang (SKU), total unit fisik, estimasi modal belanja barang, dan jumlah barang yang stoknya menipis.
+   - Penanda status visual otomatis (`[KRITIS]`) jika stok berada pada atau di bawah batas minimum aman.
+2. **Pengelolaan Data Barang (Master Inventory):**
+   - Penambahan barang baru dengan validasi kode alfanumerik unik (tidak membedakan huruf besar-kecil).
+   - Pembaruan rincian barang (nama, kategori, satuan, harga beli, harga jual, dan batas minimum stok).
+   - Penghapusan data barang disertai dialog konfirmasi.
+   - Pencarian langsung berdasarkan nama atau kode barang.
+3. **Pencatatan Barang Masuk (Restock):**
+   - Penambahan stok fisik dari pemasok disertai keterangan asal barang.
+4. **Pencatatan Barang Keluar (Pencegahan Stok Minus):**
    - Pengurangan stok untuk penjualan toko, barang rusak, atau kedaluwarsa.
-   - **Validasi Mutlak:** Transaksi otomatis dibatalkan jika jumlah keluar melebihi stok yang tersedia.
-5. **Log Riwayat Transaksi Mutasi:**
-   - Catatan kronologis seluruh arus keluar-masuk barang lengkap dengan waktu kejadian, stok sebelum, stok sesudah, dan alasan transaksi.
-6. **Analisis Data Tabular (Integrasi Pandas):**
-   - Konversi data inventaris ke objek `pandas.DataFrame` untuk laporan analisis persediaan (materi Pertemuan 7).
+   - Sistem menolak transaksi dan membatalkan perubahan apabila kuantitas keluar melebihi stok yang tersedia.
+5. **Riwayat Mutasi:**
+   - Catatan runtut waktu atas seluruh arus keluar-masuk barang, mencakup tanggal, kuantitas, sisa stok sebelum dan sesudah, serta keterangan transaksi.
+6. **Laporan Data Tabular (Pandas):**
+   - Konversi data inventaris ke bentuk `pandas.DataFrame` untuk keperluan analisis persediaan (materi perkuliahan Pertemuan 7).
 
 ---
 
-## 🛠️ Tech Stack & Dependensi
+## Lingkungan Pengembangan & Pustaka
 
-- **Bahasa Pemrograman:** Python 3 (Python 3.8 s.d. 3.14)
-- **Antarmuka Grafis (GUI):** Tkinter & `tkinter.ttk` (Pustaka Standar Python)
-- **Basis Data:** SQLite3 (`sqlite3` bawaan Python — berkas lokal `stok_gudang.db`)
-- **Analisis Tabular:** Pandas (`pandas.DataFrame`)
-- **Dependensi Eksternal:** **0** (*Zero pip install*, kecuali Pandas untuk P07)
-
----
-
-## 🚀 Roadmap Rilis Versi
-
-### 1. Versi 1.0 (v1.0 — Target Evaluasi UTS Pertemuan 8 | Silabus P01–P07)
-- **Fokus:** Mesin Logika Persediaan (*Core In-Memory Stock Engine*) berbasis CLI interaktif.
-- **Implementasi Silabus:** Variabel & Tipe Data (P2), String & Operator (P3), Percabangan Anti-Stok Minus (P4), Menu Loop `while True` (P5), Koleksi `list of dicts` & `tuple` (P6), Analisis DataFrame Pandas (P7).
-- **Direktori Kerja:** `progress_p7/`.
-
-### 2. Versi 2.0 (v2.0 — Final Project Menuju UAS | Silabus P09–P16)
-- **Fokus:** Transformasi Penuh ke Aplikasi Desktop Native Modern dengan GUI Tkinter dan Database SQLite Permanen.
-- **Implementasi Silabus:** Fungsi Modular `def` (P9), Multi-Modul & Exception Handling `try...except ValueError` (P10), Desktop Native GUI Tkinter & `ttk.Treeview` (P11–P12), Makalah Laporan Resmi format UBSI & Slide Presentasi PPT (P13–P14), dan Demonstrasi Live di Lab Kampus (P15–P16).
-- **Direktori Kerja:** `app/` dan `main.py`.
+- Bahasa Pemrograman: Python 3 (Python 3.8 hingga 3.14)
+- Antarmuka Grafis (GUI Fase 2): Tkinter dan `tkinter.ttk` (pustaka standar Python)
+- Basis Data (Fase 2): SQLite3 (`sqlite3` pustaka standar Python, berkas lokal `stok_gudang.db`)
+- Analisis Data (Fase 1 P07): Pandas (`pandas.DataFrame`)
+- Instalasi Pustaka: Hanya modul `pandas` yang dipasang melalui pip untuk materi Pertemuan 7, modul lainnya menggunakan pustaka bawaan Python.
 
 ---
 
-## 📂 Struktur Direktori Proyek
+## Tahapan Rilis Proyek
+
+### 1. Versi 1.0 (Target Evaluasi UTS Pertemuan 8 | Silabus P01-P07)
+- Fokus: Logika dasar persediaan berbasis antarmuka terminal (CLI) dengan struktur data di memori.
+- Cakupan Materi: Variabel dan tipe data (P2), string dan operator (P3), percabangan validasi stok (P4), perulangan menu (P5), koleksi list dan tuple (P6), serta analisis DataFrame Pandas (P7).
+- Folder Kerja: `progress_p7/`.
+
+### 2. Versi 2.0 (Target Final Project UAS | Silabus P09-P16)
+- Fokus: Pengembangan antarmuka desktop menggunakan Tkinter dan penyimpanan data permanen dengan SQLite.
+- Cakupan Materi: Fungsi modular (P9), penanganan eksepsi `try...except` dan pembagian multi-berkas (P10), antarmuka Tkinter dan `ttk.Treeview` (P11-P12), penyusunan naskah laporan format UBSI dan slide presentasi (P13-P14), serta demonstrasi program di laboratorium (P15-P16).
+- Folder Kerja: `app/` dan `main.py`.
+
+---
+
+## Struktur Direktori
 
 ```text
 Stokku-Desktop/
 ├── docs/
-│   ├── PRD.md                             # Dokumen Spesifikasi Kebutuhan Produk Lengkap
-│   └── TASK.md                            # Rencana Kerja, Checklist & Matriks PIC
-├── progress_p7/                           # FASE 1: Mesin In-Memory P1-P7 (Bahan UTS)
-│   ├── data_store.py                      # [PIC: YUKEN] Inisialisasi list of dicts & data dummy
-│   ├── validasi.py                        # [PIC: YUKEN] Logika validasi input & kode unik
-│   ├── engine_stok.py                     # [PIC: YUKEN] Logika mutasi & kalkulasi aset
-│   ├── display_cli.py                     # [PIC: MAHARDIKA] Formatting tabel CLI & tag visual
-│   ├── laporan_pandas.py                  # [PIC: RENKYNA] Rekapitulasi DataFrame Pandas (P7)
-│   ├── test_skenario.py                   # [PIC: PRISILA] Otomasi pengujian 7 kasus uji
-│   └── main_p7.py                         # [PIC: YUKEN] Integrator menu utama program CLI
-├── app/                                   # FASE 2: Desktop GUI Native & SQLite (Bahan UAS)
+│   ├── PRD.md                             # Spesifikasi kebutuhan sistem
+│   └── TASK.md                            # Pembagian tugas dan daftar kerja tim
+├── progress_p7/                           # Fase 1: Logika memori P1-P7 (Bahan UTS)
+│   ├── data_store.py                      # [YUKEN] Struktur data list dan data awal
+│   ├── validasi.py                        # [YUKEN] Fungsi validasi input dan keunikan kode
+│   ├── engine_stok.py                     # [YUKEN] Perhitungan mutasi dan total aset
+│   ├── display_cli.py                     # [MAHARDIKA] Tampilan tabel CLI dan penanda visual
+│   ├── laporan_pandas.py                  # [RENKYNA] Analisis DataFrame Pandas (P7)
+│   ├── test_skenario.py                   # [PRISILA] Skrip pengujian otomatis 7 kasus uji
+│   └── main_p7.py                         # [YUKEN] Menu utama program terminal
+├── app/                                   # Fase 2: GUI Tkinter dan SQLite (Bahan UAS)
 │   ├── __init__.py
 │   ├── database/
-│   │   └── db_manager.py                  # [PIC: YUKEN] Koneksi & query SQLite3
+│   │   └── db_manager.py                  # [YUKEN] Koneksi dan query SQLite3
 │   ├── services/
-│   │   ├── stok_service.py                # [PIC: YUKEN] Aturan bisnis mutasi atomik
-│   │   └── validator.py                   # [PIC: YUKEN] Proteksi try-except & sanitasi
+│   │   ├── stok_service.py                # [YUKEN] Aturan mutasi data dan transaksi
+│   │   └── validator.py                   # [YUKEN] Penanganan kesalahan dan validasi input
 │   ├── ui/
-│   │   ├── main_window.py                 # [PIC: MAHARDIKA] Window utama Tkinter
-│   │   ├── table_view.py                  # [PIC: MAHARDIKA] Komponen ttk.Treeview
-│   │   └── dialogs.py                     # [PIC: MAHARDIKA] Form pop-up tambah/mutasi
+│   │   ├── main_window.py                 # [MAHARDIKA] Jendela utama Tkinter
+│   │   ├── table_view.py                  # [MAHARDIKA] Tabel data ttk.Treeview
+│   │   └── dialogs.py                     # [MAHARDIKA] Dialog form tambah dan mutasi
 │   └── reports/
-│       └── pandas_reporter.py             # [PIC: RENKYNA] Modul pelaporan & ekspor
+│       └── pandas_reporter.py             # [RENKYNA] Modul ekspor dan ringkasan data
 ├── main.py                                # Titik masuk eksekusi aplikasi desktop
-├── LICENSE                                # Lisensi Open-Source MIT
+├── LICENSE                                # Berkas lisensi MIT
 ├── .gitignore                             # Berkas pengecualian Git
 └── README.md                              # Dokumentasi utama proyek
 ```
 
 ---
 
-## 💻 Cara Menjalankan Aplikasi
+## Petunjuk Menjalankan Program
 
-### 1. Menjalankan Versi CLI (Fase 1 - Progres P1–P7)
+### Menjalankan Versi CLI (Fase 1, Progres P1-P7)
+
+Jalankan menu utama program:
 ```bash
 python progress_p7/main_p7.py
 ```
 
-Untuk menjalankan script pengujian otomatis:
+Jalankan pengujian otomatis:
 ```bash
 python progress_p7/test_skenario.py
 ```
 
-### 2. Menjalankan Versi Desktop GUI (Fase 2 - Versi Final)
+### Menjalankan Versi Desktop GUI (Fase 2, Versi Final UAS)
+
 ```bash
 python main.py
 ```
 
 ---
 
-## 📄 Lisensi
+## Lisensi
 
-Proyek ini didistribusikan di bawah lisensi **MIT License**. Lihat berkas [LICENSE](LICENSE) untuk rincian selengkapnya.
+Proyek ini menggunakan lisensi **MIT License**. Rincian lengkap tersedia pada berkas [LICENSE](LICENSE).
