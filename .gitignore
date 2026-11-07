@@ -29,3 +29,18 @@ AGENT.md
 GEMINI.md
 h.md
 
+# Anti-slop & Skills Generated Artifacts (Local only)
+anti-slop/
+.antislop/
+antislop/
+.scratch/
+scratch/
+artifacts/
+specs/
+dist/
+*.log
+*.tmp
+.env*
+!.env.example
+
+
