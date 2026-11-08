@@ -92,7 +92,9 @@ Stokku Desktop dibangun untuk membantu pencatatan barang dan mutasi keluar-masuk
 Stokku-Desktop/
 ├── docs/
 │   ├── PRD.md                             # Spesifikasi kebutuhan sistem
-│   └── TASK.md                            # Pembagian tugas dan daftar kerja tim
+│   ├── TASK.md                            # Pembagian tugas dan daftar kerja tim
+│   ├── makalah/                           # [RENKYNA] Naskah laporan akademik resmi UBSI (.docx / .pdf)
+│   └── presentasi/                        # [MAHARDIKA] Slide presentasi PowerPoint (.pptx dan .pdf)
 ├── progress_p7/                           # Fase 1: Logika memori P1-P7 (Bahan UTS)
 │   ├── data_store.py                      # [YUKEN] Struktur data list dan data awal
 │   ├── validasi.py                        # [YUKEN] Fungsi validasi input dan keunikan kode

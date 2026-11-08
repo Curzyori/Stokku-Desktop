@@ -175,7 +175,9 @@ Agar setiap anggota tim dapat mengerjakan bagiannya secara terpisah tanpa saling
 Stokku-Desktop/
 ├── docs/
 │   ├── PRD.md                             # Dokumen spesifikasi kebutuhan sistem
-│   └── TASK.md                            # Rencana tugas dan matriks penanggung jawab
+│   ├── TASK.md                            # Rencana tugas dan matriks penanggung jawab
+│   ├── makalah/                           # [RENKYNA] Naskah draf makalah evaluasi UTS
+│   └── presentasi/                        # [MAHARDIKA] Slide presentasi evaluasi UTS (.pptx dan .pdf)
 ├── progress_p7/
 │   ├── data_store.py                      # [YUKEN] Struktur data list dictionary dan data awal
 │   ├── validasi.py                        # [YUKEN] Validasi input angka, keunikan kode, dan batas stok
@@ -205,8 +207,8 @@ Stokku-Desktop/
 ├── tests/
 │   └── test_suite.py                      # [YUKEN] Pengujian menyeluruh sistem
 ├── docs/
-│   └── makalah/                           # [RENKYNA] Berkas naskah makalah format resmi UBSI
-├── presentation/                          # [MAHARDIKA] Slide presentasi PowerPoint
+│   ├── makalah/                           # [RENKYNA] Berkas naskah makalah format resmi UBSI
+│   └── presentasi/                        # [MAHARDIKA] Slide presentasi PowerPoint (.pptx dan .pdf)
 ├── main.py                                # [YUKEN] Titik masuk eksekusi antarmuka desktop
 ├── stok_gudang.db                         # Berkas basis data SQLite
 └── README.md                              # Panduan penggunaan proyek
@@ -228,7 +230,7 @@ Stokku-Desktop/
 | **P08** | Evaluasi Progres Proyek (UTS) | Demonstrasi program berbasis Pertemuan 1 sampai 7 di depan dosen kelas sebagai pengganti ujian tertulis UTS. | Berkas di `progress_p7/` |
 | **P09** | Fungsi Modular (`def` dan `return`) | Pembagian logika menjadi fungsi-fungsi terpisah dengan parameter dan nilai kembalian. | `app/services/stok_service.py` |
 | **P10** | Modul dan Penanganan Eksepsi | Pemisahan multi-berkas dan proteksi `try...except ValueError` pada pembacaan input angka pengguna. | `app/services/validator.py`, `app/database/db_manager.py` |
-| **P11-P16** | Tugas Akhir, Laporan, dan Presentasi | Penyusunan makalah akademik format UBSI, uji coba aplikasi di laboratorium, dan presentasi kelompok pengganti UAS. | Berkas di `docs/makalah/` dan `presentation/` |
+| **P11-P16** | Tugas Akhir, Laporan, dan Presentasi | Penyusunan makalah akademik format UBSI, uji coba aplikasi di laboratorium, dan presentasi kelompok pengganti UAS. | Berkas di `docs/makalah/` dan `docs/presentasi/` |
 
 ---
 
