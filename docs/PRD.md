@@ -11,8 +11,8 @@
 - Institusi: Universitas Bina Sarana Informatika (UBSI)
 - Dosen Pengampu: Ali Mustopa, M.Kom (Kode Dosen: AOP)
 - Identitas Tim Pengembang (Kelompok 4):
-  1. 15260767 - YUKEN VELINO (Project Lead, Logika Backend, Validasi Data, dan Test Runner)
-  2. 15260673 - MAHARDIKA ATHAILLAH (Tampilan Antarmuka dan Desain Presentasi)
+  1. 15260767 - YUKEN VELINO [@Curzyori](https://github.com/Curzyori) (Project Lead, Logika Backend, Validasi Data, dan Test Runner)
+  2. 15260673 - MAHARDIKA ATHAILLAH [@dikah4300](https://github.com/dikah4300) (Tampilan Antarmuka dan Desain Presentasi)
   3. 15260847 - RENKYNA AFTANIA NASUTION (Modul Laporan Pandas dan Makalah Laporan)
 
 ---
@@ -273,12 +273,11 @@ Stokku-Desktop/
 
 ## 11. Pembagian Tanggung Jawab Anggota Tim
 
-| Nama Anggota | NIM | Peran | Rincian Tanggung Jawab |
-| :--- | :---: | :--- | :--- |
-| **YUKEN VELINO** | 15260767 | Project Lead, Backend, Validasi, dan Pengujian | - Merancang struktur data, skema basis data SQLite, dan model data.<br>- Menulis logika mutasi barang masuk/keluar serta rumus akumulasi nilai modal.<br>- Menyusun fungsi validasi (kode unik, kuantitas positif, batas stok, dan tipe data).<br>- Mengembangkan dan mengeksekusi skrip pengujian otomatis (test_skenario.py dan test_suite.py). |
-| **MAHARDIKA ATHAILLAH** | 15260673 | Tampilan Antarmuka dan Presentasi | - Merancang format tabel CLI (Fase 1) dan tata letak antarmuka Tkinter (Fase 2).<br>- Mengatur penataan kolom Treeview, kartu ringkasan, dan dialog form.<br>- Menyusun slide materi presentasi resmi untuk penilaian kelas. |
-| **RENKYNA AFTANIA NASUTION** | 15260847 | Modul Laporan dan Makalah Laporan | - Mengembangkan modul pelaporan dan rekapitulasi data menggunakan Pandas (P07).<br>- Menyaring data transaksi berdasarkan jenis mutasi.<br>- Menyusun naskah Makalah Laporan Resmi format UBSI (Bab I Pendahuluan, Bab II Pembahasan, Bab III Penutup, dan Daftar Pustaka) serta mendokumentasikan hasil pengujian sistem. |
-
+| Nama Anggota | NIM | Akun GitHub | Peran | Rincian Tanggung Jawab |
+| :--- | :---: | :---: | :--- | :--- |
+| **YUKEN VELINO** | 15260767 | [@Curzyori](https://github.com/Curzyori) | Project Lead, Backend, Validasi, dan Pengujian | - Merancang struktur data, skema basis data SQLite, dan model data.<br>- Menulis logika mutasi barang masuk/keluar serta rumus akumulasi nilai modal.<br>- Menyusun fungsi validasi (kode unik, kuantitas positif, batas stok, dan tipe data).<br>- Mengembangkan dan mengeksekusi skrip pengujian otomatis (test_skenario.py dan test_suite.py). |
+| **MAHARDIKA ATHAILLAH** | 15260673 | [@dikah4300](https://github.com/dikah4300) | Tampilan Antarmuka dan Presentasi | - Merancang format tabel CLI (Fase 1) dan tata letak antarmuka Tkinter (Fase 2).<br>- Mengatur penataan kolom Treeview, kartu ringkasan, dan dialog form.<br>- Menyusun slide materi presentasi resmi untuk penilaian kelas. |
+| **RENKYNA AFTANIA NASUTION** | 15260847 | - | Modul Laporan dan Makalah Laporan | - Mengembangkan modul pelaporan dan rekapitulasi data menggunakan Pandas (P07).<br>- Menyaring data transaksi berdasarkan jenis mutasi.<br>- Menyusun naskah Makalah Laporan Resmi format UBSI (Bab I Pendahuluan, Bab II Pembahasan, Bab III Penutup, dan Daftar Pustaka) serta mendokumentasikan hasil pengujian sistem. |
 ---
 
 ## 12. Kriteria Keberhasilan Program

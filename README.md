@@ -20,11 +20,11 @@ Proyek ini dikembangkan untuk penilaian Ujian Tengah Semester (UTS, P08) dan Tug
 
 ### Anggota Tim Pengembang
 
-| No | NIM | Nama Lengkap | Peran Utama |
-| :---: | :---: | :--- | :--- |
-| 1 | **15260767** | **YUKEN VELINO** | Project Lead, Logika Backend, Validasi & Test Runner |
-| 2 | **15260673** | **MAHARDIKA ATHAILLAH** | Tampilan Antarmuka (UI) & Desain Presentasi |
-| 3 | **15260847** | **RENKYNA AFTANIA NASUTION** | Modul Analisis Pandas (P7) & Dokumentasi Akademik |
+| No | NIM | Nama Lengkap | Akun GitHub | Peran Utama |
+| :---: | :---: | :--- | :--- | :--- |
+| 1 | **15260767** | **YUKEN VELINO** | [@Curzyori](https://github.com/Curzyori) | Project Lead, Logika Backend, Validasi & Test Runner |
+| 2 | **15260673** | **MAHARDIKA ATHAILLAH** | [@dikah4300](https://github.com/dikah4300) | Tampilan Antarmuka (UI) & Desain Presentasi |
+| 3 | **15260847** | **RENKYNA AFTANIA NASUTION** | - | Modul Analisis Pandas (P7) & Dokumentasi Akademik |
 
 ---
 
