@@ -60,7 +60,7 @@ Untuk mencegah konflik perubahan berkas pada git:
 ### Bagian 3: Pengujian dan Dokumen Progres UTS (P08)
 - [ ] TASK-1.8: Implementasi `progress_p7/test_skenario.py`:
   - Pembuatan skrip otomatis untuk menjalankan 7 skenario pengujian transaksi (TC-01 sampai TC-07) tanpa input manual saat penilaian. (PIC: YUKEN)
-- [ ] TASK-1.9: Penyusunan draf Bab II Makalah Progres UTS dan materi ringkas slide presentasi. (PIC: MAHARDIKA dan RENKYNA)
+- [ ] TASK-1.9: Penyusunan draf Bab II Makalah Progres UTS (`docs/makalah/`) dan materi ringkas slide presentasi (`docs/presentasi/`). (PIC: MAHARDIKA dan RENKYNA)
 
 ---
 
@@ -114,7 +114,7 @@ Untuk mencegah konflik perubahan berkas pada git:
     - Bab III: Penutup (Kesimpulan dan Saran Pengembangan).
     - Daftar Pustaka dan Lampiran Cuplikan Kode Program serta Tangkapan Layar Aplikasi. (PIC: RENKYNA)
 - [ ] TASK-2.12 (Slide Presentasi PPT):
-  - Penyusunan materi presentasi PowerPoint (.pptx):
+  - Penyusunan materi presentasi PowerPoint (.pptx dan .pdf) di folder `docs/presentasi/`:
     - Slide 1: Judul Proyek dan Anggota Kelompok.
     - Slide 2: Latar Belakang Masalah Pengelolaan Stok.
     - Slide 3: Diagram Alur Kerja dan Struktur Modul.
@@ -138,11 +138,11 @@ Untuk mencegah konflik perubahan berkas pada git:
 | **TASK-1.6** | Modul Analisis Pandas DataFrame | `progress_p7/laporan_pandas.py` | RENKYNA AFTANIA N. | Evaluasi UTS |
 | **TASK-1.7** | Menu Utama Program Terminal | `progress_p7/main_p7.py` | YUKEN VELINO | Evaluasi UTS |
 | **TASK-1.8** | Skrip Pengujian Otomatis 7 Kasus | `progress_p7/test_skenario.py` | YUKEN VELINO | Evaluasi UTS |
-| **TASK-1.9** | Draf Bab II Makalah UTS dan Slide PPT | `docs/` dan PPT | MAHARDIKA & RENKYNA | Evaluasi UTS |
+| **TASK-1.9** | Draf Bab II Makalah UTS dan Slide PPT | `docs/makalah/` & `docs/presentasi/` | MAHARDIKA & RENKYNA | Evaluasi UTS |
 | **TASK-2.1 s.d. 2.2** | Fungsi Modular dan Penanganan Eksepsi | `app/services/` | YUKEN VELINO | Pasca UTS |
 | **TASK-2.3 s.d. 2.5** | Basis Data Relasional SQLite3 | `app/database/db_manager.py` | YUKEN VELINO | Pasca UTS |
 | **TASK-2.6 s.d. 2.9** | Antarmuka Desktop Tkinter dan Tabel | `app/ui/` | MAHARDIKA ATHAILLAH | Pasca UTS |
 | **TASK-2.10** | Titik Masuk Eksekusi Aplikasi Desktop | `main.py` | YUKEN VELINO | Pasca UTS |
 | **TASK-2.11** | Makalah Lengkap Format Resmi UBSI | `docs/makalah/` | RENKYNA AFTANIA N. | Menuju UAS |
-| **TASK-2.12** | Slide Presentasi Final PPT | `presentation/` | MAHARDIKA ATHAILLAH | Menuju UAS |
+| **TASK-2.12** | Slide Presentasi Final PPT | `docs/presentasi/` | MAHARDIKA ATHAILLAH | Menuju UAS |
 | **TASK-2.13** | Demonstrasi dan Pengujian Akhir | Keseluruhan Program | Seluruh Anggota Tim | Pertemuan 11-16 |
