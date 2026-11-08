@@ -30,8 +30,8 @@ Untuk mencegah konflik perubahan berkas pada git:
 ---
 
 ### Bagian 1: Struktur Data dan Inisialisasi (P01, P02, P06)
-- [ ] TASK-1.1: Pembuatan folder `progress_p7/` dan berkas modul kerja. (PIC: YUKEN)
-- [ ] TASK-1.2: Implementasi `progress_p7/data_store.py`:
+- [x] TASK-1.1: Pembuatan folder `progress_p7/` dan berkas modul kerja. (PIC: YUKEN)
+- [x] TASK-1.2: Implementasi `progress_p7/data_store.py`:
   - Variabel list `daftar_barang` berisi kumpulan dictionary untuk menyimpan atribut produk.
   - Variabel list `log_mutasi` berisi kumpulan tuple riwayat mutasi barang.
   - Data awal dummy sebanyak 3 produk untuk keperluan demonstrasi program. (PIC: YUKEN)
@@ -41,11 +41,11 @@ Untuk mencegah konflik perubahan berkas pada git:
   - Fungsi pencetakan banner pembuka program.
   - Fungsi format tabel daftar barang (lebar kolom rapi, pemisah garis, dan format mata uang Rupiah).
   - Penanda visual status: `[KRITIS]` untuk barang dengan stok kurang dari atau sama dengan batas minimum, dan `[AMAN]` untuk stok cukup. (PIC: MAHARDIKA)
-- [ ] TASK-1.4: Implementasi `progress_p7/validasi.py`:
+- [x] TASK-1.4: Implementasi `progress_p7/validasi.py`:
   - Validasi kode barang baru (memeriksa keunikan kode menggunakan operator `in`).
   - Validasi input angka bilangan bulat positif (kuantitas lebih dari 0).
   - Validasi batas kuantitas keluar agar tidak melebihi persediaan fisik di gudang. (PIC: YUKEN)
-- [ ] TASK-1.5: Implementasi `progress_p7/engine_stok.py`:
+- [x] TASK-1.5: Implementasi `progress_p7/engine_stok.py`:
   - Fungsi penambahan barang baru ke dalam list.
   - Fungsi transaksi barang masuk (restock), menambah stok dan mencatat riwayat mutasi.
   - Fungsi transaksi barang keluar dengan proteksi pencegah stok minus, mengurangi stok jika valid dan mencatat riwayat mutasi.
@@ -53,12 +53,12 @@ Untuk mencegah konflik perubahan berkas pada git:
 - [ ] TASK-1.6: Implementasi `progress_p7/laporan_pandas.py`:
   - Konversi list data barang ke dalam objek `pandas.DataFrame`.
   - Pembuatan ringkasan data tabular persediaan untuk pemenuhan materi Pertemuan 7. (PIC: RENKYNA)
-- [ ] TASK-1.7: Implementasi `progress_p7/main_p7.py`:
+- [x] TASK-1.7: Implementasi `progress_p7/main_p7.py`:
   - Perulangan menu utama menggunakan `while True` dan pemilihan opsi menu dengan `if-elif-else`.
   - Integrasi modul `data_store`, `display_cli`, `validasi`, `engine_stok`, dan `laporan_pandas`. (PIC: YUKEN)
 
 ### Bagian 3: Pengujian dan Dokumen Progres UTS (P08)
-- [ ] TASK-1.8: Implementasi `progress_p7/test_skenario.py`:
+- [x] TASK-1.8: Implementasi `progress_p7/test_skenario.py`:
   - Pembuatan skrip otomatis untuk menjalankan 7 skenario pengujian transaksi (TC-01 sampai TC-07) tanpa input manual saat penilaian. (PIC: YUKEN)
 - [ ] TASK-1.9: Penyusunan draf Bab II Makalah Progres UTS (`docs/makalah/`) dan materi ringkas slide presentasi (`docs/presentasi/`). (PIC: MAHARDIKA dan RENKYNA)
 
