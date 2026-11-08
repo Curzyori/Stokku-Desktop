@@ -1,3 +1,10 @@
+# Superpowers & Worktrees (Local only)
+docs/superpowers/
+.superpowers/
+superpowers/
+.worktree*
+.worktrees/
+
 # __pycache__ & bytecode
 __pycache__/
 *.py[cod]
