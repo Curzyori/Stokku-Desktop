@@ -4,10 +4,9 @@
 - Mata Kuliah: Dasar Pemrograman (Kode: 894), UBSI
 - Dosen Pengampu: Ali Mustopa, M.Kom (Kode Dosen: AOP)
 - Anggota Tim (Kelompok 4):
-  - 15260767 - YUKEN VELINO (Project Lead, Logika Backend, dan Validasi Data)
+  - 15260767 - YUKEN VELINO (Project Lead, Logika Backend, Validasi Data, dan Test Runner)
   - 15260673 - MAHARDIKA ATHAILLAH (Tampilan Antarmuka dan Desain Presentasi)
   - 15260847 - RENKYNA AFTANIA NASUTION (Modul Laporan Pandas P7 dan Naskah Makalah)
-  - 15260722 - PRISILA HUTAJULU (Status: Sementara / Tentatif - Pengujian dan Notulensi)
 
 ---
 
@@ -23,10 +22,9 @@ Proyek Stokku Desktop dikerjakan dalam dua fase utama mengikuti agenda perkuliah
 
 ### Pembagian Modul Kerja Mandiri
 Untuk mencegah konflik perubahan berkas pada git:
-- YUKEN mengerjakan `progress_p7/data_store.py` (struktur data), `progress_p7/validasi.py` (pemeriksaan input dan stok minus), serta `progress_p7/engine_stok.py` (mutasi kuantitas dan total nilai modal).
+- YUKEN mengerjakan `progress_p7/data_store.py` (struktur data), `progress_p7/validasi.py` (pemeriksaan input dan stok minus), `progress_p7/engine_stok.py` (mutasi kuantitas dan total nilai modal), serta `progress_p7/test_skenario.py` (skrip pengujian otomatis 7 skenario transaksi).
 - MAHARDIKA mengerjakan `progress_p7/display_cli.py` (tata letak tabel, batas kolom, garis pemisah, dan format tampilan).
-- RENKYNA mengerjakan `progress_p7/laporan_pandas.py` (analisis DataFrame Pandas P7) dan kerangka naskah makalah evaluasi UTS.
-- PRISILA (Tentatif) mengerjakan `progress_p7/test_skenario.py` (skrip pengujian otomatis skenario transaksi).
+- RENKYNA mengerjakan `progress_p7/laporan_pandas.py` (analisis DataFrame Pandas P7) dan penyusunan naskah makalah evaluasi UTS.
 - Berkas `progress_p7/main_p7.py` bertindak sebagai penyatu modul yang mengimpor seluruh fungsi di atas ke dalam menu utama.
 
 ---
@@ -61,7 +59,7 @@ Untuk mencegah konflik perubahan berkas pada git:
 
 ### Bagian 3: Pengujian dan Dokumen Progres UTS (P08)
 - [ ] TASK-1.8: Implementasi `progress_p7/test_skenario.py`:
-  - Pembuatan skrip otomatis untuk menjalankan 7 skenario pengujian transaksi (TC-01 sampai TC-07) tanpa input manual saat penilaian. (PIC: PRISILA)
+  - Pembuatan skrip otomatis untuk menjalankan 7 skenario pengujian transaksi (TC-01 sampai TC-07) tanpa input manual saat penilaian. (PIC: YUKEN)
 - [ ] TASK-1.9: Penyusunan draf Bab II Makalah Progres UTS dan materi ringkas slide presentasi. (PIC: MAHARDIKA dan RENKYNA)
 
 ---
@@ -139,7 +137,7 @@ Untuk mencegah konflik perubahan berkas pada git:
 | **TASK-1.5** | Logika Mutasi Stok dan Nilai Aset | `progress_p7/engine_stok.py` | YUKEN VELINO | Evaluasi UTS |
 | **TASK-1.6** | Modul Analisis Pandas DataFrame | `progress_p7/laporan_pandas.py` | RENKYNA AFTANIA N. | Evaluasi UTS |
 | **TASK-1.7** | Menu Utama Program Terminal | `progress_p7/main_p7.py` | YUKEN VELINO | Evaluasi UTS |
-| **TASK-1.8** | Skrip Pengujian Otomatis 7 Kasus | `progress_p7/test_skenario.py` | PRISILA HUTAJULU | Evaluasi UTS |
+| **TASK-1.8** | Skrip Pengujian Otomatis 7 Kasus | `progress_p7/test_skenario.py` | YUKEN VELINO | Evaluasi UTS |
 | **TASK-1.9** | Draf Bab II Makalah UTS dan Slide PPT | `docs/` dan PPT | MAHARDIKA & RENKYNA | Evaluasi UTS |
 | **TASK-2.1 s.d. 2.2** | Fungsi Modular dan Penanganan Eksepsi | `app/services/` | YUKEN VELINO | Pasca UTS |
 | **TASK-2.3 s.d. 2.5** | Basis Data Relasional SQLite3 | `app/database/db_manager.py` | YUKEN VELINO | Pasca UTS |

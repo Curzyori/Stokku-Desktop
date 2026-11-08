@@ -22,10 +22,9 @@ Proyek ini dikembangkan untuk penilaian Ujian Tengah Semester (UTS, P08) dan Tug
 
 | No | NIM | Nama Lengkap | Peran Utama |
 | :---: | :---: | :--- | :--- |
-| 1 | **15260767** | **YUKEN VELINO** | Project Lead, Backend Logic & Data Validation |
-| 2 | **15260673** | **MAHARDIKA ATHAILLAH** | Frontend UI & Presentation Designer |
-| 3 | **15260847** | **RENKYNA AFTANIA NASUTION** | Reporting Module (Pandas P7) & Academic Documentation |
-| 4 | **15260722** | **PRISILA HUTAJULU** | *Status: Sementara / Tentatif - Test Runner & Notulen* |
+| 1 | **15260767** | **YUKEN VELINO** | Project Lead, Logika Backend, Validasi & Test Runner |
+| 2 | **15260673** | **MAHARDIKA ATHAILLAH** | Tampilan Antarmuka (UI) & Desain Presentasi |
+| 3 | **15260847** | **RENKYNA AFTANIA NASUTION** | Modul Analisis Pandas (P7) & Dokumentasi Akademik |
 
 ---
 
@@ -100,7 +99,7 @@ Stokku-Desktop/
 │   ├── engine_stok.py                     # [YUKEN] Perhitungan mutasi dan total aset
 │   ├── display_cli.py                     # [MAHARDIKA] Tampilan tabel CLI dan penanda visual
 │   ├── laporan_pandas.py                  # [RENKYNA] Analisis DataFrame Pandas (P7)
-│   ├── test_skenario.py                   # [PRISILA] Skrip pengujian otomatis 7 kasus uji
+│   ├── test_skenario.py                   # [YUKEN] Skrip pengujian otomatis 7 kasus uji
 │   └── main_p7.py                         # [YUKEN] Menu utama program terminal
 ├── app/                                   # Fase 2: GUI Tkinter dan SQLite (Bahan UAS)
 │   ├── __init__.py

@@ -11,10 +11,9 @@
 - Institusi: Universitas Bina Sarana Informatika (UBSI)
 - Dosen Pengampu: Ali Mustopa, M.Kom (Kode Dosen: AOP)
 - Identitas Tim Pengembang (Kelompok 4):
-  1. 15260767 - YUKEN VELINO (Project Lead, Logika Backend, Basis Data, dan Validasi)
+  1. 15260767 - YUKEN VELINO (Project Lead, Logika Backend, Validasi Data, dan Test Runner)
   2. 15260673 - MAHARDIKA ATHAILLAH (Tampilan Antarmuka dan Desain Presentasi)
   3. 15260847 - RENKYNA AFTANIA NASUTION (Modul Laporan Pandas dan Makalah Laporan)
-  4. 15260722 - PRISILA HUTAJULU (Status: Sementara / Tentatif - Pengujian dan Notulensi)
 
 ---
 
@@ -183,7 +182,7 @@ Stokku-Desktop/
 │   ├── engine_stok.py                     # [YUKEN] Logika mutasi stok dan kalkulasi nilai modal
 │   ├── display_cli.py                     # [MAHARDIKA] Format tabel CLI dan penanda visual status
 │   ├── laporan_pandas.py                  # [RENKYNA] Analisis DataFrame Pandas (materi P07)
-│   ├── test_skenario.py                   # [PRISILA] Skrip pengujian otomatis 7 kasus uji
+│   ├── test_skenario.py                   # [YUKEN] Skrip pengujian otomatis 7 kasus uji
 │   └── main_p7.py                         # [YUKEN] Titik masuk dan menu utama program terminal
 ```
 
@@ -204,7 +203,7 @@ Stokku-Desktop/
 │   └── reports/
 │       └── pandas_reporter.py             # [RENKYNA] Modul ekspor dan ringkasan data tabular
 ├── tests/
-│   └── test_suite.py                      # [PRISILA] Pengujian menyeluruh sistem
+│   └── test_suite.py                      # [YUKEN] Pengujian menyeluruh sistem
 ├── docs/
 │   └── makalah/                           # [RENKYNA] Berkas naskah makalah format resmi UBSI
 ├── presentation/                          # [MAHARDIKA] Slide presentasi PowerPoint
@@ -274,10 +273,9 @@ Stokku-Desktop/
 
 | Nama Anggota | NIM | Peran | Rincian Tanggung Jawab |
 | :--- | :---: | :--- | :--- |
-| **YUKEN VELINO** | 15260767 | Project Lead, Backend, dan Validasi | - Merancang struktur data, skema basis data SQLite, dan model data.<br>- Menulis logika mutasi barang masuk/keluar serta rumus akumulasi nilai modal.<br>- Menyusun fungsi validasi (kode unik, kuantitas positif, batas stok, dan tipe data). |
+| **YUKEN VELINO** | 15260767 | Project Lead, Backend, Validasi, dan Pengujian | - Merancang struktur data, skema basis data SQLite, dan model data.<br>- Menulis logika mutasi barang masuk/keluar serta rumus akumulasi nilai modal.<br>- Menyusun fungsi validasi (kode unik, kuantitas positif, batas stok, dan tipe data).<br>- Mengembangkan dan mengeksekusi skrip pengujian otomatis (test_skenario.py dan test_suite.py). |
 | **MAHARDIKA ATHAILLAH** | 15260673 | Tampilan Antarmuka dan Presentasi | - Merancang format tabel CLI (Fase 1) dan tata letak antarmuka Tkinter (Fase 2).<br>- Mengatur penataan kolom Treeview, kartu ringkasan, dan dialog form.<br>- Menyusun slide materi presentasi resmi untuk penilaian kelas. |
-| **RENKYNA AFTANIA NASUTION** | 15260847 | Modul Laporan dan Makalah Laporan | - Mengembangkan modul pelaporan dan rekapitulasi data menggunakan Pandas (P07).<br>- Menyaring data transaksi berdasarkan jenis mutasi.<br>- Menyusun naskah Makalah Laporan Resmi format UBSI (Bab I Pendahuluan, Bab II Pembahasan, Bab III Penutup, dan Daftar Pustaka). |
-| **PRISILA HUTAJULU** *(Tentatif)* | 15260722 | Pengujian Program dan Notulensi | - Menjalankan skrip pengujian otomatis 7 skenario (TC-01 sampai TC-07) dan mencatat hasil pengujian.<br>- Menguji skenario batas input salah untuk memastikan program tidak crash.<br>- Membantu dokumentasi tangkapan layar jalannya program dan catatan evaluasi dosen. |
+| **RENKYNA AFTANIA NASUTION** | 15260847 | Modul Laporan dan Makalah Laporan | - Mengembangkan modul pelaporan dan rekapitulasi data menggunakan Pandas (P07).<br>- Menyaring data transaksi berdasarkan jenis mutasi.<br>- Menyusun naskah Makalah Laporan Resmi format UBSI (Bab I Pendahuluan, Bab II Pembahasan, Bab III Penutup, dan Daftar Pustaka) serta mendokumentasikan hasil pengujian sistem. |
 
 ---
 
