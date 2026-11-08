@@ -42,16 +42,16 @@ def tampilkan_tabel_barang(daftar_barang: list) -> None:
         print("\n[INFO] Belum ada data barang di inventaris gudang.\n")
         return
 
-    garis = "+----------+------------------------+-------------+---------+--------------+--------------+-------+-----+----------+"
-    header = "| Kode     | Nama Barang            | Kategori    | Satuan  | Harga Beli   | Harga Jual   | Stok  | Min | Status   |"
+    garis = "+----------+--------------------------------+-------------+---------+--------------+--------------+-------+-----+----------+"
+    header = "| Kode     | Nama Barang                    | Kategori    | Satuan  | Harga Beli   | Harga Jual   | Stok  | Min | Status   |"
     
     print("\n" + garis)
     print(header)
     print(garis)
 
     for item in daftar_barang:
-        kode = str(item.get("kode_barang", ""))[:8]
-        nama = str(item.get("nama_barang", ""))[:22]
+        kode = str(item.get("kode_barang") or item.get("kode") or "")[:8]
+        nama = str(item.get("nama_barang") or item.get("nama") or "")[:30]
         kategori = str(item.get("kategori", ""))[:11]
         satuan = str(item.get("satuan", ""))[:7]
         harga_beli = format_rupiah(item.get("harga_beli", 0))
@@ -62,7 +62,7 @@ def tampilkan_tabel_barang(daftar_barang: list) -> None:
 
         print(
             f"| {kode:<8} "
-            f"| {nama:<22} "
+            f"| {nama:<30} "
             f"| {kategori:<11} "
             f"| {satuan:<7} "
             f"| {harga_beli:>12} "
@@ -79,8 +79,8 @@ def tampilkan_tabel_riwayat(daftar_mutasi: list) -> None:
         print("\n[INFO] Belum ada riwayat transaksi mutasi.\n")
         return
 
-    garis = "+-----+---------------------+----------+----------------------+---------+-------+-------+-------+----------------------+"
-    header = "| No  | Tanggal & Waktu     | Kode     | Nama Barang          | Jenis   | Qty   | Awal  | Akhir | Keterangan           |"
+    garis = "+-----+---------------------+----------+------------------------------+---------+-------+-------+-------+------------------------+"
+    header = "| No  | Tanggal & Waktu     | Kode     | Nama Barang                  | Jenis   | Qty   | Awal  | Akhir | Keterangan             |"
     
     print("\n" + garis)
     print(header)
@@ -89,22 +89,22 @@ def tampilkan_tabel_riwayat(daftar_mutasi: list) -> None:
     for index, mutasi in enumerate(daftar_mutasi, start=1):
         if isinstance(mutasi, dict):
             tanggal = str(mutasi.get("tanggal", ""))[:19]
-            kode = str(mutasi.get("kode_barang", ""))[:8]
-            nama = str(mutasi.get("nama_barang", ""))[:20]
-            jenis = str(mutasi.get("jenis_transaksi", ""))[:7]
+            kode = str(mutasi.get("kode_barang") or mutasi.get("kode") or "")[:8]
+            nama = str(mutasi.get("nama_barang") or mutasi.get("nama") or "")[:28]
+            jenis = str(mutasi.get("jenis_transaksi") or mutasi.get("jenis") or "")[:7]
             jumlah = int(mutasi.get("jumlah", 0))
             stok_awal = int(mutasi.get("stok_sebelum", 0))
             stok_akhir = int(mutasi.get("stok_sesudah", 0))
-            keterangan = str(mutasi.get("keterangan", ""))[:20]
+            keterangan = str(mutasi.get("keterangan", ""))[:22]
         elif isinstance(mutasi, (list, tuple)) and len(mutasi) >= 8:
             tanggal = str(mutasi[0])[:19]
             kode = str(mutasi[1])[:8]
-            nama = str(mutasi[2])[:20]
+            nama = str(mutasi[2])[:28]
             jenis = str(mutasi[3])[:7]
             jumlah = int(mutasi[4])
             stok_awal = int(mutasi[5])
             stok_akhir = int(mutasi[6])
-            keterangan = str(mutasi[7])[:20]
+            keterangan = str(mutasi[7])[:22]
         else:
             continue
 
@@ -114,12 +114,12 @@ def tampilkan_tabel_riwayat(daftar_mutasi: list) -> None:
             f"| {index:<3} "
             f"| {tanggal:<19} "
             f"| {kode:<8} "
-            f"| {nama:<20} "
+            f"| {nama:<28} "
             f"| {jenis:<7} "
             f"| {qty_str:>5} "
             f"| {stok_awal:>5} "
             f"| {stok_akhir:>5} "
-            f"| {keterangan:<20} |"
+            f"| {keterangan:<22} |"
         )
     print(garis + "\n")
 
@@ -130,6 +130,10 @@ def tampilkan_pesan_sukses(pesan: str) -> None:
 
 def tampilkan_pesan_error(pesan: str) -> None:
     print(f"[ERROR] {pesan}")
+
+
+cetak_tabel_barang = tampilkan_tabel_barang
+cetak_log_mutasi = tampilkan_tabel_riwayat
 
 
 if __name__ == "__main__":

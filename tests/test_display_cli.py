@@ -109,6 +109,23 @@ class TestDisplayCLI(unittest.TestCase):
         self.assertIn("+10", output_isi)
         self.assertIn("Pasokan Agen Utama", output_isi)
 
+    def test_alias_dan_kompatibilitas_data_store(self):
+        from progress_p7.display_cli import cetak_tabel_barang, cetak_log_mutasi
+        from progress_p7.data_store import daftar_barang, log_mutasi
+
+        cetak_tabel_barang(daftar_barang)
+        output_tabel = self.held_output.getvalue()
+        self.assertIn("ATK01", output_tabel)
+        self.assertIn("Buku Tulis Kiky 38 Lembar", output_tabel)
+
+        self.held_output.truncate(0)
+        self.held_output.seek(0)
+
+        cetak_log_mutasi(log_mutasi)
+        output_mutasi = self.held_output.getvalue()
+        self.assertIn("Saldo Awal Sistem", output_mutasi)
+        self.assertIn("ATK01", output_mutasi)
+
     def test_notifikasi(self):
         from progress_p7.display_cli import tampilkan_pesan_sukses, tampilkan_pesan_error
         tampilkan_pesan_sukses("Data tersimpan")
