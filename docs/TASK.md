@@ -4,8 +4,8 @@
 - Mata Kuliah: Dasar Pemrograman (Kode: 894), UBSI
 - Dosen Pengampu: Ali Mustopa, M.Kom (Kode Dosen: AOP)
 - Anggota Tim (Kelompok 4):
-  - 15260767 - YUKEN VELINO (Project Lead, Logika Backend, Validasi Data, dan Test Runner)
-  - 15260673 - MAHARDIKA ATHAILLAH (Tampilan Antarmuka dan Desain Presentasi)
+  - 15260767 - YUKEN VELINO [@Curzyori](https://github.com/Curzyori) (Project Lead, Logika Backend, Validasi Data, dan Test Runner)
+  - 15260673 - MAHARDIKA ATHAILLAH [@dikah4300](https://github.com/dikah4300) (Tampilan Antarmuka dan Desain Presentasi)
   - 15260847 - RENKYNA AFTANIA NASUTION (Modul Laporan Pandas P7 dan Naskah Makalah)
 
 ---
