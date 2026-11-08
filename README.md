@@ -124,26 +124,95 @@ Stokku-Desktop/
 
 ---
 
-## Petunjuk Menjalankan Program
+## Panduan Instalasi dan Pengoperasian
 
-### Menjalankan Versi CLI (Fase 1, Progres P1-P7)
+Panduan ini disusun untuk memudahkan anggota tim, rekan mahasiswa, maupun dosen penguji dalam mengunduh dan menjalankan aplikasi Stokku Desktop di komputer lokal masing-masing.
 
-Jalankan menu utama program:
+### Prasyarat Perangkat Lunak
+
+Sebelum memulai, pastikan komputer Anda telah terpasang:
+1. **Python 3.8 atau versi yang lebih baru** (dapat diunduh dari [python.org](https://www.python.org/downloads/)).
+   - *Pengguna Windows:* Saat memasang Python, pastikan mencentang opsi **"Add python.exe to PATH"**.
+2. **Aplikasi Terminal / Command Prompt** bawaan sistem operasi (CMD, PowerShell, Git Bash, atau Terminal macOS/Linux).
+
+---
+
+### Cara 1: Mengunduh Repositori via Git Clone (Direkomendasikan)
+
+Gunakan cara ini apabila komputer Anda sudah memiliki aplikasi Git:
+
+1. Buka terminal atau Command Prompt di komputer Anda.
+2. Kloning repositori proyek dari GitHub:
+   ```bash
+   git clone https://github.com/Curzyori/Stokku-Desktop.git
+   ```
+3. Masuk ke dalam direktori proyek yang baru diunduh:
+   ```bash
+   cd Stokku-Desktop
+   ```
+4. Lanjutkan ke tahap pemasangan pustaka pendukung di bawah.
+
+---
+
+### Cara 2: Mengunduh Arsip ZIP (Tanpa Memasang Git)
+
+Gunakan cara ini apabila komputer Anda belum terpasang aplikasi Git:
+
+1. Buka halaman repositori proyek di browser: [https://github.com/Curzyori/Stokku-Desktop](https://github.com/Curzyori/Stokku-Desktop).
+2. Klik tombol hijau bertuliskan **Code** di sisi kanan atas daftar berkas.
+3. Pilih menu **Download ZIP** untuk mengunduh arsip kode sumber.
+4. Setelah selesai diunduh, ekstrak berkas `Stokku-Desktop-main.zip` tersebut ke folder pilihan Anda (misalnya di `Documents` atau `Desktop`).
+5. Buka terminal atau Command Prompt, lalu arahkan ke folder hasil ekstraksi:
+   - *Di Windows:* Buka folder hasil ekstrak di File Explorer, klik pada bilah alamat folder di atas, ketik `cmd`, lalu tekan **Enter**.
+   - *Atau lewat terminal:*
+     ```bash
+     cd path/ke/folder/Stokku-Desktop-main
+     ```
+
+---
+
+### Pemasangan Pustaka Pendukung (Pandas)
+
+Aplikasi ini menggunakan pustaka bawaan Python secara murni, kecuali modul `pandas` yang dibutuhkan untuk pemenuhan analisis data tabular (materi perkuliahan Pertemuan 7).
+
+Pasang pustaka Pandas menggunakan perintah:
+```bash
+pip install pandas
+```
+*(Pada sistem operasi Linux atau macOS tertentu, gunakan perintah `pip3 install pandas`).*
+
+---
+
+### Cara Menjalankan Aplikasi
+
+#### 1. Menjalankan Program CLI (Fase 1, Evaluasi UTS Materi P1-P7)
+
+Pastikan terminal Anda berada di dalam folder proyek `Stokku-Desktop`, lalu jalankan menu utama program:
 ```bash
 python progress_p7/main_p7.py
 ```
+*(Gunakan perintah `python3 progress_p7/main_p7.py` pada Linux/macOS).*
 
-Jalankan pengujian otomatis:
+Setelah program berjalan, Anda akan melihat banner antarmuka dan dapat memilih menu interaktif [0-7] dari terminal.
+
+#### 2. Menjalankan Skrip Pengujian Otomatis
+
+Untuk membuktikan 7 kasus uji transaksi (validasi kode duplikat, mutasi keluar-masuk, status kritis, anti-stok minus, dan kalkulasi aset modal) tanpa perlu input manual di hadapan dosen:
 ```bash
 python progress_p7/test_skenario.py
 ```
 
-### Menjalankan Versi Desktop GUI (Fase 2, Versi Final UAS)
+Untuk menjalankan pengujian unit modul tampilan tabel terminal:
+```bash
+python -m unittest discover -s tests
+```
 
+#### 3. Menjalankan Aplikasi Desktop Native GUI (Fase 2, Versi UAS)
+
+Setelah pengerjaan antarmuka grafis Tkinter dan basis data SQLite selesai:
 ```bash
 python main.py
 ```
-
 ---
 
 ## Lisensi
