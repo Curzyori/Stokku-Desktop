@@ -37,7 +37,7 @@ Untuk mencegah konflik perubahan berkas pada git:
   - Data awal dummy sebanyak 3 produk untuk keperluan demonstrasi program. (PIC: YUKEN)
 
 ### Bagian 2: Tampilan Terminal dan Logika Program (P03, P04, P05, P07)
-- [ ] TASK-1.3: Implementasi `progress_p7/display_cli.py`:
+- [x] TASK-1.3: Implementasi `progress_p7/display_cli.py`:
   - Fungsi pencetakan banner pembuka program.
   - Fungsi format tabel daftar barang (lebar kolom rapi, pemisah garis, dan format mata uang Rupiah).
   - Penanda visual status: `[KRITIS]` untuk barang dengan stok kurang dari atau sama dengan batas minimum, dan `[AMAN]` untuk stok cukup. (PIC: MAHARDIKA)
