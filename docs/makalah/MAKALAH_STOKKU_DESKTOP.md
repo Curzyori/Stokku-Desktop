@@ -75,7 +75,7 @@ Jakarta, 11 November 2026
 ## BAB I: PENDAHULUAN
 
 ### 1.1 Latar Belakang Masalah
-Usaha Mikro, Kecil, dan Menengah (UMKM) merupakan pilar penggerak ekonomi nasional yang mendominasi aktivitas perdagangan di Indonesia. Kendati demikian, sebagian besar pelaku UMKM—seperti toko kelontong, kios alat tulis kantor (ATK), dan distributor skala rumahan—masih mengandalkan sistem pencatatan manual berbasis buku fisik (*paper-based inventory log*) untuk mencatat arus keluar masuk barang.
+Usaha Mikro, Kecil, dan Menengah (UMKM) merupakan pilar penggerak ekonomi nasional yang mendominasi aktivitas perdagangan di Indonesia. Kendati demikian, sebagian besar pelaku UMKM, seperti toko kelontong, kios alat tulis kantor (ATK), dan distributor skala rumahan, masih mengandalkan sistem pencatatan manual berbasis buku fisik (*paper-based inventory log*) untuk mencatat arus keluar masuk barang.
 
 Pola pencatatan konvensional tersebut menimbulkan berbagai masalah operasional yang merugikan, antara lain:
 1. **Ketiadaan Visibilitas Stok Riil:** Pemilik usaha tidak dapat mengetahui sisa persediaan fisik secara akurat tanpa melakukan penghitungan fisik manual (*stock opname*) yang menyita waktu.
