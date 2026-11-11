@@ -50,7 +50,7 @@ Untuk mencegah konflik perubahan berkas pada git:
   - Fungsi transaksi barang masuk (restock), menambah stok dan mencatat riwayat mutasi.
   - Fungsi transaksi barang keluar dengan proteksi pencegah stok minus, mengurangi stok jika valid dan mencatat riwayat mutasi.
   - Fungsi perhitungan total unit fisik dan estimasi total nilai modal persediaan. (PIC: YUKEN)
-- [ ] TASK-1.6: Implementasi `progress_p7/laporan_pandas.py`:
+- [x] TASK-1.6: Implementasi `progress_p7/laporan_pandas.py`:
   - Konversi list data barang ke dalam objek `pandas.DataFrame`.
   - Pembuatan ringkasan data tabular persediaan untuk pemenuhan materi Pertemuan 7. (PIC: RENKYNA)
 - [x] TASK-1.7: Implementasi `progress_p7/main_p7.py`:
@@ -60,7 +60,7 @@ Untuk mencegah konflik perubahan berkas pada git:
 ### Bagian 3: Pengujian dan Dokumen Progres UTS (P08)
 - [x] TASK-1.8: Implementasi `progress_p7/test_skenario.py`:
   - Pembuatan skrip otomatis untuk menjalankan 7 skenario pengujian transaksi (TC-01 sampai TC-07) tanpa input manual saat penilaian. (PIC: YUKEN)
-- [ ] TASK-1.9: Penyusunan draf Bab II Makalah Progres UTS (`docs/makalah/`) dan materi ringkas slide presentasi (`docs/presentasi/`). (PIC: MAHARDIKA dan RENKYNA)
+- [x] TASK-1.9: Penyusunan draf Bab II Makalah Progres UTS (`docs/makalah/`) dan materi ringkas slide presentasi (`docs/presentasi/`). (PIC: MAHARDIKA dan RENKYNA)
 
 ---
 
