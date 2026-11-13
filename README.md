@@ -81,6 +81,7 @@ Fitur di bawah ini benar-benar tersedia dan sudah diuji saat ini.
 ## Arsitektur Sistem
 
 ```mermaid
+%%{init: {"flowchart": {"nodeSpacing": 22, "rankSpacing": 30, "padding": 6}, "themeVariables": {"fontSize": "13px"}}}%%
 flowchart LR
     subgraph Entry["Titik Masuk"]
         MAIN["main_p7.py<br/>menu literal 0-7"]
@@ -184,6 +185,7 @@ Setiap elemen `log_mutasi` berbentuk 8-tuple berurutan:
 ## Alur Program Utama
 
 ```mermaid
+%%{init: {"flowchart": {"nodeSpacing": 22, "rankSpacing": 30, "padding": 6}, "themeVariables": {"fontSize": "13px"}}}%%
 flowchart TD
     START([Mulai: python progress_p7/main_p7.py]) --> INIT["Impor modul<br/>data_store menjalankan inisialisasi_log_awal()"]
     INIT --> BANNER["cetak_banner_bawaan()"]
@@ -222,6 +224,7 @@ flowchart TD
 ### Menu 1: Lihat Daftar Stok Barang & Status Kritis
 
 ```mermaid
+%%{init: {"flowchart": {"nodeSpacing": 22, "rankSpacing": 30, "padding": 6}, "themeVariables": {"fontSize": "13px"}}}%%
 flowchart TD
     A([Pilih menu 1]) --> B["Impor cetak_tabel_barang<br/>dari display_cli"]
     B --> C{"Import berhasil?"}
@@ -253,6 +256,7 @@ flowchart TD
 Ini menu paling panjang karena meminta delapan input berurutan, masing-masing dengan validasi sendiri.
 
 ```mermaid
+%%{init: {"flowchart": {"nodeSpacing": 22, "rankSpacing": 30, "padding": 6}, "themeVariables": {"fontSize": "13px"}}}%%
 flowchart TD
     A([Pilih menu 2]) --> B["input Kode Barang"]
     B --> C["validasi_kode_unik(kode, daftar_barang)<br/>strip lalu upper"]
@@ -321,6 +325,7 @@ flowchart TD
 ### Menu 3: Transaksi Barang Masuk (Restock)
 
 ```mermaid
+%%{init: {"flowchart": {"nodeSpacing": 22, "rankSpacing": 30, "padding": 6}, "themeVariables": {"fontSize": "13px"}}}%%
 flowchart TD
     A([Pilih menu 3]) --> B["input Kode Barang"]
     B --> C["cari_barang_by_kode(kode, daftar_barang)"]
@@ -351,6 +356,7 @@ flowchart TD
 Menu ini adalah inti aturan bisnis proyek.
 
 ```mermaid
+%%{init: {"flowchart": {"nodeSpacing": 22, "rankSpacing": 30, "padding": 6}, "themeVariables": {"fontSize": "13px"}}}%%
 flowchart TD
     A([Pilih menu 4]) --> B["input Kode Barang"]
     B --> C["cari_barang_by_kode(kode, daftar_barang)"]
@@ -387,6 +393,7 @@ flowchart TD
 ### Menu 5: Lihat Riwayat Mutasi Arus Barang
 
 ```mermaid
+%%{init: {"flowchart": {"nodeSpacing": 22, "rankSpacing": 30, "padding": 6}, "themeVariables": {"fontSize": "13px"}}}%%
 flowchart TD
     A([Pilih menu 5]) --> B["Impor cetak_log_mutasi<br/>dari display_cli"]
     B --> C{"Import berhasil?"}
@@ -420,6 +427,7 @@ flowchart TD
 Menu ini punya sub-menu sendiri dan bergantung pada pustaka `pandas`.
 
 ```mermaid
+%%{init: {"flowchart": {"nodeSpacing": 22, "rankSpacing": 30, "padding": 6}, "themeVariables": {"fontSize": "13px"}}}%%
 flowchart TD
     A([Pilih menu 6]) --> B["tampilkan_laporan_pandas(daftar_barang, log_mutasi)"]
     B --> C{"PANDAS_TERSEDIA?"}
@@ -460,6 +468,7 @@ flowchart TD
 ### Menu 7: Jalankan Skrip Uji Otomatis (7 Kasus Uji)
 
 ```mermaid
+%%{init: {"flowchart": {"nodeSpacing": 22, "rankSpacing": 30, "padding": 6}, "themeVariables": {"fontSize": "13px"}}}%%
 flowchart TD
     A([Pilih menu 7]) --> B["Impor jalankan_semua_pengujian<br/>dari test_skenario"]
     B --> C["reset_data()"]
@@ -489,6 +498,7 @@ flowchart TD
 ### Menu 0: Keluar dari Program
 
 ```mermaid
+%%{init: {"flowchart": {"nodeSpacing": 22, "rankSpacing": 30, "padding": 6}, "themeVariables": {"fontSize": "13px"}}}%%
 flowchart LR
     A([Pilih menu 0]) --> B["print 'Terima kasih.<br/>Program Stokku Desktop ditutup.'"]
     B --> C["break dari while True"]
@@ -565,16 +575,24 @@ Stokku-Desktop/
 ├── docs/
 │   ├── PRD.md                                  # Spesifikasi kebutuhan sistem
 │   ├── TASK.md                                 # Pembagian tugas dan checklist kerja
-│   ├── assets/                                 # Foto dokumentasi sesi kerja tim
+│   ├── assets/                                 # Aset gambar dokumentasi
 │   │   ├── P1_2026-11-13.jpg                   # Sesi 1: Yuken dan Mahardika
-│   │   └── P2_2026-11-13.jpg                   # Sesi 2: Yuken, Mahardika, Renkyna
+│   │   ├── P2_2026-11-13.jpg                   # Sesi 2: Yuken, Mahardika, Renkyna
+│   │   ├── cli_menu.png                        # Preview Menu utama
+│   │   ├── cli_tabel.png                       # Preview Menu 1
+│   │   ├── cli_anti_minus.png                  # Preview Menu 4
+│   │   ├── cli_uji.png                         # Preview Menu 7
+│   │   └── diagrams/                           # Render PNG seluruh diagram
+│   ├── diagrams/                               # Sumber mermaid (.mmd) per diagram
 │   ├── makalah/
 │   │   ├── .gitkeep
 │   │   └── MAKALAH_STOKKU_DESKTOP.md           # [RENKYNA] Naskah akademik format UBSI
 │   └── presentasi/
-│       ├── STOKKU_DESKTOP_PROGRES_P7.pptx      # [YUKEN] Deck presentasi UTS (10 slide)
+│       ├── STOKKU_DESKTOP_PROGRES_P7.pptx      # [YUKEN] Deck presentasi UTS (14 slide)
 │       ├── STOKKU_DESKTOP_PROGRES_P7.pdf       # [YUKEN] Versi PDF untuk pratinjau
-│       └── generate_pptx.py                    # [YUKEN] Skrip pembuat deck
+│       ├── generate_pptx.py                    # [YUKEN] Pembangkit deck presentasi
+│       ├── capture_cli.py                      # [YUKEN] Perekam preview terminal ke PNG
+│       └── build_diagrams.py                   # [YUKEN] Render mermaid menjadi PNG
 ├── progress_p7/                                # Fase 1: logika in-memory P01-P07
 │   ├── __init__.py
 │   ├── data_store.py                           # [YUKEN] Data awal, saldo awal, reset
@@ -633,28 +651,44 @@ Penggabungan modul analisis Pandas serta penyusunan naskah akademik.
 
 ## Susunan Deck Presentasi
 
-Deck `docs/presentasi/STOKKU_DESKTOP_PROGRES_P7.pptx` berisi 10 slide:
+Deck `docs/presentasi/STOKKU_DESKTOP_PROGRES_P7.pptx` berisi 14 slide:
 
 | Slide | Isi |
 | :---: | :--- |
 | 1 | Layar kosong putih, untuk jeda sebelum presentasi dimulai |
 | 2 | Judul materi, identitas akademik, dan daftar anggota tim |
 | 3 | Latar belakang dan empat masalah pencatatan UMKM |
-| 4 | Pemetaan silabus P01 s.d. P07 ke berkas kode |
-| 5 | Arsitektur modul terisolasi dan logika anti stok minus |
-| 6 | Hasil 7 kasus uji otomatis |
-| 7 | Formula nilai aset modal dan ambang batas kritis |
-| 8 | Dokumentasi kegiatan (dua foto sesi kerja) |
-| 9 | Roadmap versi 2.0 menuju UAS |
-| 10 | Kesimpulan dan matriks tanggung jawab |
+| 4 | Diagram arsitektur modul dan alur ketergantungan |
+| 5 | Flowchart alur program utama (menu 0 sampai 7) |
+| 6 | Flowchart validasi anti stok minus |
+| 7 | Tampilan output: menu utama dan daftar stok |
+| 8 | Tampilan output program: anti stok minus dan hasil pengujian |
+| 9 | Pemetaan silabus P01 s.d. P07 |
+| 10 | Hasil 7 kasus uji otomatis |
+| 11 | Formula nilai aset modal dan ambang batas kritis |
+| 12 | Dokumentasi kegiatan (dua foto sesi kerja) |
+| 13 | Roadmap versi 2.0 menuju UAS |
+| 14 | Kesimpulan dan matriks tanggung jawab |
 
 Cara membuat ulang deck beserta PDF:
 
 ```bash
-pip install python-pptx
+pip install python-pptx pillow
+
+# 1. Rekam ulang preview terminal ke PNG
+python docs/presentasi/capture_cli.py
+
+# 2. Render ulang diagram dari sumber mermaid
+python docs/presentasi/build_diagrams.py --no-readme
+
+# 3. Bangun deck dan versi PDF
 python docs/presentasi/generate_pptx.py
 soffice --headless --convert-to pdf --outdir docs/presentasi docs/presentasi/STOKKU_DESKTOP_PROGRES_P7.pptx
 ```
+
+Blok `mermaid` di README ini juga dirender menjadi PNG oleh
+`docs/presentasi/build_diagrams.py` ke folder `docs/assets/diagrams/` untuk dipakai
+di deck presentasi. Sumber diagram tetap satu, yaitu blok mermaid di README.
 
 ---
 
@@ -763,35 +797,28 @@ python -m unittest discover -s tests -v
 
 ---
 
-## Contoh Sesi Terminal
+## Preview Terminal
 
-```text
-$ python progress_p7/main_p7.py
-========================================================================
-            STOKKU DESKTOP - MANAJEMEN PERSEDIAAN GUDANG
-           Tugas Proyek Mata Kuliah Dasar Pemrograman (894)
-      Kelas 15.1C.30 - Universitas Bina Sarana Informatika (UBSI)
-========================================================================
+Tangkapan layar berikut dihasilkan otomatis oleh `docs/presentasi/capture_cli.py` yang menjalankan program di dalam pseudo terminal, sehingga teks yang tampil identik dengan sesi asli.
 
-MENU OPERASIONAL STOKKU:
-1. Lihat Daftar Stok Barang & Status Kritis
-2. Tambah Data Barang Baru
-3. Transaksi Barang Masuk (Restock)
-4. Transaksi Barang Keluar (Anti-Stok Minus)
-5. Lihat Riwayat Mutasi Arus Barang
-6. Laporan Analisis Persediaan (P7)
-7. Jalankan Skrip Uji Otomatis (7 Kasus Uji)
-0. Keluar dari Program
-Pilih menu [0-7]: 1
+### Menu utama
 
-+----------+--------------------------------+-------------+---------+--------------+--------------+-------+-----+----------+
-| Kode     | Nama Barang                    | Kategori    | Satuan  | Harga Beli   | Harga Jual   | Stok  | Min | Status   |
-+----------+--------------------------------+-------------+---------+--------------+--------------+-------+-----+----------+
-| ATK01    | Buku Tulis Kiky 38 Lembar      | ATK         | Pcs     |     Rp 3.500 |     Rp 5.000 |    15 |   5 |  [AMAN]  |
-| ATK02    | Pulpen Faster C600 Hitam       | ATK         | Pcs     |     Rp 2.500 |     Rp 3.500 |     4 |   5 | [KRITIS] |
-| KRT01    | Kertas HVS Sinar Dunia A4 75gr | Kertas      | Rim     |    Rp 42.000 |    Rp 48.000 |    10 |   3 |  [AMAN]  |
-+----------+--------------------------------+-------------+---------+--------------+--------------+-------+-----+----------+
-```
+![Menu utama Stokku Desktop](docs/assets/cli_menu.png)
+
+### Menu 1: daftar stok dan status kritis
+
+![Tabel stok pada Menu 1](docs/assets/cli_tabel.png)
+
+### Menu 4: anti stok minus
+
+Transaksi 50 Rim pada barang dengan stok 10 Rim ditolak, lalu transaksi 4 Rim diterima.
+
+![Validasi anti stok minus pada Menu 4](docs/assets/cli_anti_minus.png)
+
+### Menu 7: pengujian otomatis
+
+![Hasil pengujian otomatis pada Menu 7](docs/assets/cli_uji.png)
+
 
 ---
 

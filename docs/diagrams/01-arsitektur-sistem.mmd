@@ -1,0 +1,38 @@
+%%{init: {"flowchart": {"nodeSpacing": 22, "rankSpacing": 30, "padding": 6}, "themeVariables": {"fontSize": "13px"}}}%%
+flowchart LR
+    subgraph Entry["Titik Masuk"]
+        MAIN["main_p7.py<br/>menu literal 0-7"]
+    end
+
+    subgraph Core["Mesin Logika (Yuken)"]
+        DS["data_store.py<br/>daftar_barang<br/>log_mutasi<br/>DATA_AWAL<br/>reset_data()"]
+        VAL["validasi.py<br/>validasi_kode_unik<br/>validasi_angka_positif<br/>validasi_stok_keluar<br/>validasi_string_tidak_kosong<br/>cari_barang_by_kode"]
+        ENG["engine_stok.py<br/>tambah_barang_baru<br/>transaksi_barang_masuk<br/>transaksi_barang_keluar<br/>cek_status_stok<br/>ringkasan_inventaris"]
+    end
+
+    subgraph View["Presentasi (Mahardika)"]
+        DISP["display_cli.py<br/>tampilkan_tabel_barang<br/>tampilkan_tabel_riwayat<br/>tampilkan_ringkasan<br/>format_rupiah<br/>status_stok"]
+    end
+
+    subgraph Report["Analitik (Renkyna)"]
+        PAND["laporan_pandas.py<br/>buat_dataframe_barang<br/>buat_dataframe_mutasi<br/>rekapitulasi_kategori<br/>filter_mutasi_berdasarkan_jenis<br/>ringkasan_statistik_deskriptif"]
+    end
+
+    subgraph Tester["Pengujian"]
+        TEST["test_skenario.py<br/>TC-01 s.d. TC-07"]
+        UNIT["tests/<br/>test_display_cli.py<br/>test_laporan_pandas.py"]
+    end
+
+    MAIN --> DS
+    MAIN --> VAL
+    MAIN --> ENG
+    MAIN --> DISP
+    MAIN --> PAND
+    MAIN --> TEST
+    ENG --> VAL
+    ENG --> DS
+    TEST --> DS
+    TEST --> ENG
+    UNIT --> DISP
+    UNIT --> PAND
+    DS -.->|"struktur data dibaca bersama"| PAND

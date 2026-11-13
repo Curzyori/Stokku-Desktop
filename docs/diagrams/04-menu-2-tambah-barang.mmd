@@ -1,0 +1,52 @@
+%%{init: {"flowchart": {"nodeSpacing": 22, "rankSpacing": 30, "padding": 6}, "themeVariables": {"fontSize": "13px"}}}%%
+flowchart TD
+    A([Pilih menu 2]) --> B["input Kode Barang"]
+    B --> C["validasi_kode_unik(kode, daftar_barang)<br/>strip lalu upper"]
+    C --> D{"Kode kosong?"}
+    D -->|"Ya"| X1["print peringatan<br/>return ke menu"]
+    D -->|"Tidak"| E{"Hanya alfanumerik?"}
+    E -->|"Tidak"| X2["print peringatan<br/>return ke menu"]
+    E -->|"Ya"| F{"Sudah terdaftar?"}
+    F -->|"Ya, termasuk beda kapitalisasi"| X3["print 'Kode sudah terdaftar'<br/>return ke menu"]
+    F -->|"Belum"| G["input Nama Produk"]
+
+    G --> H["validasi_string_tidak_kosong"]
+    H --> I{"Kosong?"}
+    I -->|"Ya"| X4["print peringatan<br/>return ke menu"]
+    I -->|"Tidak"| J["input Kategori"]
+    J --> K["validasi_string_tidak_kosong"]
+    K --> L["input Satuan"]
+    L --> M2["validasi_string_tidak_kosong"]
+    M2 --> N["input Harga Beli"]
+
+    N --> O["validasi_angka_positif(min_val = 0)"]
+    O --> P{"Bilangan bulat<br/>dan minimal 0?"}
+    P -->|"Tidak"| X5["print peringatan<br/>return ke menu"]
+    P -->|"Ya"| Q["input Harga Jual"]
+    Q --> R["validasi_angka_positif(min_val = 0)"]
+    R --> S["input Stok Awal"]
+    S --> T["validasi_angka_positif(min_val = 0)"]
+    T --> U["input Batas Minimum Stok<br/>kosong berarti default 5"]
+    U --> V{"Diisi?"}
+    V -->|"Ya"| W["validasi_angka_positif(min_val = 1)"]
+    V -->|"Tidak"| Y["min_stok = 5"]
+
+    W --> Z["tambah_barang_baru(...)"]
+    Y --> Z
+    Z --> AA["Susun dict produk 8 kunci<br/>append ke daftar_barang"]
+    AA --> AB{"stok_awal lebih dari 0?"}
+    AB -->|"Ya"| AC["append tuple mutasi<br/>jenis MASUK, stok 0 ke stok_awal,<br/>keterangan 'Pendaftaran Produk Baru'"]
+    AB -->|"Tidak"| AD["Tanpa entri log"]
+    AC --> AE["print berhasil"]
+    AD --> AE
+    AE --> AF([Kembali ke menu utama])
+    X1 --> AF
+    X2 --> AF
+    X3 --> AF
+    X4 --> AF
+    X5 --> AF
+
+    style AA fill:#d7f0dd
+    style AC fill:#d7f0dd
+    style X1 fill:#fbe3e3
+    style X3 fill:#fbe3e3

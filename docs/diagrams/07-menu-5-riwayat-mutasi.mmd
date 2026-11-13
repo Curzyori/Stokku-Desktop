@@ -1,0 +1,23 @@
+%%{init: {"flowchart": {"nodeSpacing": 22, "rankSpacing": 30, "padding": 6}, "themeVariables": {"fontSize": "13px"}}}%%
+flowchart TD
+    A([Pilih menu 5]) --> B["Impor cetak_log_mutasi<br/>dari display_cli"]
+    B --> C{"Import berhasil?"}
+    C -->|"Ya"| D["tampilkan_tabel_riwayat(log_mutasi)"]
+    C -->|"Tidak"| E["Tabel cadangan internal<br/>memakai reversed(log_mutasi)"]
+    D --> F{"Log kosong?"}
+    E --> F
+    F -->|"Ya"| G["print INFO belum ada riwayat"]
+    F -->|"Tidak"| H["Loop setiap entri dari indeks 1"]
+    H --> I["Baca 8 field tuple<br/>waktu, kode, nama, jenis,<br/>jumlah, sebelum, sesudah, keterangan"]
+    I --> J{"Jenis?"}
+    J -->|"MASUK"| K["Tampilkan jumlah dengan tanda +"]
+    J -->|"KELUAR"| L["Tampilkan jumlah dengan tanda -"]
+    K --> M["Cetak baris tabel"]
+    L --> M
+    M --> N{"Entri berikutnya?"}
+    N -->|"Ada"| H
+    N -->|"Habis"| O([Kembali ke menu utama])
+    G --> O
+
+    style K fill:#d7f0dd
+    style L fill:#fbe3e3
