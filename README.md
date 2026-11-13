@@ -565,13 +565,16 @@ Stokku-Desktop/
 ├── docs/
 │   ├── PRD.md                                  # Spesifikasi kebutuhan sistem
 │   ├── TASK.md                                 # Pembagian tugas dan checklist kerja
+│   ├── assets/                                 # Foto dokumentasi sesi kerja tim
+│   │   ├── P1_2026-11-13.jpg                   # Sesi 1: Yuken dan Mahardika
+│   │   └── P2_2026-11-13.jpg                   # Sesi 2: Yuken, Mahardika, Renkyna
 │   ├── makalah/
 │   │   ├── .gitkeep
 │   │   └── MAKALAH_STOKKU_DESKTOP.md           # [RENKYNA] Naskah akademik format UBSI
 │   └── presentasi/
-│       ├── STOKKU_DESKTOP_PROGRES_P7.pptx      # [YUKEN] Slide presentasi UTS
+│       ├── STOKKU_DESKTOP_PROGRES_P7.pptx      # [YUKEN] Deck presentasi UTS (10 slide)
 │       ├── STOKKU_DESKTOP_PROGRES_P7.pdf       # [YUKEN] Versi PDF untuk pratinjau
-│       └── generate_pptx.py                    # [YUKEN] Skrip pembuat slide
+│       └── generate_pptx.py                    # [YUKEN] Skrip pembuat deck
 ├── progress_p7/                                # Fase 1: logika in-memory P01-P07
 │   ├── __init__.py
 │   ├── data_store.py                           # [YUKEN] Data awal, saldo awal, reset
@@ -602,6 +605,55 @@ Belum dibuat (target Fase 2):
 │   ├── ui/dialogs.py
 │   └── reports/pandas_reporter.py
 └── main.py                                     # Titik masuk aplikasi desktop
+```
+
+---
+
+## Dokumentasi Pengerjaan
+
+Kolaborasi tim direkam dalam dua sesi kerja. Foto tersimpan di `docs/assets/` dan ditampilkan pada slide 8 deck presentasi.
+
+### Sesi 1: Pengembangan Mesin Inti
+
+**Yuken Velino dan Mahardika Athaillah**
+
+Penyusunan modul backend, validasi anti stok minus, serta format tabel terminal.
+
+![Sesi 1: Yuken Velino dan Mahardika Athaillah](docs/assets/P1_2026-11-13.jpg)
+
+### Sesi 2: Integrasi Modul dan Makalah
+
+**Yuken Velino, Mahardika Athaillah, dan Renkyna Aftania Nasution**
+
+Penggabungan modul analisis Pandas serta penyusunan naskah akademik.
+
+![Sesi 2: Yuken Velino, Mahardika Athaillah, dan Renkyna Aftania Nasution](docs/assets/P2_2026-11-13.jpg)
+
+---
+
+## Susunan Deck Presentasi
+
+Deck `docs/presentasi/STOKKU_DESKTOP_PROGRES_P7.pptx` berisi 10 slide:
+
+| Slide | Isi |
+| :---: | :--- |
+| 1 | Layar kosong putih, untuk jeda sebelum presentasi dimulai |
+| 2 | Judul materi, identitas akademik, dan daftar anggota tim |
+| 3 | Latar belakang dan empat masalah pencatatan UMKM |
+| 4 | Pemetaan silabus P01 s.d. P07 ke berkas kode |
+| 5 | Arsitektur modul terisolasi dan logika anti stok minus |
+| 6 | Hasil 7 kasus uji otomatis |
+| 7 | Formula nilai aset modal dan ambang batas kritis |
+| 8 | Dokumentasi kegiatan (dua foto sesi kerja) |
+| 9 | Roadmap versi 2.0 menuju UAS |
+| 10 | Kesimpulan dan matriks tanggung jawab |
+
+Cara membuat ulang deck beserta PDF:
+
+```bash
+pip install python-pptx
+python docs/presentasi/generate_pptx.py
+soffice --headless --convert-to pdf --outdir docs/presentasi docs/presentasi/STOKKU_DESKTOP_PROGRES_P7.pptx
 ```
 
 ---

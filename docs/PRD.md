@@ -186,8 +186,11 @@ Stokku-Desktop/
 ├── docs/
 │   ├── PRD.md                             # Dokumen spesifikasi kebutuhan sistem
 │   ├── TASK.md                            # Rencana tugas dan matriks penanggung jawab
-│   ├── makalah/                           # [RENKYNA] Naskah draf makalah evaluasi UTS
-│   └── presentasi/                        # [MAHARDIKA] Slide presentasi evaluasi UTS (.pptx dan .pdf)
+│   ├── assets/                            # Foto dokumentasi sesi kerja tim
+│   │   ├── P1_2026-11-13.jpg              # Sesi 1: Yuken dan Mahardika
+│   │   └── P2_2026-11-13.jpg              # Sesi 2: Yuken, Mahardika, Renkyna
+│   ├── makalah/                           # [RENKYNA] Naskah makalah evaluasi UTS
+│   └── presentasi/                        # [YUKEN] Deck presentasi UTS (10 slide, .pptx dan .pdf)
 ├── progress_p7/
 │   ├── data_store.py                      # [YUKEN] Struktur data list dictionary dan data awal
 │   ├── validasi.py                        # [YUKEN] Validasi input angka, keunikan kode, dan batas stok
@@ -224,7 +227,7 @@ Stokku-Desktop/
 │   └── test_suite.py                      # [YUKEN] Pengujian menyeluruh sistem
 ├── docs/
 │   ├── makalah/                           # [RENKYNA] Berkas naskah makalah format resmi UBSI
-│   └── presentasi/                        # [MAHARDIKA] Slide presentasi PowerPoint (.pptx dan .pdf)
+│   └── presentasi/                        # [YUKEN] Deck presentasi final (.pptx dan .pdf)
 ├── main.py                                # [YUKEN] Titik masuk eksekusi antarmuka desktop
 ├── stok_gudang.db                         # Berkas basis data SQLite
 └── README.md                              # Panduan penggunaan proyek
@@ -284,7 +287,8 @@ Protokol `try...except ValueError` baru akan diterapkan pada pembacaan nilai dar
   - `progress_p7/test_skenario.py`: 7 kasus uji, seluruhnya lulus.
   - `tests/test_display_cli.py` dan `tests/test_laporan_pandas.py`: 15 unit test, seluruhnya lulus.
   - `docs/makalah/MAKALAH_STOKKU_DESKTOP.md`: naskah akademik lengkap format UBSI.
-  - `docs/presentasi/STOKKU_DESKTOP_PROGRES_P7.pptx` beserta versi PDF.
+  - `docs/presentasi/STOKKU_DESKTOP_PROGRES_P7.pptx` berisi 10 slide beserta versi PDF, termasuk slide 1 layar kosong dan slide 8 dokumentasi kegiatan.
+  - `docs/assets/P1_2026-11-13.jpg` dan `docs/assets/P2_2026-11-13.jpg`: foto dokumentasi dua sesi kerja tim.
 
 ### Keterbatasan Versi 1.0
 

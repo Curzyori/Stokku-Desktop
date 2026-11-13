@@ -60,7 +60,7 @@ Untuk mencegah konflik perubahan berkas pada git:
 ### Bagian 3: Pengujian dan Dokumen Progres UTS (P08)
 - [x] TASK-1.8: Implementasi `progress_p7/test_skenario.py`:
   - Pembuatan skrip otomatis untuk menjalankan 7 skenario pengujian transaksi (TC-01 sampai TC-07) tanpa input manual saat penilaian. (PIC: YUKEN)
-- [x] TASK-1.9: Penyusunan draf makalah Progres UTS (`docs/makalah/MAKALAH_STOKKU_DESKTOP.md`) dan slide presentasi (`docs/presentasi/STOKKU_DESKTOP_PROGRES_P7.pptx`). (PIC: RENKYNA untuk makalah, YUKEN untuk slide)
+- [x] TASK-1.9: Penyusunan draf makalah Progres UTS (`docs/makalah/MAKALAH_STOKKU_DESKTOP.md`) dan deck presentasi 10 slide (`docs/presentasi/STOKKU_DESKTOP_PROGRES_P7.pptx`), termasuk slide 1 layar kosong dan slide 8 dokumentasi kegiatan dari `docs/assets/`. (PIC: RENKYNA untuk makalah, YUKEN untuk deck)
 
 ---
 
