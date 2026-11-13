@@ -678,27 +678,27 @@ berisi nama PIC dan poin yang perlu disampaikan.
 | Slide | PIC | Estimasi | Poin utama |
 | :---: | :--- | :---: | :--- |
 | 1 | Semua | 10 detik | Layar putih, jeda naik panggung |
-| 2 | Mahardika | 1 menit | Pembukaan, identitas, anggota tim |
+| 2 | **Yuken** | 1 menit | Pembukaan, identitas, anggota tim |
 | 3 | Mahardika | 1,5 menit | Empat masalah pencatatan manual + solusi |
 | 4 | Yuken | 1 menit | Diagram arsitektur enam modul |
 | 5 | Yuken | 1 menit | Flowchart alur program, delapan menu |
 | 6 | Yuken | 1,5 menit | Flowchart anti stok minus |
 | 7 | Mahardika | 1,5 menit | Output menu dan tabel stok |
-| 8 | Yuken | 1,5 menit | Output penolakan transaksi dan hasil uji |
+| 8 | Mahardika | 1,5 menit | Output penolakan transaksi dan hasil uji |
 | 9 | Renkyna | 1 menit | Pemetaan silabus P01 sampai P07 |
-| 10 | Yuken | 1 menit | Tujuh kasus uji otomatis |
+| 10 | Renkyna | 1 menit | Tujuh kasus uji otomatis |
 | 11 | Renkyna | 1 menit | Formula aset modal dan ambang kritis |
 | 12 | Renkyna | 1 menit | Dokumentasi dua sesi kerja |
-| 13 | Renkyna | 1,5 menit | Roadmap P09 sampai P16 |
-| 14 | Mahardika | 1,5 menit | Kesimpulan, peran, tanya jawab |
+| 13 | Mahardika | 1,5 menit | Roadmap P09 sampai P16 |
+| 14 | **Yuken** | 1,5 menit | Kesimpulan, peran, tanya jawab |
 
 Rekap jumlah slide per orang:
 
 | Anggota | Slide | Jumlah |
 | :--- | :--- | :---: |
-| Yuken Velino | 4, 5, 6, 8, 10 | 5 |
-| Mahardika Athaillah | 2, 3, 7, 14 | 4 |
-| Renkyna Aftania Nasution | 9, 11, 12, 13 | 4 |
+| Yuken Velino | 2, 4, 5, 6, 14 | 5 |
+| Mahardika Athaillah | 3, 7, 8, 13 | 4 |
+| Renkyna Aftania Nasution | 9, 10, 11, 12 | 4 |
 | Bersama | 1 | 1 |
 
 Cara membuat ulang deck beserta PDF:

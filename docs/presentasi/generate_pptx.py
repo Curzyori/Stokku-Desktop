@@ -117,8 +117,9 @@ CATATAN_PEMBICARA = {
         "Slide ini sengaja dibiarkan putih kosong.",
         "Dipakai sebagai jeda saat kelompok naik ke depan kelas.",
     ]),
-    2: ("Mahardika Athaillah", [
-        "Buka dengan salam dan perkenalkan ketiga anggota kelompok.",
+    2: ("Yuken Velino", [
+        "Buka dengan salam dan perkenalkan diri sebagai ketua kelompok.",
+        "Perkenalkan kedua anggota lain beserta perannya masing-masing.",
         "Sebutkan mata kuliah, kelas, dan nama dosen pengampu.",
         "Satu kalimat inti: aplikasi mencatat persediaan dan mutasi stok gudang UMKM.",
     ]),
@@ -147,20 +148,22 @@ CATATAN_PEMBICARA = {
         "Tunjuk kolom Status dan jelaskan arti KRITIS dan AMAN.",
         "Sebutkan format Rupiah dengan pemisah titik.",
     ]),
-    8: ("Yuken Velino", [
+    8: ("Mahardika Athaillah", [
         "Tunjukkan penolakan transaksi 50 Rim saat stok 10 Rim.",
         "Tunjukkan transaksi 4 Rim yang diterima beserta sisa stok.",
         "Sebutkan hasil Menu 7: tujuh dari tujuh kasus uji lulus.",
+        "Tegaskan bahwa tangkapan layar ini bukan rekayasa, diambil dari eksekusi nyata.",
     ]),
     9: ("Renkyna Aftania Nasution", [
         "Petakan tiap pertemuan P01 sampai P07 ke berkas kode yang nyata.",
         "Tekankan tidak ada materi yang dilompati.",
         "Sebutkan P07 dipegang modul laporan_pandas.",
     ]),
-    10: ("Yuken Velino", [
+    10: ("Renkyna Aftania Nasution", [
         "Bacakan tujuh kasus uji secara ringkas.",
         "Tegaskan TC-05 sebagai bukti proteksi anti stok minus.",
         "Sebutkan tambahan 15 unit test di folder tests.",
+        "Sebutkan bahwa seluruh hasil dicatat ke dalam draf makalah.",
     ]),
     11: ("Renkyna Aftania Nasution", [
         "Jelaskan rumus nilai aset per produk dan total aset gudang.",
@@ -172,15 +175,16 @@ CATATAN_PEMBICARA = {
         "Sesi 1 mengerjakan mesin inti dan antarmuka terminal.",
         "Sesi 2 mengerjakan integrasi modul Pandas, deck presentasi, dan draf makalah.",
     ]),
-    13: ("Renkyna Aftania Nasution", [
+    13: ("Mahardika Athaillah", [
         "Jelaskan rencana P09 sampai P16 menuju UAS.",
         "Sebutkan migrasi ke SQLite dan antarmuka Tkinter pada P10 sampai P12.",
         "Sebutkan makalah final dan demonstrasi laboratorium pada P13 sampai P16.",
     ]),
-    14: ("Mahardika Athaillah", [
+    14: ("Yuken Velino", [
         "Bacakan empat poin kesimpulan.",
         "Sebutkan matriks tanggung jawab tiap anggota.",
         "Tutup dengan terima kasih lalu buka sesi tanya jawab.",
+        "Siapkan jawaban teknis dari berkas DOSEN-ASK.txt.",
     ]),
 }
 
