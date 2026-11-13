@@ -112,6 +112,78 @@ DOKUMENTASI = [
      "dan penyusunan draf naskah akademik"),
 ]
 
+CATATAN_PEMBICARA = {
+    1: ("Semua", [
+        "Slide ini sengaja dibiarkan putih kosong.",
+        "Dipakai sebagai jeda saat kelompok naik ke depan kelas.",
+    ]),
+    2: ("Mahardika Athaillah", [
+        "Buka dengan salam dan perkenalkan ketiga anggota kelompok.",
+        "Sebutkan mata kuliah, kelas, dan nama dosen pengampu.",
+        "Satu kalimat inti: aplikasi mencatat persediaan dan mutasi stok gudang UMKM.",
+    ]),
+    3: ("Mahardika Athaillah", [
+        "Jelaskan empat masalah pencatatan manual secara berurutan.",
+        "Tekankan masalah keempat: nilai modal yang tertanam tidak diketahui.",
+        "Tutup dengan kartu solusi: Stokku Desktop berjalan luring.",
+    ]),
+    4: ("Yuken Velino", [
+        "Tunjuk titik masuk main_p7.py lalu arahkan ke enam modul progress_p7.",
+        "Sebutkan pembagian PIC tiap berkas sesuai label diagram.",
+        "Tekankan bahwa setiap modul terpisah agar tidak bentrok saat digabung.",
+    ]),
+    5: ("Yuken Velino", [
+        "Jelaskan perulangan while True dan percabangan if elif else.",
+        "Sebutkan delapan pilihan menu dan bahwa input tidak valid kembali ke menu.",
+    ]),
+    6: ("Yuken Velino", [
+        "Ini aturan inti proyek: stok tidak boleh minus.",
+        "Telusuri alur sampai kotak jumlah lebih besar dari stok.",
+        "Tegaskan jalur ditolak: stok utuh dan log tidak bertambah.",
+        "Sebutkan fungsi validasi_stok_keluar sebagai penjaga.",
+    ]),
+    7: ("Mahardika Athaillah", [
+        "Perlihatkan tangkapan layar menu bawaan dan tabel Menu 1.",
+        "Tunjuk kolom Status dan jelaskan arti KRITIS dan AMAN.",
+        "Sebutkan format Rupiah dengan pemisah titik.",
+    ]),
+    8: ("Yuken Velino", [
+        "Tunjukkan penolakan transaksi 50 Rim saat stok 10 Rim.",
+        "Tunjukkan transaksi 4 Rim yang diterima beserta sisa stok.",
+        "Sebutkan hasil Menu 7: tujuh dari tujuh kasus uji lulus.",
+    ]),
+    9: ("Renkyna Aftania Nasution", [
+        "Petakan tiap pertemuan P01 sampai P07 ke berkas kode yang nyata.",
+        "Tekankan tidak ada materi yang dilompati.",
+        "Sebutkan P07 dipegang modul laporan_pandas.",
+    ]),
+    10: ("Yuken Velino", [
+        "Bacakan tujuh kasus uji secara ringkas.",
+        "Tegaskan TC-05 sebagai bukti proteksi anti stok minus.",
+        "Sebutkan tambahan 15 unit test di folder tests.",
+    ]),
+    11: ("Renkyna Aftania Nasution", [
+        "Jelaskan rumus nilai aset per produk dan total aset gudang.",
+        "Bacakan angka saldo awal: tiga SKU, 29 unit, Rp 482.500.",
+        "Jelaskan ambang batas kritis: stok kurang dari atau sama dengan min_stok.",
+    ]),
+    12: ("Renkyna Aftania Nasution", [
+        "Sebutkan dua sesi kerja dan siapa saja yang hadir di masing-masing sesi.",
+        "Sesi 1 mengerjakan mesin inti dan antarmuka terminal.",
+        "Sesi 2 mengerjakan integrasi modul Pandas, deck presentasi, dan draf makalah.",
+    ]),
+    13: ("Renkyna Aftania Nasution", [
+        "Jelaskan rencana P09 sampai P16 menuju UAS.",
+        "Sebutkan migrasi ke SQLite dan antarmuka Tkinter pada P10 sampai P12.",
+        "Sebutkan makalah final dan demonstrasi laboratorium pada P13 sampai P16.",
+    ]),
+    14: ("Mahardika Athaillah", [
+        "Bacakan empat poin kesimpulan.",
+        "Sebutkan matriks tanggung jawab tiap anggota.",
+        "Tutup dengan terima kasih lalu buka sesi tanya jawab.",
+    ]),
+}
+
 
 def _textbox(slide, left, top, width, height):
     box = slide.shapes.add_textbox(left, top, width, height)
@@ -680,6 +752,18 @@ def create_deck(output_path, root=None):
           "Terima kasih kepada Dosen Pengampu Ali Mustopa, M.Kom atas "
           "bimbingan dan arahan akademiknya.",
           "Calibri", 10.5, C_MUTED)
+
+    # ------------------------------------------------------------------
+    # CATATAN PEMBICARA (PIC dan poin kunci per slide)
+    # ------------------------------------------------------------------
+    for nomor, (pic, poin) in CATATAN_PEMBICARA.items():
+        if nomor - 1 >= len(prs.slides):
+            continue
+        tf_notes = prs.slides[nomor - 1].notes_slide.notes_text_frame
+        tf_notes.text = f"PIC: {pic}"
+        for baris in poin:
+            para = tf_notes.add_paragraph()
+            para.text = f"- {baris}"
 
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     prs.save(output_path)

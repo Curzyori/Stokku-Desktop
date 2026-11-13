@@ -670,6 +670,37 @@ Deck `docs/presentasi/STOKKU_DESKTOP_PROGRES_P7.pptx` berisi 14 slide:
 | 13 | Roadmap versi 2.0 menuju UAS |
 | 14 | Kesimpulan dan matriks tanggung jawab |
 
+### Pembagian Slide Presentasi (3 Orang)
+
+Setiap slide punya catatan pembicara di dalam berkas PPTX (Presenter View, panel Notes),
+berisi nama PIC dan poin yang perlu disampaikan.
+
+| Slide | PIC | Estimasi | Poin utama |
+| :---: | :--- | :---: | :--- |
+| 1 | Semua | 10 detik | Layar putih, jeda naik panggung |
+| 2 | Mahardika | 1 menit | Pembukaan, identitas, anggota tim |
+| 3 | Mahardika | 1,5 menit | Empat masalah pencatatan manual + solusi |
+| 4 | Yuken | 1 menit | Diagram arsitektur enam modul |
+| 5 | Yuken | 1 menit | Flowchart alur program, delapan menu |
+| 6 | Yuken | 1,5 menit | Flowchart anti stok minus |
+| 7 | Mahardika | 1,5 menit | Output menu dan tabel stok |
+| 8 | Yuken | 1,5 menit | Output penolakan transaksi dan hasil uji |
+| 9 | Renkyna | 1 menit | Pemetaan silabus P01 sampai P07 |
+| 10 | Yuken | 1 menit | Tujuh kasus uji otomatis |
+| 11 | Renkyna | 1 menit | Formula aset modal dan ambang kritis |
+| 12 | Renkyna | 1 menit | Dokumentasi dua sesi kerja |
+| 13 | Renkyna | 1,5 menit | Roadmap P09 sampai P16 |
+| 14 | Mahardika | 1,5 menit | Kesimpulan, peran, tanya jawab |
+
+Rekap jumlah slide per orang:
+
+| Anggota | Slide | Jumlah |
+| :--- | :--- | :---: |
+| Yuken Velino | 4, 5, 6, 8, 10 | 5 |
+| Mahardika Athaillah | 2, 3, 7, 14 | 4 |
+| Renkyna Aftania Nasution | 9, 11, 12, 13 | 4 |
+| Bersama | 1 | 1 |
+
 Cara membuat ulang deck beserta PDF:
 
 ```bash
