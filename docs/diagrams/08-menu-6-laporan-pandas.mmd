@@ -1,0 +1,32 @@
+%%{init: {"flowchart": {"nodeSpacing": 22, "rankSpacing": 30, "padding": 6}, "themeVariables": {"fontSize": "13px"}}}%%
+flowchart TD
+    A([Pilih menu 6]) --> B["tampilkan_laporan_pandas(daftar_barang, log_mutasi)"]
+    B --> C{"PANDAS_TERSEDIA?"}
+    C -->|"Tidak"| D["print peringatan<br/>'pip install pandas'<br/>return ke menu utama"]
+    C -->|"Ya"| E["buat_dataframe_barang(daftar_barang)"]
+    E --> F["buat_dataframe_mutasi(log_mutasi)"]
+    F --> G["Tampilkan SUB-MENU 0-6"]
+    G --> H["input sub-menu 0-6"]
+    H --> I{"Pilihan?"}
+
+    I -->|"1"| J1["tampilkan_tabel_barang_pandas(df_barang)<br/>12 kolom termasuk Nilai Modal,<br/>Estimasi Omzet, Potensi Laba, Status"]
+    I -->|"2"| J2["rekapitulasi_kategori(df_barang)<br/>groupby Kategori dengan agg:<br/>count Kode, sum Stok,<br/>sum Nilai Modal, mean Harga Beli"]
+    I -->|"3"| J3["ringkasan_statistik_deskriptif(df_barang)<br/>sum Stok, sum Nilai Modal,<br/>sum Omzet, sum Laba,<br/>count KRITIS, idxmax, idxmin"]
+    I -->|"4"| J4["tampilkan_tabel_mutasi_pandas(df_mutasi)"]
+    I -->|"5"| J5["filter_mutasi_berdasarkan_jenis(df_mutasi, 'MASUK')"]
+    I -->|"6"| J6["filter_mutasi_berdasarkan_jenis(df_mutasi, 'KELUAR')"]
+    I -->|"0"| J7["break sub-menu"]
+    I -->|"selain itu"| J8["print peringatan pilih 0 sampai 6"]
+
+    J1 --> G
+    J2 --> G
+    J3 --> G
+    J4 --> G
+    J5 --> G
+    J6 --> G
+    J8 --> G
+    J7 --> Z([Kembali ke menu utama])
+    D --> Z
+
+    style D fill:#fbe3e3
+    style J2 fill:#e8f0fb

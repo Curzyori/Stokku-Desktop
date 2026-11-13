@@ -1,0 +1,21 @@
+%%{init: {"flowchart": {"nodeSpacing": 22, "rankSpacing": 30, "padding": 6}, "themeVariables": {"fontSize": "13px"}}}%%
+flowchart TD
+    A([Pilih menu 1]) --> B["Impor cetak_tabel_barang<br/>dari display_cli"]
+    B --> C{"Import berhasil?"}
+    C -->|"Ya"| D["tampilkan_tabel_barang(daftar_barang)"]
+    C -->|"Tidak"| E["Tabel cadangan internal<br/>KODE, NAMA, STOK, SATUAN,<br/>HARGA BELI, STATUS"]
+    D --> F{"Daftar kosong?"}
+    E --> F
+    F -->|"Ya"| G["print INFO belum ada data barang"]
+    F -->|"Tidak"| H["Loop setiap produk"]
+    H --> I["status_stok(stok, min_stok)<br/>KRITIS bila stok kurang dari atau sama dengan min_stok"]
+    I --> J["format_rupiah(harga_beli)<br/>contoh Rp 3.500"]
+    J --> K["Cetak satu baris tabel"]
+    K --> L{"Produk berikutnya?"}
+    L -->|"Ada"| H
+    L -->|"Habis"| M["Cetak garis penutup tabel"]
+    M --> N([Kembali ke menu utama])
+    G --> N
+
+    style I fill:#e8f0fb
+    style J fill:#e8f0fb

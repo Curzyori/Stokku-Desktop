@@ -5,7 +5,7 @@
 - Deskripsi: Aplikasi manajemen persediaan dan pencatatan mutasi stok gudang berbasis Python
 - Versi: 1.0 (Evaluasi UTS) / 2.0 (Evaluasi UAS)
 - Status Dokumen: Disetujui
-- Tanggal Pembaruan: 8 November 2026
+- Tanggal Pembaruan: 13 November 2026
 - Mata Kuliah: Dasar Pemrograman (Kode: 894), 4 SKS
 - Program Studi / Kelas: Teknik Informatika / 15.1C.30
 - Institusi: Universitas Bina Sarana Informatika (UBSI)
@@ -13,7 +13,7 @@
 - Identitas Tim Pengembang (Kelompok 4):
   1. 15260767 - YUKEN VELINO [@Curzyori](https://github.com/Curzyori) (Project Lead, Logika Backend, Validasi Data, dan Test Runner)
   2. 15260673 - MAHARDIKA ATHAILLAH [@dikah4300](https://github.com/dikah4300) (Tampilan Antarmuka dan Desain Presentasi)
-  3. 15260847 - RENKYNA AFTANIA NASUTION (Modul Laporan Pandas dan Makalah Laporan)
+  3. 15260847 - RENKYNA AFTANIA NASUTION [@renkynatania-dotcom](https://github.com/renkynatania-dotcom) (Modul Laporan Pandas dan Makalah Laporan)
 
 ---
 
@@ -69,32 +69,42 @@ Fitur-fitur berikut tidak dimasukkan ke dalam ruang lingkup aplikasi demi menjag
 ## 4. Kebutuhan Fungsional
 
 ### Modul 1: Ringkasan Informasi dan Penanda Visual
-- Menampilkan ringkasan: total jenis barang (SKU), total kuantitas unit barang, estimasi nilai modal belanja barang (Rupiah), dan jumlah produk dengan stok kritis.
-- Memberikan penanda visual status: `[KRITIS]` jika stok kurang dari atau sama dengan batas minimum, dan `[AMAN]` jika stok melebihi batas minimum.
+- **Fase 1 (CLI, sudah berjalan):** Penanda visual status `[KRITIS]` bila stok kurang dari atau sama dengan batas minimum, dan `[AMAN]` bila stok melebihi batas minimum. Penanda ini tampil pada kolom Status di tabel Menu 1.
+- **Fase 2 (GUI, belum dibuat):** Kartu ringkasan berisi total jenis barang (SKU), total kuantitas unit, estimasi nilai modal belanja (Rupiah), dan jumlah produk berstatus kritis. Fungsi `tampilkan_ringkasan()` sudah tersedia di `display_cli.py` namun belum dipanggil oleh Menu 1.
 
 ### Modul 2: Pengelolaan Data Barang (Master Inventory)
-- Tambah Barang: Form input data produk dengan pemeriksaan keunikan kode barang (tidak membedakan huruf besar-kecil).
-- Ubah Barang: Memperbarui data nama, kategori, satuan, harga beli, harga jual, dan batas minimum stok.
-- Hapus Barang: Menghapus data barang terpilih dengan dialog konfirmasi terlebih dahulu.
-- Pencarian Data: Menyaring baris tabel berdasarkan kata kunci nama produk atau kode barang.
-- Tampilan Tabel: Menggunakan antarmuka tabel rapi (`ttk.Treeview` pada GUI Fase 2, atau tabel teks pada CLI Fase 1).
+- **Fase 1 (CLI, sudah berjalan):**
+  - Tambah Barang: Form 8 kolom dengan pemeriksaan keunikan kode barang (tidak membedakan huruf besar-kecil), validasi alfanumerik, dan validasi bilangan bulat.
+  - Tampilan Tabel: Tabel teks berformat dengan garis, lebar kolom proporsional, format Rupiah, dan kolom Status.
+  - Pencarian: Fungsi `cari_barang_by_kode()` tersedia di `validasi.py` dan dipakai oleh Menu 3 dan Menu 4 untuk menunjuk produk berdasarkan kode.
+- **Fase 2 (GUI, belum dibuat):**
+  - Ubah Barang: Memperbarui data nama, kategori, satuan, harga beli, harga jual, dan batas minimum stok.
+  - Hapus Barang: Menghapus data barang terpilih dengan dialog konfirmasi.
+  - Pencarian langsung: Menyaring baris tabel `ttk.Treeview` berdasarkan kata kunci nama atau kode produk.
 
 ### Modul 3: Transaksi Mutasi Barang Masuk (Restock)
-- Memilih barang terdaftar, memasukkan kuantitas masuk (bilangan bulat positif lebih dari 0), dan mengisi keterangan sumber barang.
-- Menambahkan stok fisik secara langsung dan mencatat baris riwayat mutasi baru.
+- **Fase 1 (CLI, sudah berjalan):** Memilih barang terdaftar berdasarkan kode, memasukkan kuantitas masuk (bilangan bulat minimal 1), dan mengisi keterangan sumber barang (default "Pasokan Pemasok"). Sistem menambah `stok += jumlah` dan mencatat tuple mutasi `MASUK` berisi stok sebelum dan sesudah.
 
 ### Modul 4: Transaksi Mutasi Barang Keluar
-- Memilih barang terdaftar dan memasukkan kuantitas keluar (bilangan bulat positif lebih dari 0).
-- Memeriksa batas stok. Transaksi ditolak jika kuantitas keluar melebihi stok yang ada di gudang.
-- Mencatat alasan pengeluaran barang (seperti penjualan, barang rusak, atau kedaluwarsa).
-- Mengurangi stok fisik dan mencatat baris riwayat mutasi keluar.
+- **Fase 1 (CLI, sudah berjalan):** Memilih barang berdasarkan kode, memasukkan kuantitas keluar (bilangan bulat minimal 1), dan mengisi keterangan alasan (default "Penjualan Toko"). Bila kuantitas melebihi stok fisik, sistem membatalkan transaksi tanpa mengubah stok dan tanpa menambah log. Bila valid, sistem menjalankan `stok -= jumlah` dan mencatat tuple mutasi `KELUAR`.
 
 ### Modul 5: Riwayat Transaksi Mutasi
-- Menampilkan riwayat mutasi secara runtut waktu (terbaru di atas), memuat tanggal dan waktu, kode barang, nama barang, jenis mutasi (`MASUK` atau `KELUAR`), kuantitas, stok sebelum, stok sesudah, dan keterangan.
-- Menyediakan penyaring riwayat berdasarkan jenis mutasi (`SEMUA`, `MASUK`, `KELUAR`).
+- **Fase 1 (CLI, sudah berjalan):**
+  - Menu 5 menampilkan **seluruh** riwayat mutasi secara kronologis naik (entri terlama di posisi paling atas, transaksi terbaru di paling bawah), memuat nomor, tanggal dan waktu, kode, nama barang, jenis, kuantitas bertanda (`+` untuk MASUK, `-` untuk KELUAR), stok sebelum, stok sesudah, dan keterangan.
+  - Penyaringan per jenis mutasi tersedia di dalam Menu 6, sub-menu 4 (semua), 5 (MASUK saja), dan 6 (KELUAR saja).
+- **Fase 2 (GUI, belum dibuat):** Tombol penyaring `SEMUA` / `MASUK` / `KELUAR` langsung pada tab riwayat.
 
 ### Modul 6: Analisis Data Tabular dengan Pandas
-- Mengonversi data daftar barang ke dalam objek `pandas.DataFrame` untuk menampilkan tabel terstruktur dan ringkasan statistik (pemenuhan materi perkuliahan Pertemuan 7).
+- **Fase 1 (CLI, sudah berjalan, wajib pustaka `pandas`):**
+  - Sub-menu 1: Matriks data produk 12 kolom termasuk turunan Nilai Modal, Estimasi Omzet, Potensi Laba, dan Status.
+  - Sub-menu 2: Rekapitulasi per kategori memakai `groupby("Kategori")` dengan agregasi `count`, `sum`, dan `mean`.
+  - Sub-menu 3: Ringkasan statistik deskriptif memakai `sum`, `idxmax`, dan `idxmin`.
+  - Sub-menu 4, 5, 6: Riwayat mutasi lengkap, filter MASUK, dan filter KELUAR.
+  - Bila `pandas` belum terpasang, Menu 6 menampilkan instruksi `pip install pandas` dan kembali ke menu utama tanpa crash.
+
+### Modul 7: Skrip Uji Otomatis (Menu 7)
+- **Fase 1 (CLI, sudah berjalan):** Menjalankan TC-01 s.d. TC-07 tanpa input manual dan mencetak status lulus per kasus beserta persentase akhir.
+- **Perhatian:** Fungsi ini memanggil `reset_data()` di awal eksekusi, sehingga seluruh data yang sudah diinput pengguna dikembalikan ke 3 produk bawaan. Perilaku ini disengaja agar hasil pengujian deterministik.
 
 ---
 
@@ -176,8 +186,14 @@ Stokku-Desktop/
 ├── docs/
 │   ├── PRD.md                             # Dokumen spesifikasi kebutuhan sistem
 │   ├── TASK.md                            # Rencana tugas dan matriks penanggung jawab
-│   ├── makalah/                           # [RENKYNA] Naskah draf makalah evaluasi UTS
-│   └── presentasi/                        # [MAHARDIKA] Slide presentasi evaluasi UTS (.pptx dan .pdf)
+│   ├── assets/                            # Aset gambar dokumentasi dan preview
+│   │   ├── P1_2026-11-13.jpg              # Sesi 1: Yuken dan Mahardika
+│   │   ├── P2_2026-11-13.jpg              # Sesi 2: Yuken, Mahardika, Renkyna
+│   │   ├── cli_*.png                      # Preview eksekusi untuk README dan slide
+│   │   └── diagrams/                      # Render PNG seluruh diagram mermaid
+│   ├── diagrams/                          # Sumber mermaid (.mmd) per diagram
+│   ├── makalah/                           # [RENKYNA] Draf makalah evaluasi UTS
+│   └── presentasi/                        # [YUKEN] Deck presentasi UTS (15 slide, .pptx dan .pdf)
 ├── progress_p7/
 │   ├── data_store.py                      # [YUKEN] Struktur data list dictionary dan data awal
 │   ├── validasi.py                        # [YUKEN] Validasi input angka, keunikan kode, dan batas stok
@@ -186,7 +202,13 @@ Stokku-Desktop/
 │   ├── laporan_pandas.py                  # [RENKYNA] Analisis DataFrame Pandas (materi P07)
 │   ├── test_skenario.py                   # [YUKEN] Skrip pengujian otomatis 7 kasus uji
 │   └── main_p7.py                         # [YUKEN] Titik masuk dan menu utama program terminal
+├── tests/
+│   ├── test_display_cli.py                # [MAHARDIKA] 9 unit test antarmuka terminal
+│   └── test_laporan_pandas.py             # [RENKYNA] 6 unit test analitik Pandas
+├── requirements.txt                       # Dependensi eksternal (pandas)
 ```
+
+> **Status Fase 2: belum dibuat.** Direktori `app/` dan berkas `main.py` belum ada di repositori. Struktur di bawah adalah rencana target.
 
 ### B. Struktur Berkas Fase 2 (Evaluasi UAS, Materi P09 sampai P16 | Folder `app/`)
 ```text
@@ -208,7 +230,7 @@ Stokku-Desktop/
 │   └── test_suite.py                      # [YUKEN] Pengujian menyeluruh sistem
 ├── docs/
 │   ├── makalah/                           # [RENKYNA] Berkas naskah makalah format resmi UBSI
-│   └── presentasi/                        # [MAHARDIKA] Slide presentasi PowerPoint (.pptx dan .pdf)
+│   └── presentasi/                        # [YUKEN] Deck presentasi final (.pptx dan .pdf)
 ├── main.py                                # [YUKEN] Titik masuk eksekusi antarmuka desktop
 ├── stok_gudang.db                         # Berkas basis data SQLite
 └── README.md                              # Panduan penggunaan proyek
@@ -221,43 +243,63 @@ Stokku-Desktop/
 | Pertemuan | Materi Perkuliahan UBSI | Penerapan pada Kode Program | Berkas Implementasi |
 | :---: | :--- | :--- | :--- |
 | **P01** | Pengenalan Python dan Lingkungan Kerja | Struktur penulisan rapi, indentasi 4 spasi, penamaan variabel sesuai kaidah PEP 8. | Seluruh berkas |
-| **P02** | Sintaks Dasar, Variabel, dan Tipe Data | Variabel kode dan nama (`str`), harga dan stok (`int`), dictionary (`dict`) untuk produk. | `progress_p7/data_store.py`, `app/database/db_manager.py` |
-| **P03** | String, Operator, dan Format Angka | Normalisasi teks pencarian (`.lower()`), format nominal Rupiah (`Rp {:,.0f}`), operator mutasi (`+=`, `-=`). | `progress_p7/display_cli.py`, `app/ui/main_window.py` |
+| **P02** | Sintaks Dasar, Variabel, dan Tipe Data | Variabel kode dan nama (`str`), harga dan stok (`int`), `bool` pada penanda pandas, `dict` untuk produk. | `progress_p7/data_store.py`, `progress_p7/laporan_pandas.py` |
+| **P03** | String, Operator, dan Format Angka | Normalisasi input (`.strip()`, `.upper()`, `.isdigit()`), format nominal Rupiah, operator mutasi (`+=`, `-=`). | `progress_p7/validasi.py`, `progress_p7/display_cli.py` |
 | **P04** | Percabangan (`if...elif...else`) | Validasi $\text{keluar} \le \text{stok}$, pengecekan status kritis $\text{stok} \le \text{min\_stok}$. | `progress_p7/validasi.py`, `app/services/validator.py` |
 | **P05** | Perulangan (`for` dan `while`) | Perulangan `while True` untuk navigasi menu, perulangan `for` untuk pencetakan baris tabel dan hitung aset. | `progress_p7/main_p7.py`, `progress_p7/display_cli.py` |
 | **P06** | List dan Tuple | Penampungan daftar produk dalam list, baris riwayat mutasi disimpan dalam bentuk tuple. | `progress_p7/data_store.py`, `progress_p7/engine_stok.py` |
-| **P07** | Matriks dan Analisis Data Pandas | Representasi data dua dimensi, pemanfaatan `pandas.DataFrame` untuk rekapitulasi data persediaan. | `progress_p7/laporan_pandas.py`, `app/reports/pandas_reporter.py` |
+| **P07** | Matriks dan Analisis Data Pandas | `DataFrame` 12 kolom, `groupby` per kategori, agregasi `agg`, `sum`, `idxmax`, `idxmin`, dan filter boolean. | `progress_p7/laporan_pandas.py` |
 | **P08** | Evaluasi Progres Proyek (UTS) | Demonstrasi program berbasis Pertemuan 1 sampai 7 di depan dosen kelas sebagai pengganti ujian tertulis UTS. | Berkas di `progress_p7/` |
-| **P09** | Fungsi Modular (`def` dan `return`) | Pembagian logika menjadi fungsi-fungsi terpisah dengan parameter dan nilai kembalian. | `app/services/stok_service.py` |
-| **P10** | Modul dan Penanganan Eksepsi | Pemisahan multi-berkas dan proteksi `try...except ValueError` pada pembacaan input angka pengguna. | `app/services/validator.py`, `app/database/db_manager.py` |
-| **P11-P16** | Tugas Akhir, Laporan, dan Presentasi | Penyusunan makalah akademik format UBSI, uji coba aplikasi di laboratorium, dan presentasi kelompok pengganti UAS. | Berkas di `docs/makalah/` dan `docs/presentasi/` |
+| **P09** | Fungsi Modular (`def` dan `return`) | Seluruh Fase 1 sudah berbentuk fungsi modular: 8 fungsi di `engine_stok.py`, 5 di `validasi.py`, 8 di `display_cli.py`, 11 di `laporan_pandas.py`, ditambah 2 alias kompatibilitas. | `progress_p7/*.py` |
+| **P10** | Modul dan Penanganan Eksepsi | Multi-berkas sudah berjalan (6 modul + 2 test). Eksepsi formal `try...except ValueError` dan `sqlite3.IntegrityError` dijadwalkan pada Fase 2. | `progress_p7/`, target `app/services/validator.py` |
+| **P11-P16** | Tugas Akhir, Laporan, dan Presentasi | Makalah akademik dan slide presentasi sudah tersedia; uji coba laboratorium dan presentasi UAS menyusul. | `docs/makalah/`, `docs/presentasi/` |
 
 ---
 
 ## 9. Penanganan Kesalahan Input
 
-1. Input Karakter pada Kolom Angka: Konversi data angka ke `int()` diproteksi dengan blok `try...except ValueError`. Sistem memberikan pesan peringatan bahwa input harus berupa bilangan bulat positif.
-2. Kuantitas Nol atau Negatif: Sistem menolak nilai transaksi kurang dari atau sama dengan 0 dengan pesan bahwa kuantitas minimal bernilai 1.
-3. Kode Barang Duplikat: Sistem memeriksa kode barang sebelum menyimpan produk baru. Pada basis data SQLite, benturan kode ditangkap melalui `sqlite3.IntegrityError`.
-4. Stok Tidak Cukup: Kuantitas pengeluaran barang dibandingkan dengan sisa stok fisik. Jika kuantitas keluar melebihi stok yang ada, sistem menolak transaksi tanpa mengubah data stok barang.
+### Fase 1 (CLI, sudah berjalan)
+
+Validasi dilakukan sebelum konversi angka, bukan dengan `try...except ValueError`. Pendekatan ini dipilih karena seluruh input di Fase 1 dibaca sebagai `str` dari `input()`, sehingga pemeriksaan karakter dapat dilakukan eksplisit dan pesan kesalahan bisa lebih spesifik.
+
+1. **Input Karakter pada Kolom Angka:** `validasi_angka_positif()` memeriksa `teks.isdigit()` (dan menangani tanda negatif secara terpisah). Bila bukan bilangan bulat, fungsi mengembalikan `(False, 0, pesan)` dan pemanggil langsung menampilkan peringatan tanpa menghentikan program.
+2. **Kuantitas Nol atau Negatif:** Ditolak dengan batas minimum per field. Kuantitas mutasi memakai `min_val=1`, harga dan stok awal memakai `min_val=0`, batas minimum stok memakai `min_val=1`.
+3. **Kode Barang Duplikat:** `validasi_kode_unik()` menormalkan input dengan `strip().upper()` lalu membandingkan terhadap seluruh kode terdaftar. Karena perbandingan dilakukan setelah normalisasi, `atk01` dan `ATK01` dianggap sama.
+4. **Stok Tidak Cukup:** `validasi_stok_keluar()` menolak transaksi bila `jumlah > stok`. Pada kondisi ini stok tidak diubah dan `log_mutasi` tidak bertambah, sehingga invarian `stok >= 0` selalu terjaga.
+
+### Fase 2 (GUI, belum dibuat)
+
+Protokol `try...except ValueError` baru akan diterapkan pada pembacaan nilai dari widget Tkinter, dan `sqlite3.IntegrityError` akan ditangkap pada operasi `INSERT` untuk menangani benturan kode barang di level basis data.
 
 ---
 
 ## 10. Rencana Rilis Versi
 
-### A. Versi 1.0 (Evaluasi UTS Pertemuan 8, Silabus P01-P07)
+### A. Versi 1.0 (Evaluasi UTS Pertemuan 8, Silabus P01-P07) - SELESAI
 - Fokus: Logika dasar persediaan berbasis antarmuka terminal (CLI) dengan struktur data di memori.
-- Cakupan Teknis:
-  - Struktur data memori: list of dictionary untuk data barang dan list of tuple untuk catatan mutasi.
-  - Menu interaktif perulangan `while True` dan percabangan `if-elif-else`.
-  - Operasi penambahan barang baru dengan validasi keunikan kode.
-  - Transaksi barang masuk dan transaksi barang keluar dengan proteksi sisa stok.
-  - Tabel ringkasan persediaan dengan penanda stok kritis dan akumulasi nilai modal barang.
-  - Konversi data ke tabel analisis `pandas.DataFrame`.
-- Hasil Kerja Versi 1.0:
-  - `progress_p7/main_p7.py`: Program CLI yang dapat dijalankan langsung.
-  - `progress_p7/test_skenario.py`: Skrip pengujian otomatis untuk membuktikan 7 kasus uji transaksi.
-  - Draf naskah Bab II Makalah Progres untuk sesi evaluasi UTS bersama Dosen Pengampu.
+- Cakupan Teknis yang Sudah Terimplementasi:
+  - Struktur data memori: `list of dictionary` untuk data barang dan `list of tuple` untuk catatan mutasi.
+  - Menu interaktif perulangan `while True` dengan percabangan `if-elif-else` untuk 8 pilihan (0 s.d. 7).
+  - Operasi penambahan barang baru dengan validasi keunikan kode, alfanumerik, dan bilangan bulat.
+  - Transaksi barang masuk dan transaksi barang keluar dengan proteksi sisa stok (`stok >= 0`).
+  - Tabel persediaan dengan penanda status `[KRITIS]` / `[AMAN]`, format Rupiah, dan lebar kolom proporsional.
+  - Riwayat mutasi lengkap dengan stok sebelum dan sesudah.
+  - Analisis `pandas.DataFrame`: `groupby` kategori, statistik deskriptif, dan filter mutasi.
+- Hasil Kerja Versi 1.0 (terverifikasi):
+  - `progress_p7/main_p7.py`: Program CLI dengan 8 menu.
+  - `progress_p7/test_skenario.py`: 7 kasus uji, seluruhnya lulus.
+  - `tests/test_display_cli.py` dan `tests/test_laporan_pandas.py`: 15 unit test, seluruhnya lulus.
+  - `docs/makalah/MAKALAH_STOKKU_DESKTOP.md`: draf naskah akademik format UBSI (belum final, naskah lengkap disusun menjelang UAS).
+  - `docs/presentasi/STOKKU_DESKTOP_PROGRES_P7.pptx` berisi 15 slide beserta versi PDF, termasuk slide 1 layar kosong, slide 4 sampai 6 diagram dan flowchart, slide 7 sampai 9 tampilan output, dan slide 13 dokumentasi kegiatan.
+  - `docs/assets/P1_2026-11-13.jpg` dan `docs/assets/P2_2026-11-13.jpg`: foto dokumentasi dua sesi kerja tim.
+
+### Keterbatasan Versi 1.0
+
+1. Data bersifat in-memory: menutup program mengembalikan data ke 3 produk bawaan.
+2. Menu 7 memanggil `reset_data()`, sehingga data pengguna kembali ke kondisi awal setelah pengujian.
+3. Menu 1 mencetak tabel saja; kartu ringkasan (`tampilkan_ringkasan`) belum dipanggil dan baru dipakai di Fase 2.
+4. Fitur Ubah Barang, Hapus Barang, dan Pencarian langsung belum ada di CLI.
+5. Menu 5 menampilkan riwayat kronologis naik; filter jenis mutasi hanya tersedia di Menu 6 sub-menu 4, 5, dan 6.
 
 ### B. Versi 2.0 (Target Akhir UAS, Silabus P09-P16)
 - Fokus: Pengembangan antarmuka desktop menggunakan Tkinter dan penyimpanan data permanen dengan basis data SQLite.
@@ -277,7 +319,8 @@ Stokku-Desktop/
 | :--- | :---: | :---: | :--- | :--- |
 | **YUKEN VELINO** | 15260767 | [@Curzyori](https://github.com/Curzyori) | Project Lead, Backend, Validasi, dan Pengujian | - Merancang struktur data, skema basis data SQLite, dan model data.<br>- Menulis logika mutasi barang masuk/keluar serta rumus akumulasi nilai modal.<br>- Menyusun fungsi validasi (kode unik, kuantitas positif, batas stok, dan tipe data).<br>- Mengembangkan dan mengeksekusi skrip pengujian otomatis (test_skenario.py dan test_suite.py). |
 | **MAHARDIKA ATHAILLAH** | 15260673 | [@dikah4300](https://github.com/dikah4300) | Tampilan Antarmuka dan Presentasi | - Merancang format tabel CLI (Fase 1) dan tata letak antarmuka Tkinter (Fase 2).<br>- Mengatur penataan kolom Treeview, kartu ringkasan, dan dialog form.<br>- Menyusun slide materi presentasi resmi untuk penilaian kelas. |
-| **RENKYNA AFTANIA NASUTION** | 15260847 | - | Modul Laporan dan Makalah Laporan | - Mengembangkan modul pelaporan dan rekapitulasi data menggunakan Pandas (P07).<br>- Menyaring data transaksi berdasarkan jenis mutasi.<br>- Menyusun naskah Makalah Laporan Resmi format UBSI (Bab I Pendahuluan, Bab II Pembahasan, Bab III Penutup, dan Daftar Pustaka) serta mendokumentasikan hasil pengujian sistem. |
+| **RENKYNA AFTANIA NASUTION** | 15260847 | [@renkynatania-dotcom](https://github.com/renkynatania-dotcom) | Modul Laporan dan Makalah Laporan | - Mengembangkan modul pelaporan dan rekapitulasi data menggunakan Pandas (P07).<br>- Menyaring data transaksi berdasarkan jenis mutasi.<br>- Menyusun naskah Makalah Laporan Resmi format UBSI (Bab I Pendahuluan, Bab II Pembahasan, Bab III Penutup, dan Daftar Pustaka) serta mendokumentasikan hasil pengujian sistem. |
+
 ---
 
 ## 12. Kriteria Keberhasilan Program

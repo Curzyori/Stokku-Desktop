@@ -1,0 +1,4 @@
+# Dependensi eksternal Stokku Desktop
+# Hanya dibutuhkan untuk Menu 6 (Laporan Analisis Persediaan, materi P07).
+# Menu 1-5, 7, dan 0 berjalan tanpa dependensi ini.
+pandas>=2.0.0

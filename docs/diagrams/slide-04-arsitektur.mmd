@@ -1,0 +1,9 @@
+%%{init: {"flowchart": {"nodeSpacing": 26, "rankSpacing": 46, "padding": 8}, "themeVariables": {"fontSize": "15px"}}}%%
+flowchart TD
+    M["main_p7.py<br/>titik masuk"] --> DS["data_store.py"]
+    M --> VAL["validasi.py"]
+    M --> ENG["engine_stok.py"]
+    M --> DISP["display_cli.py"]
+    M --> PAND["laporan_pandas.py"]
+    M --> TST["test_skenario.py"]
+    ENG --> VAL2["validasi dipakai engine"]

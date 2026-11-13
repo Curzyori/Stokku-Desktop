@@ -54,3 +54,6 @@ dist/
 graphify-out/
 
 
+
+# Diagram build artifact (path chromium lokal)
+docs/diagrams/puppeteer.json

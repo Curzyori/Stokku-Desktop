@@ -1,0 +1,22 @@
+%%{init: {"flowchart": {"nodeSpacing": 22, "rankSpacing": 30, "padding": 6}, "themeVariables": {"fontSize": "13px"}}}%%
+flowchart TD
+    A([Pilih menu 3]) --> B["input Kode Barang"]
+    B --> C["cari_barang_by_kode(kode, daftar_barang)"]
+    C --> D{"Produk ditemukan?"}
+    D -->|"Tidak"| X1["print 'Barang tidak ditemukan'<br/>return ke menu"]
+    D -->|"Ya"| E["print nama produk<br/>dan sisa stok saat ini"]
+    E --> F["input Kuantitas Masuk"]
+    F --> G["validasi_angka_positif(min_val = 1)"]
+    G --> H{"Bilangan bulat<br/>minimal 1?"}
+    H -->|"Tidak"| X2["print peringatan<br/>return ke menu"]
+    H -->|"Ya"| I["input Keterangan<br/>kosong berarti 'Pasokan Pemasok'"]
+    I --> J["transaksi_barang_masuk(...)"]
+    J --> K["stok_sebelum = item['stok']<br/>item['stok'] += jumlah"]
+    K --> L["append tuple mutasi<br/>jenis MASUK,<br/>stok_sebelum ke stok_sesudah"]
+    L --> M["print berhasil, stok bertambah N"]
+    M --> N([Kembali ke menu utama])
+    X1 --> N
+    X2 --> N
+
+    style K fill:#d7f0dd
+    style L fill:#d7f0dd

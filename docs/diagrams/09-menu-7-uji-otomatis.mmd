@@ -1,0 +1,23 @@
+%%{init: {"flowchart": {"nodeSpacing": 22, "rankSpacing": 30, "padding": 6}, "themeVariables": {"fontSize": "13px"}}}%%
+flowchart TD
+    A([Pilih menu 7]) --> B["Impor jalankan_semua_pengujian<br/>dari test_skenario"]
+    B --> C["reset_data()"]
+    C --> D["PERHATIAN: daftar_barang dan log_mutasi<br/>dikembalikan ke kondisi awal"]
+    D --> E["Tampilkan header pengujian"]
+    E --> F["TC-01 Inisialisasi data master<br/>dan saldo awal"]
+    F --> G["TC-02 Tambah barang valid<br/>dan proteksi kode duplikat"]
+    G --> H["TC-03 Transaksi barang masuk"]
+    H --> I["TC-04 Transaksi barang keluar normal"]
+    I --> J["TC-05 Validasi anti-stok minus"]
+    J --> K["TC-06 Deteksi status kritis"]
+    K --> L["TC-07 Akurasi total unit<br/>dan nilai modal"]
+    L --> M["Hitung total lulus"]
+    M --> N{"7 dari 7 lulus?"}
+    N -->|"Ya"| O["KESIMPULAN: mesin logika<br/>siap penilaian UTS<br/>return 0"]
+    N -->|"Tidak"| P["KESIMPULAN: ada kasus gagal<br/>return 1"]
+    O --> Q([Kembali ke menu utama])
+    P --> Q
+
+    style D fill:#fff3cd
+    style O fill:#d7f0dd
+    style P fill:#fbe3e3

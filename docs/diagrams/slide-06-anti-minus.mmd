@@ -1,0 +1,25 @@
+%%{init: {"flowchart": {"nodeSpacing": 24, "rankSpacing": 34, "padding": 8}, "themeVariables": {"fontSize": "15px"}}}%%
+flowchart LR
+    subgraph C1["1. Input dan pencarian"]
+        direction TB
+        A(["Menu 4"]) --> B["input kode barang"]
+        B --> C{"produk ada?"}
+        C -- tidak --> D["pesan tidak ditemukan"]
+    end
+    subgraph C2["2. Validasi angka"]
+        direction TB
+        E["input kuantitas<br/>dan keterangan"] --> F{"angka valid?"}
+        F -- tidak --> G["pesan peringatan"]
+    end
+    subgraph C3["3. Validasi stok"]
+        direction TB
+        H{"jumlah > stok?"}
+        H -- ya --> I["DIBATALKAN<br/>stok utuh, log kosong"]
+        H -- tidak --> J["stok dikurangi<br/>log KELUAR dicatat"]
+    end
+    C -- ya --> E
+    F -- ya --> H
+    D --> Z(["kembali ke menu"])
+    G --> Z
+    I --> Z
+    J --> Z

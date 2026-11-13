@@ -36,12 +36,17 @@ def validasi_angka_positif(nilai_input: str, nama_field: str = "Nilai", min_val:
     return True, nilai_int, ""
 
 
-def validasi_stok_keluar(stok_saat_ini: int, jumlah_keluar: int) -> tuple[bool, str]:
+def validasi_stok_keluar(stok_saat_ini: int, jumlah_keluar: int,
+                         satuan: str = "") -> tuple[bool, str]:
     if jumlah_keluar <= 0:
         return False, "Jumlah barang keluar harus lebih dari 0."
 
     if jumlah_keluar > stok_saat_ini:
-        return False, f"Stok tidak mencukupi. Sisa stok fisik saat ini: {stok_saat_ini} unit."
+        akhiran = f" {satuan}" if satuan else ""
+        return False, (
+            "Stok tidak mencukupi. Sisa stok fisik saat ini: "
+            f"{stok_saat_ini}{akhiran}."
+        )
 
     return True, ""
 
