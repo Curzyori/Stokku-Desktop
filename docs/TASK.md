@@ -6,7 +6,7 @@
 - Anggota Tim (Kelompok 4):
   - 15260767 - YUKEN VELINO [@Curzyori](https://github.com/Curzyori) (Project Lead, Logika Backend, Validasi Data, dan Test Runner)
   - 15260673 - MAHARDIKA ATHAILLAH [@dikah4300](https://github.com/dikah4300) (Tampilan Antarmuka dan Desain Presentasi)
-  - 15260847 - RENKYNA AFTANIA NASUTION (Modul Laporan Pandas P7 dan Naskah Makalah)
+  - 15260847 - RENKYNA AFTANIA NASUTION [@renkynatania-dotcom](https://github.com/renkynatania-dotcom) (Modul Laporan Pandas P7 dan Naskah Makalah)
 
 ---
 
@@ -60,11 +60,14 @@ Untuk mencegah konflik perubahan berkas pada git:
 ### Bagian 3: Pengujian dan Dokumen Progres UTS (P08)
 - [x] TASK-1.8: Implementasi `progress_p7/test_skenario.py`:
   - Pembuatan skrip otomatis untuk menjalankan 7 skenario pengujian transaksi (TC-01 sampai TC-07) tanpa input manual saat penilaian. (PIC: YUKEN)
-- [x] TASK-1.9: Penyusunan draf Bab II Makalah Progres UTS (`docs/makalah/`) dan materi ringkas slide presentasi (`docs/presentasi/`). (PIC: MAHARDIKA dan RENKYNA)
+- [x] TASK-1.9: Penyusunan draf makalah Progres UTS (`docs/makalah/MAKALAH_STOKKU_DESKTOP.md`) dan slide presentasi (`docs/presentasi/STOKKU_DESKTOP_PROGRES_P7.pptx`). (PIC: RENKYNA untuk makalah, YUKEN untuk slide)
 
 ---
 
 ## Fase 2: Rencana Menuju Evaluasi UAS (P09-P16)
+> **Status: seluruh item Fase 2 belum dikerjakan.** Direktori `app/` dan berkas `main.py` belum ada di repositori, sehingga semua kotak centang di bawah masih kosong.
+>
+> Catatan: TASK-2.11 dan TASK-2.12 adalah target versi UAS (final). Versi UTS-nya sudah selesai lebih awal melalui TASK-1.9, yaitu `docs/makalah/MAKALAH_STOKKU_DESKTOP.md` dan `docs/presentasi/STOKKU_DESKTOP_PROGRES_P7.pptx`.
 
 ### Bagian 4: Modularisasi Fungsi dan Penanganan Eksepsi (P09, P10)
 - [ ] TASK-2.1 (P09 - Fungsi Modular):
@@ -138,7 +141,7 @@ Untuk mencegah konflik perubahan berkas pada git:
 | **TASK-1.6** | Modul Analisis Pandas DataFrame | `progress_p7/laporan_pandas.py` | RENKYNA AFTANIA N. | Evaluasi UTS |
 | **TASK-1.7** | Menu Utama Program Terminal | `progress_p7/main_p7.py` | YUKEN VELINO | Evaluasi UTS |
 | **TASK-1.8** | Skrip Pengujian Otomatis 7 Kasus | `progress_p7/test_skenario.py` | YUKEN VELINO | Evaluasi UTS |
-| **TASK-1.9** | Draf Bab II Makalah UTS dan Slide PPT | `docs/makalah/` & `docs/presentasi/` | MAHARDIKA & RENKYNA | Evaluasi UTS |
+| **TASK-1.9** | Makalah UTS dan Slide PPT | `docs/makalah/` & `docs/presentasi/` | RENKYNA (makalah) & YUKEN (slide) | Selesai |
 | **TASK-2.1 s.d. 2.2** | Fungsi Modular dan Penanganan Eksepsi | `app/services/` | YUKEN VELINO | Pasca UTS |
 | **TASK-2.3 s.d. 2.5** | Basis Data Relasional SQLite3 | `app/database/db_manager.py` | YUKEN VELINO | Pasca UTS |
 | **TASK-2.6 s.d. 2.9** | Antarmuka Desktop Tkinter dan Tabel | `app/ui/` | MAHARDIKA ATHAILLAH | Pasca UTS |
