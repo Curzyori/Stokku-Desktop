@@ -1,4 +1,12 @@
 # MAKALAH TUGAS PROYEK DASAR PEMROGRAMAN (KODE: 894)
+
+> **Status berkas: DRAF.**
+> Naskah ini belum final. Bab I dan Bab II masih berisi materi progres UTS Pertemuan 1 sampai 7.
+> Bab III, daftar pustaka, dan lampiran akan dilengkapi menjelang UAS (P13 dan P14),
+> termasuk penambahan bab untuk basis data SQLite dan antarmuka Tkinter.
+
+---
+
 ## RANCANG BANGUN APLIKASI MANAJEMEN PERSEDIAAN GUDANG UMKM BERBASIS PYTHON (STOKKU DESKTOP)
 
 ---

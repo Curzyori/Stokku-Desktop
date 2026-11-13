@@ -586,7 +586,7 @@ Stokku-Desktop/
 │   ├── diagrams/                               # Sumber mermaid (.mmd) per diagram
 │   ├── makalah/
 │   │   ├── .gitkeep
-│   │   └── MAKALAH_STOKKU_DESKTOP.md           # [RENKYNA] Naskah akademik format UBSI
+│   │   └── MAKALAH_STOKKU_DESKTOP.md           # [RENKYNA] Draf naskah akademik format UBSI
 │   └── presentasi/
 │       ├── STOKKU_DESKTOP_PROGRES_P7.pptx      # [YUKEN] Deck presentasi UTS (14 slide)
 │       ├── STOKKU_DESKTOP_PROGRES_P7.pdf       # [YUKEN] Versi PDF untuk pratinjau
@@ -629,7 +629,7 @@ Belum dibuat (target Fase 2):
 
 ## Dokumentasi Pengerjaan
 
-Kolaborasi tim direkam dalam dua sesi kerja. Foto tersimpan di `docs/assets/` dan ditampilkan pada slide 8 deck presentasi.
+Kolaborasi tim direkam dalam dua sesi kerja. Foto tersimpan di `docs/assets/` dan ditampilkan pada slide 12 deck presentasi.
 
 ### Sesi 1: Pengembangan Mesin Inti
 
@@ -639,11 +639,11 @@ Penyusunan modul backend, validasi anti stok minus, serta format tabel terminal.
 
 ![Sesi 1: Yuken Velino dan Mahardika Athaillah](docs/assets/P1_2026-11-13.jpg)
 
-### Sesi 2: Integrasi Modul dan Makalah
+### Sesi 2: Integrasi Modul, Deck Presentasi, dan Draf Makalah
 
 **Yuken Velino, Mahardika Athaillah, dan Renkyna Aftania Nasution**
 
-Penggabungan modul analisis Pandas serta penyusunan naskah akademik.
+Penggabungan modul analisis Pandas, penyusunan deck presentasi Slide UTS, serta penyusunan draf naskah akademik.
 
 ![Sesi 2: Yuken Velino, Mahardika Athaillah, dan Renkyna Aftania Nasution](docs/assets/P2_2026-11-13.jpg)
 

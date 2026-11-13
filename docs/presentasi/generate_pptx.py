@@ -106,9 +106,10 @@ DOKUMENTASI = [
      "Yuken Velino dan Mahardika Athaillah",
      "Penyusunan modul backend, validasi anti stok minus, dan format tabel terminal"),
     ("docs/assets/P2_2026-11-13.jpg",
-     "Sesi 2: Integrasi Modul dan Makalah",
+     "Sesi 2: Integrasi Modul, Deck Presentasi, dan Draf Makalah",
      "Yuken Velino, Mahardika Athaillah, dan Renkyna Aftania Nasution",
-     "Penggabungan modul analisis Pandas serta penyusunan naskah akademik"),
+     "Penggabungan modul analisis Pandas, penyusunan deck presentasi, "
+     "dan penyusunan draf naskah akademik"),
 ]
 
 
@@ -575,7 +576,7 @@ def create_deck(output_path, root=None):
     header(s, "Dokumentasi Pengerjaan",
            "Bukti Sesi Kerja dan Kolaborasi Tim",
            "Dua sesi kerja terdokumentasi, dari pengembangan mesin inti "
-           "hingga integrasi modul dan penyusunan makalah.")
+           "hingga integrasi modul, penyusunan deck, dan draf makalah.")
 
     foto_w = Inches(5.667)
     foto_h = Inches(5.0)
@@ -650,8 +651,8 @@ def create_deck(output_path, root=None):
         "tanpa galat, membuktikan keandalan anti stok minus.",
         "3. Dependensi Minimal: hanya pandas untuk Menu 6 analisis tabular; "
         "menu lain berjalan dengan pustaka bawaan Python.",
-        "4. Kesiapan Evaluasi: berkas tanya jawab teknis DOSEN-ASK.txt dan "
-        "naskah makalah akademik sudah disusun.",
+        "4. Kesiapan Evaluasi: berkas tanya jawab teknis DOSEN-ASK.txt sudah ada "
+        "dan draf naskah makalah akademik sudah disusun.",
     ]:
         _para(tf_sum, teks, "Calibri", 11, C_SLATE, after=10)
 
