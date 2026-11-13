@@ -185,36 +185,17 @@ Setiap elemen `log_mutasi` berbentuk 8-tuple berurutan:
 ## Alur Program Utama
 
 ```mermaid
-%%{init: {"flowchart": {"nodeSpacing": 22, "rankSpacing": 30, "padding": 6}, "themeVariables": {"fontSize": "13px"}}}%%
-flowchart TD
-    START([Mulai: python progress_p7/main_p7.py]) --> INIT["Impor modul<br/>data_store menjalankan inisialisasi_log_awal()"]
-    INIT --> BANNER["cetak_banner_bawaan()"]
-    BANNER --> MENU["Tampilkan MENU OPERASIONAL STOKKU 0-7"]
-    MENU --> INPUT["input('Pilih menu 0-7')"]
-    INPUT --> CHK{"Pilihan?"}
-
-    CHK -->|"1"| M1["Menu 1<br/>Lihat Daftar Stok"]
-    CHK -->|"2"| M2["Menu 2<br/>Tambah Barang Baru"]
-    CHK -->|"3"| M3["Menu 3<br/>Barang Masuk"]
-    CHK -->|"4"| M4["Menu 4<br/>Barang Keluar"]
-    CHK -->|"5"| M5["Menu 5<br/>Riwayat Mutasi"]
-    CHK -->|"6"| M6["Menu 6<br/>Laporan Pandas"]
-    CHK -->|"7"| M7["Menu 7<br/>Uji Otomatis"]
-    CHK -->|"0"| EXIT["print 'Terima kasih'<br/>break"]
-    CHK -->|"selain itu"| WARN["print peringatan pilihan tidak valid"]
-
-    M1 --> MENU
-    M2 --> MENU
-    M3 --> MENU
-    M4 --> MENU
-    M5 --> MENU
-    M6 --> MENU
-    M7 --> MENU
-    WARN --> MENU
-    EXIT --> END([Program berhenti])
-
-    style EXIT fill:#d7f0dd
-    style WARN fill:#fbe3e3
+%%{init: {"flowchart": {"nodeSpacing": 22, "rankSpacing": 46, "padding": 8}, "themeVariables": {"fontSize": "13px"}}}%%
+flowchart LR
+    A(["Mulai"]) --> B["tampilkan menu 0-7"]
+    B --> C["input pilihan"]
+    C --> D{"pilihan valid?"}
+    D -- tidak --> E["pesan peringatan"]
+    D -- ya --> F{"pilihan 0?"}
+    F -- tidak --> G["jalankan menu 1-7"]
+    F -- ya --> H(["program ditutup"])
+    E -.-> B
+    G -.-> B
 ```
 
 ---
@@ -578,10 +559,12 @@ Stokku-Desktop/
 │   ├── assets/                                 # Aset gambar dokumentasi
 │   │   ├── P1_2026-11-13.jpg                   # Sesi 1: Yuken dan Mahardika
 │   │   ├── P2_2026-11-13.jpg                   # Sesi 2: Yuken, Mahardika, Renkyna
-│   │   ├── cli_menu.png                        # Preview Menu utama
-│   │   ├── cli_tabel.png                       # Preview Menu 1
-│   │   ├── cli_anti_minus.png                  # Preview Menu 4
-│   │   ├── cli_uji.png                         # Preview Menu 7
+│   │   ├── cli_menu.png                        # Preview banner dan menu (README)
+│   │   ├── cli_menu_only.png                   # Preview menu saja (slide 7)
+│   │   ├── cli_tabel.png                       # Preview tabel 9 kolom (README)
+│   │   ├── cli_tabel_ringkas.png               # Preview tabel 4 kolom (slide 8)
+│   │   ├── cli_anti_minus.png                  # Preview Menu 4 (README dan slide 9)
+│   │   ├── cli_uji.png                         # Preview Menu 7 (README)
 │   │   └── diagrams/                           # Render PNG seluruh diagram
 │   ├── diagrams/                               # Sumber mermaid (.mmd) per diagram
 │   ├── makalah/
@@ -651,24 +634,40 @@ Penggabungan modul analisis Pandas, penyusunan deck presentasi Slide UTS, serta 
 
 ## Susunan Deck Presentasi
 
-Deck `docs/presentasi/STOKKU_DESKTOP_PROGRES_P7.pptx` berisi 14 slide:
+Deck `docs/presentasi/STOKKU_DESKTOP_PROGRES_P7.pptx` berisi 15 slide:
 
 | Slide | Isi |
 | :---: | :--- |
 | 1 | Layar kosong putih, untuk jeda sebelum presentasi dimulai |
 | 2 | Judul materi, identitas akademik, dan daftar anggota tim |
 | 3 | Latar belakang dan empat masalah pencatatan UMKM |
-| 4 | Diagram arsitektur modul dan alur ketergantungan |
-| 5 | Flowchart alur program utama (menu 0 sampai 7) |
+| 4 | Diagram arsitektur: satu titik masuk, enam modul |
+| 5 | Flowchart siklus menu dan percabangan pilihan |
 | 6 | Flowchart validasi anti stok minus |
-| 7 | Tampilan output: menu utama dan daftar stok |
-| 8 | Tampilan output program: anti stok minus dan hasil pengujian |
-| 9 | Pemetaan silabus P01 s.d. P07 |
-| 10 | Hasil 7 kasus uji otomatis |
-| 11 | Formula nilai aset modal dan ambang batas kritis |
-| 12 | Dokumentasi kegiatan (dua foto sesi kerja) |
-| 13 | Roadmap versi 2.0 menuju UAS |
-| 14 | Kesimpulan dan matriks tanggung jawab |
+| 7 | Tampilan output: menu operasional |
+| 8 | Tampilan output: daftar stok dan status kritis |
+| 9 | Tampilan output: anti stok minus |
+| 10 | Pemetaan silabus P01 s.d. P07 |
+| 11 | Hasil 7 kasus uji otomatis |
+| 12 | Formula nilai aset modal dan ambang batas kritis |
+| 13 | Dokumentasi kegiatan (dua foto sesi kerja) |
+| 14 | Roadmap versi 2.0 menuju UAS |
+| 15 | Kesimpulan dan matriks tanggung jawab |
+
+Setiap slide mulai nomor 2 memuat nomor halaman di kanan bawah, dan setiap slide
+punya catatan pembicara berisi nama PIC.
+
+Ukuran huruf efektif pada gambar, dihitung dari lebar berkas dibagi lebar
+penempatan di slide. Ambang baca layar kelas sekitar 14 pt.
+
+| Slide | Gambar | Piksel | Lebar tempel | Huruf efektif |
+| :---: | :--- | :---: | :---: | :---: |
+| 4 | `slide-04-arsitektur.png` | 1568 x 436 | 11,43 in | 15,7 pt |
+| 5 | `slide-05-alur-utama.png` | 1568 x 342 | 11,43 in | 15,7 pt |
+| 6 | `slide-06-anti-minus.png` | 1568 x 270 | 11,43 in | 15,7 pt |
+| 7 | `cli_menu_only.png` | 554 x 362 | 6,82 in | 16,8 pt |
+| 8 | `cli_tabel_ringkas.png` | 782 x 284 | 11,43 in | 20,0 pt |
+| 9 | `cli_anti_minus.png` | 1079 x 414 | 11,43 in | 14,5 pt |
 
 ### Pembagian Slide Presentasi (3 Orang)
 
@@ -681,25 +680,47 @@ berisi nama PIC dan poin yang perlu disampaikan.
 | 2 | **Yuken** | 1 menit | Pembukaan, identitas, anggota tim |
 | 3 | Mahardika | 1,5 menit | Empat masalah pencatatan manual + solusi |
 | 4 | Yuken | 1 menit | Diagram arsitektur enam modul |
-| 5 | Yuken | 1 menit | Flowchart alur program, delapan menu |
+| 5 | Yuken | 1 menit | Flowchart siklus menu |
 | 6 | Yuken | 1,5 menit | Flowchart anti stok minus |
-| 7 | Mahardika | 1,5 menit | Output menu dan tabel stok |
-| 8 | Mahardika | 1,5 menit | Output penolakan transaksi dan hasil uji |
-| 9 | Renkyna | 1 menit | Pemetaan silabus P01 sampai P07 |
-| 10 | Renkyna | 1 menit | Tujuh kasus uji otomatis |
-| 11 | Renkyna | 1 menit | Formula aset modal dan ambang kritis |
-| 12 | Renkyna | 1 menit | Dokumentasi dua sesi kerja |
-| 13 | Mahardika | 1,5 menit | Roadmap P09 sampai P16 |
-| 14 | **Yuken** | 1,5 menit | Kesimpulan, peran, tanya jawab |
+| 7 | Mahardika | 1 menit | Output menu operasional |
+| 8 | Mahardika | 1 menit | Output daftar stok dan status kritis |
+| 9 | Mahardika | 1 menit | Output anti stok minus |
+| 10 | Renkyna | 1 menit | Pemetaan silabus P01 sampai P07 |
+| 11 | Renkyna | 1 menit | Tujuh kasus uji otomatis |
+| 12 | Renkyna | 1 menit | Formula aset modal dan ambang kritis |
+| 13 | Renkyna | 1 menit | Dokumentasi dua sesi kerja |
+| 14 | Mahardika | 1,5 menit | Roadmap P09 sampai P16 |
+| 15 | **Yuken** | 1,5 menit | Penutup, kesimpulan, peran, tanya jawab |
 
 Rekap jumlah slide per orang:
 
 | Anggota | Slide | Jumlah |
 | :--- | :--- | :---: |
-| Yuken Velino | 2, 4, 5, 6, 14 | 5 |
-| Mahardika Athaillah | 3, 7, 8, 13 | 4 |
-| Renkyna Aftania Nasution | 9, 10, 11, 12 | 4 |
+| Yuken Velino | 2, 4, 5, 6, 15 | 5 |
+| Mahardika Athaillah | 3, 7, 8, 9, 14 | 5 |
+| Renkyna Aftania Nasution | 10, 11, 12, 13 | 4 |
 | Bersama | 1 | 1 |
+
+Dasar pembagian:
+
+| Alasan | Penerapan |
+| :--- | :--- |
+| Yuken buka dan tutup | Slide 2 pembukaan, slide 15 penutup, ditambah blok logika slide 4 sampai 6 |
+| Mahardika pegang tampilan dan output | Slide 3 latar belakang, slide 7 sampai 9 tangkapan layar, slide 14 roadmap |
+| Renkyna pegang akademik dan analitik | Slide 10 silabus, 11 hasil uji yang dia dokumentasikan, 12 formula, 13 dokumentasi |
+| Slide 7 sampai 9 ke Mahardika | Isinya output `display_cli.py` yang dia tulis sendiri |
+
+Urutan bicara:
+
+```text
+Yuken      -> 2
+Mahardika  -> 3
+Yuken      -> 4, 5, 6
+Mahardika  -> 7, 8, 9
+Renkyna    -> 10, 11, 12, 13
+Mahardika  -> 14
+Yuken      -> 15
+```
 
 Cara membuat ulang deck beserta PDF:
 

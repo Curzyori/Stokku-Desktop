@@ -189,11 +189,11 @@ Stokku-Desktop/
 │   ├── assets/                            # Aset gambar dokumentasi dan preview
 │   │   ├── P1_2026-11-13.jpg              # Sesi 1: Yuken dan Mahardika
 │   │   ├── P2_2026-11-13.jpg              # Sesi 2: Yuken, Mahardika, Renkyna
-│   │   ├── cli_*.png                      # Preview eksekusi Menu 1, 4, dan 7
+│   │   ├── cli_*.png                      # Preview eksekusi untuk README dan slide
 │   │   └── diagrams/                      # Render PNG seluruh diagram mermaid
 │   ├── diagrams/                          # Sumber mermaid (.mmd) per diagram
 │   ├── makalah/                           # [RENKYNA] Draf makalah evaluasi UTS
-│   └── presentasi/                        # [YUKEN] Deck presentasi UTS (14 slide, .pptx dan .pdf)
+│   └── presentasi/                        # [YUKEN] Deck presentasi UTS (15 slide, .pptx dan .pdf)
 ├── progress_p7/
 │   ├── data_store.py                      # [YUKEN] Struktur data list dictionary dan data awal
 │   ├── validasi.py                        # [YUKEN] Validasi input angka, keunikan kode, dan batas stok
@@ -290,7 +290,7 @@ Protokol `try...except ValueError` baru akan diterapkan pada pembacaan nilai dar
   - `progress_p7/test_skenario.py`: 7 kasus uji, seluruhnya lulus.
   - `tests/test_display_cli.py` dan `tests/test_laporan_pandas.py`: 15 unit test, seluruhnya lulus.
   - `docs/makalah/MAKALAH_STOKKU_DESKTOP.md`: draf naskah akademik format UBSI (belum final, naskah lengkap disusun menjelang UAS).
-  - `docs/presentasi/STOKKU_DESKTOP_PROGRES_P7.pptx` berisi 14 slide beserta versi PDF, termasuk slide 1 layar kosong, slide 4 sampai 6 diagram dan flowchart, slide 7 sampai 8 tampilan output, dan slide 12 dokumentasi kegiatan.
+  - `docs/presentasi/STOKKU_DESKTOP_PROGRES_P7.pptx` berisi 15 slide beserta versi PDF, termasuk slide 1 layar kosong, slide 4 sampai 6 diagram dan flowchart, slide 7 sampai 9 tampilan output, dan slide 13 dokumentasi kegiatan.
   - `docs/assets/P1_2026-11-13.jpg` dan `docs/assets/P2_2026-11-13.jpg`: foto dokumentasi dua sesi kerja tim.
 
 ### Keterbatasan Versi 1.0

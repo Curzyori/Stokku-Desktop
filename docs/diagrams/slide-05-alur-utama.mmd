@@ -1,0 +1,9 @@
+%%{init: {"flowchart": {"nodeSpacing": 22, "rankSpacing": 46, "padding": 8}, "themeVariables": {"fontSize": "15px"}}}%%
+flowchart LR
+    A(["Mulai"]) --> B["tampilkan menu 0-7"]
+    B --> C["input pilihan"]
+    C --> D{"pilihan valid?"}
+    D -- tidak --> E["pesan peringatan"]
+    D -- ya --> F{"pilihan 0?"}
+    F -- tidak --> G["jalankan menu 1-7"]
+    F -- ya --> H(["program ditutup"])

@@ -173,7 +173,7 @@ def transaksi_barang_keluar(
     if item is None:
         return False, f"Barang dengan kode '{kode.strip().upper()}' tidak ditemukan."
 
-    valid, pesan_error = validasi_stok_keluar(item["stok"], jumlah)
+    valid, pesan_error = validasi_stok_keluar(item["stok"], jumlah, item["satuan"])
     if not valid:
         return False, pesan_error
 

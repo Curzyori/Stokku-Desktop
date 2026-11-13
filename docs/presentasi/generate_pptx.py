@@ -38,7 +38,7 @@ C_BG = RGBColor(248, 250, 252)
 C_WHITE = RGBColor(255, 255, 255)
 C_NAVY = RGBColor(15, 23, 42)
 C_SLATE = RGBColor(51, 65, 85)
-C_MUTED = RGBColor(100, 116, 139)
+C_MUTED = RGBColor(71, 85, 105)
 C_TEAL = RGBColor(13, 148, 136)
 C_TEAL_DARK = RGBColor(15, 118, 110)
 C_CARD_BG = RGBColor(255, 255, 255)
@@ -87,9 +87,11 @@ SILABUS = [
     ("P01", "Tools, Best Practice dan PEP 8",
      "Struktur modul rapi, indentasi 4 spasi, penamaan variabel jelas", "Seluruh berkas"),
     ("P02", "Sintaks, Variabel dan Tipe Data",
-     "str untuk kode dan nama, int untuk stok dan harga, bool untuk penanda pandas", "data_store.py"),
+     "str untuk kode dan nama, int untuk stok dan harga, bool PANDAS_TERSEDIA sebagai penanda ketersediaan pandas",
+     "data_store.py, laporan_pandas.py"),
     ("P03", "String, Format dan Operator",
-     "strip, upper, isdigit, format Rupiah, operator += dan -=", "validasi.py"),
+     "strip, upper, isdigit, format Rupiah, operator += dan -=",
+     "validasi.py, display_cli.py"),
     ("P04", "Percabangan if elif else",
      "Validasi keluar tidak melebihi stok, penentuan status kritis", "validasi.py"),
     ("P05", "Perulangan while dan for",
@@ -104,22 +106,22 @@ DOKUMENTASI = [
     ("docs/assets/P1_2026-11-13.jpg",
      "Sesi 1: Pengembangan Mesin Inti",
      "Yuken Velino dan Mahardika Athaillah",
-     "Penyusunan modul backend, validasi anti stok minus, dan format tabel terminal"),
+     "Modul backend, validasi anti stok minus, dan tabel terminal"),
     ("docs/assets/P2_2026-11-13.jpg",
      "Sesi 2: Integrasi Modul, Deck Presentasi, dan Draf Makalah",
      "Yuken Velino, Mahardika Athaillah, dan Renkyna Aftania Nasution",
-     "Penggabungan modul analisis Pandas, penyusunan deck presentasi, "
-     "dan penyusunan draf naskah akademik"),
+     "Integrasi modul Pandas, deck presentasi, dan draf makalah"),
 ]
 
 CATATAN_PEMBICARA = {
     1: ("Semua", [
         "Slide ini sengaja dibiarkan putih kosong.",
         "Dipakai sebagai jeda saat kelompok naik ke depan kelas.",
+        "Bila laptop lambat, sebutkan judul proyek secara lisan.",
     ]),
     2: ("Yuken Velino", [
         "Buka dengan salam dan perkenalkan diri sebagai ketua kelompok.",
-        "Perkenalkan kedua anggota lain beserta perannya masing-masing.",
+        "Perkenalkan kedua anggota lain beserta perannya.",
         "Sebutkan mata kuliah, kelas, dan nama dosen pengampu.",
         "Satu kalimat inti: aplikasi mencatat persediaan dan mutasi stok gudang UMKM.",
     ]),
@@ -129,13 +131,14 @@ CATATAN_PEMBICARA = {
         "Tutup dengan kartu solusi: Stokku Desktop berjalan luring.",
     ]),
     4: ("Yuken Velino", [
-        "Tunjuk titik masuk main_p7.py lalu arahkan ke enam modul progress_p7.",
-        "Sebutkan pembagian PIC tiap berkas sesuai label diagram.",
-        "Tekankan bahwa setiap modul terpisah agar tidak bentrok saat digabung.",
+        "Tunjuk main_p7.py sebagai satu-satunya titik masuk.",
+        "Sebutkan enam modul yang dipanggil dari sana.",
+        "Tegaskan tiap modul terpisah agar tidak bentrok saat digabung.",
     ]),
     5: ("Yuken Velino", [
         "Jelaskan perulangan while True dan percabangan if elif else.",
-        "Sebutkan delapan pilihan menu dan bahwa input tidak valid kembali ke menu.",
+        "Tegaskan input tidak valid tidak menghentikan program.",
+        "Sebutkan pilihan 0 dipakai untuk keluar.",
     ]),
     6: ("Yuken Velino", [
         "Ini aturan inti proyek: stok tidak boleh minus.",
@@ -144,47 +147,51 @@ CATATAN_PEMBICARA = {
         "Sebutkan fungsi validasi_stok_keluar sebagai penjaga.",
     ]),
     7: ("Mahardika Athaillah", [
-        "Perlihatkan tangkapan layar menu bawaan dan tabel Menu 1.",
-        "Tunjuk kolom Status dan jelaskan arti KRITIS dan AMAN.",
-        "Sebutkan format Rupiah dengan pemisah titik.",
+        "Perlihatkan menu operasional yang tampil setelah program dijalankan.",
+        "Sebutkan delapan pilihan dan fungsinya masing-masing.",
+        "Tunjuk kolom kanan sebagai poin yang perlu ditekankan.",
     ]),
     8: ("Mahardika Athaillah", [
+        "Tunjuk baris ATK02 dengan status KRITIS.",
+        "Jelaskan arti KRITIS: stok kurang dari atau sama dengan batas minimum.",
+        "Sebutkan kolom harga disembunyikan agar huruf terbaca.",
+    ]),
+    9: ("Mahardika Athaillah", [
         "Tunjukkan penolakan transaksi 50 Rim saat stok 10 Rim.",
         "Tunjukkan transaksi 4 Rim yang diterima beserta sisa stok.",
-        "Sebutkan hasil Menu 7: tujuh dari tujuh kasus uji lulus.",
-        "Tegaskan bahwa tangkapan layar ini bukan rekayasa, diambil dari eksekusi nyata.",
+        "Tegaskan pesan penolakan memakai satuan yang sama dengan tabel.",
     ]),
-    9: ("Renkyna Aftania Nasution", [
+    10: ("Renkyna Aftania Nasution", [
         "Petakan tiap pertemuan P01 sampai P07 ke berkas kode yang nyata.",
         "Tekankan tidak ada materi yang dilompati.",
         "Sebutkan P07 dipegang modul laporan_pandas.",
     ]),
-    10: ("Renkyna Aftania Nasution", [
+    11: ("Renkyna Aftania Nasution", [
         "Bacakan tujuh kasus uji secara ringkas.",
         "Tegaskan TC-05 sebagai bukti proteksi anti stok minus.",
         "Sebutkan tambahan 15 unit test di folder tests.",
-        "Sebutkan bahwa seluruh hasil dicatat ke dalam draf makalah.",
+        "Sebutkan hasil dicatat ke draf makalah.",
     ]),
-    11: ("Renkyna Aftania Nasution", [
+    12: ("Renkyna Aftania Nasution", [
         "Jelaskan rumus nilai aset per produk dan total aset gudang.",
         "Bacakan angka saldo awal: tiga SKU, 29 unit, Rp 482.500.",
         "Jelaskan ambang batas kritis: stok kurang dari atau sama dengan min_stok.",
     ]),
-    12: ("Renkyna Aftania Nasution", [
+    13: ("Renkyna Aftania Nasution", [
         "Sebutkan dua sesi kerja dan siapa saja yang hadir di masing-masing sesi.",
         "Sesi 1 mengerjakan mesin inti dan antarmuka terminal.",
         "Sesi 2 mengerjakan integrasi modul Pandas, deck presentasi, dan draf makalah.",
     ]),
-    13: ("Mahardika Athaillah", [
+    14: ("Mahardika Athaillah", [
         "Jelaskan rencana P09 sampai P16 menuju UAS.",
         "Sebutkan migrasi ke SQLite dan antarmuka Tkinter pada P10 sampai P12.",
         "Sebutkan makalah final dan demonstrasi laboratorium pada P13 sampai P16.",
     ]),
-    14: ("Yuken Velino", [
+    15: ("Yuken Velino", [
         "Bacakan empat poin kesimpulan.",
         "Sebutkan matriks tanggung jawab tiap anggota.",
         "Tutup dengan terima kasih lalu buka sesi tanya jawab.",
-        "Siapkan jawaban teknis dari berkas DOSEN-ASK.txt.",
+        "Bila ditanya bukti, tunjukkan repositori publik dan jalankan skrip uji.",
     ]),
 }
 
@@ -233,7 +240,8 @@ def fit_picture(slide, path, left, top, max_w, max_h):
 
     left += int((max_w - width) / 2)
     top += int((max_h - height) / 2)
-    return slide.shapes.add_picture(path, left, top, width=width, height=height)
+    picture = slide.shapes.add_picture(path, left, top, width=width, height=height)
+    return picture, int(height), int(width)
 
 
 def create_deck(output_path, root=None):
@@ -254,7 +262,7 @@ def create_deck(output_path, root=None):
 
     def header(slide, tag_text, title_text, subtitle=None):
         tf = _textbox(slide, Inches(0.8), Inches(0.5), Inches(11.733), Inches(1.2))
-        _para(tf, tag_text.upper(), "Arial", 11, C_TEAL, bold=True, after=4, first=True)
+        _para(tf, tag_text.upper(), "Arial", 11, C_TEAL_DARK, bold=True, after=4, first=True)
         _para(tf, title_text, "Trebuchet MS", 24, C_NAVY, bold=True, after=4)
         if subtitle:
             _para(tf, subtitle, "Calibri", 13, C_SLATE)
@@ -286,17 +294,24 @@ def create_deck(output_path, root=None):
             if j in center_cols:
                 p.alignment = PP_ALIGN.CENTER
 
-    def diagram_slide(tag, title, subtitle, image_name, caption):
+    def diagram_slide(tag, title, subtitle, image_name, caption, poin=()):
         slide = prs.slides.add_slide(blank)
         background(slide)
         header(slide, tag, title, subtitle)
-        box = card(slide, Inches(0.8), Inches(1.85), Inches(11.733), Inches(4.75),
-                   bg_color=C_WHITE)
-        fit_picture(
+        card(slide, Inches(0.8), Inches(1.85), Inches(11.733), Inches(4.75),
+             bg_color=C_WHITE)
+        hasil = fit_picture(
             slide,
             os.path.join(root, "docs", "assets", "diagrams", image_name),
-            Inches(0.95), Inches(1.95), Inches(11.43), Inches(4.55),
+            Inches(0.95), Inches(1.95), Inches(11.43), Inches(3.3),
         )
+        if hasil:
+            _, tinggi, _ = hasil
+            y_poin = Inches(1.95) + tinggi + Inches(0.22)
+            tf = _textbox(slide, Inches(1.2), y_poin, Inches(11.0), Inches(1.2))
+            for i, baris in enumerate(poin):
+                _para(tf, "\u2022 " + baris, "Calibri", 12, C_SLATE,
+                      after=5, first=(i == 0))
         tf = _textbox(slide, Inches(0.8), Inches(6.72), Inches(11.733), Inches(0.5))
         _para(tf, caption, "Calibri", 10.5, C_MUTED, first=True)
         return slide
@@ -315,7 +330,7 @@ def create_deck(output_path, root=None):
                 tf = _textbox(slide, left, top + h + Inches(0.05), w, Inches(0.3))
                 _para(tf, spec["label"], "Calibri", 9.5, C_MUTED, first=True)
         tf = _textbox(slide, Inches(0.8), Inches(6.95), Inches(11.733), Inches(0.4))
-        _para(tf, caption, "Calibri", 10, C_MUTED, first=True)
+        _para(tf, caption, "Calibri", 10.5, C_MUTED, first=True)
         return slide
 
     # ------------------------------------------------------------------
@@ -362,8 +377,8 @@ def create_deck(output_path, root=None):
         ("Renkyna Aftania N.", "15260847", "Analitik Pandas dan Makalah"),
     ]:
         _para(tf_team, nama, "Trebuchet MS", 12.5, C_NAVY, bold=True)
-        _para(tf_team, f"NIM {nim}", "Calibri", 10.5, C_MUTED)
-        _para(tf_team, peran, "Calibri", 10.5, C_SLATE, after=14)
+        _para(tf_team, f"NIM {nim}", "Calibri", 11, C_MUTED)
+        _para(tf_team, peran, "Calibri", 11.5, C_SLATE, after=14)
 
     # ------------------------------------------------------------------
     # 3. LATAR BELAKANG
@@ -377,16 +392,16 @@ def create_deck(output_path, root=None):
 
     card_w, card_h, gap = Inches(2.7), Inches(3.05), Inches(0.3)
     for i, (judul, isi) in enumerate([
-        ("1. Ketidakpastian Sisa Fisik",
+        ("1. Sisa Fisik Tidak Pasti",
          "Pemilik toko tidak mengetahui jumlah barang terkini tanpa menghitung "
          "ulang fisik (stock opname) yang menyita waktu operasional."),
-        ("2. Keterlambatan Pengadaan",
+        ("2. Pengadaan Terlambat",
          "Ketiadaan ambang batas minimum membuat restock terlambat, sehingga "
          "potensi transaksi penjualan hilang."),
-        ("3. Kebocoran dan Selisih Stok",
+        ("3. Selisih Stok",
          "Barang rusak, kedaluwarsa, atau pemakaian internal sering tidak tercatat, "
          "sehingga pembukuan tidak cocok dengan saldo fisik."),
-        ("4. Kesulitan Menghitung Modal",
+        ("4. Modal Tidak Terhitung",
          "Sulit menghitung total nilai uang yang mengendap pada stok gudang "
          "tanpa rekapitulasi nilai modal."),
     ]):
@@ -417,8 +432,13 @@ def create_deck(output_path, root=None):
     diagram_slide(
         "Diagram Sistem", "Arsitektur Modul dan Alur Ketergantungan",
         "Enam modul terisolasi di progress_p7 dengan satu titik masuk main_p7.py.",
-        "01-arsitektur-sistem.png",
-        "Gambar 1. Diagram arsitektur sistem beserta relasi antar modul.",
+        "slide-04-arsitektur.png",
+        "Gambar 1. Diagram arsitektur ringkas: satu titik masuk dan enam modul.",
+        poin=[
+            "main_p7.py hanya mengimpor dan memanggil, tidak menyimpan data.",
+            "engine_stok memanggil validasi sebelum mengubah angka stok.",
+            "Setiap berkas punya satu pemilik agar tidak bentrok saat digabung.",
+        ],
     )
 
     # ------------------------------------------------------------------
@@ -427,8 +447,13 @@ def create_deck(output_path, root=None):
     diagram_slide(
         "Flowchart", "Alur Program Utama (Menu 0 sampai 7)",
         "Perulangan while True dengan percabangan if elif else untuk delapan pilihan.",
-        "02-alur-program-utama.png",
-        "Gambar 2. Flowchart alur program utama Stokku Desktop.",
+        "slide-05-alur-utama.png",
+        "Gambar 2. Flowchart siklus menu dan percabangan validasi pilihan.",
+        poin=[
+            "Percabangan memakai if elif else sesuai materi Pertemuan 4.",
+            "Input di luar 0 sampai 7 kembali ke menu tanpa keluar program.",
+            "Perulangan berhenti hanya pada pilihan 0.",
+        ],
     )
 
     # ------------------------------------------------------------------
@@ -448,7 +473,7 @@ def create_deck(output_path, root=None):
     )
     tf = _textbox(s, Inches(0.8), Inches(4.28), Inches(11.733), Inches(0.3))
     _para(tf, "Gambar 3. Flowchart validasi mutasi barang keluar.",
-          "Calibri", 10, C_MUTED, first=True)
+          "Calibri", 10.5, C_MUTED, first=True)
 
     tf_reject = card(s, Inches(0.8), Inches(4.75), Inches(5.733), Inches(1.95),
                      bg_color=RGBColor(255, 241, 242),
@@ -478,41 +503,69 @@ def create_deck(output_path, root=None):
           "Calibri", 11, C_SLATE)
 
     # ------------------------------------------------------------------
-    # 7. TAMPILAN OUTPUT (1)
+    # 7. TAMPILAN OUTPUT: MENU
     # ------------------------------------------------------------------
-    output_slide(
-        "Bukti Eksekusi", "Tampilan Output Program: Menu dan Daftar Stok",
-        "Keluaran asli dari python progress_p7/main_p7.py, direkam otomatis.",
-        [
-            {"path": "docs/assets/cli_menu.png",
-             "box": (Inches(0.8), Inches(1.95), Inches(5.9), Inches(3.4)),
-             "label": "Menu utama 0 sampai 7 setelah banner pembuka"},
-            {"path": "docs/assets/cli_tabel.png",
-             "box": (Inches(6.9), Inches(1.95), Inches(5.633), Inches(3.4)),
-             "label": "Menu 1: tabel stok dengan status KRITIS dan AMAN"},
-        ],
-        "Dua tangkapan layar di atas dihasilkan oleh docs/presentasi/capture_cli.py.",
+    s = prs.slides.add_slide(blank)
+    background(s)
+    header(s, "Bukti Eksekusi", "Tampilan Output: Menu Operasional",
+           "Keluaran asli python progress_p7/main_p7.py tanpa banner, "
+           "diperbesar agar terbaca dari baris belakang.")
+    card(s, Inches(0.8), Inches(1.9), Inches(11.733), Inches(4.62),
+         bg_color=C_WHITE)
+    fit_picture(
+        s, os.path.join(root, "docs", "assets", "cli_menu_only.png"),
+        Inches(1.2), Inches(1.98), Inches(6.9), Inches(4.46),
     )
+    tf = _textbox(s, Inches(8.4), Inches(2.2), Inches(3.9), Inches(3.9))
+    _para(tf, "YANG PERLU DITUNJUK", "Arial", 11, C_TEAL_DARK, bold=True,
+          after=10, first=True)
+    for poin in [
+        "Delapan pilihan menu, dari lihat stok sampai uji otomatis.",
+        "Menu 0 dipakai untuk keluar dengan rapi.",
+        "Input selain 0 sampai 7 ditolak tanpa menghentikan program.",
+        "Perulangan while True menjaga menu tetap tampil.",
+    ]:
+        _para(tf, "\u2022 " + poin, "Calibri", 12, C_SLATE, after=9)
 
     # ------------------------------------------------------------------
-    # 8. TAMPILAN OUTPUT (2)
+    # 8. TAMPILAN OUTPUT: DAFTAR STOK
     # ------------------------------------------------------------------
-    output_slide(
-        "Bukti Eksekusi", "Tampilan Output Program: Anti Stok Minus dan Pengujian",
-        "Penolakan transaksi berlebih dan hasil tujuh kasus uji otomatis.",
-        [
-            {"path": "docs/assets/cli_anti_minus.png",
-             "box": (Inches(0.8), Inches(1.95), Inches(6.6), Inches(2.35)),
-             "label": "Menu 4: transaksi 50 Rim ditolak karena stok hanya 10 Rim"},
-            {"path": "docs/assets/cli_uji.png",
-             "box": (Inches(7.6), Inches(1.95), Inches(4.933), Inches(4.4)),
-             "label": "Menu 7: TC-01 sampai TC-07, hasil 7 dari 7 lulus"},
-        ],
-        "Semua angka pada slide ini berasal dari eksekusi nyata, bukan perkiraan.",
+    s = prs.slides.add_slide(blank)
+    background(s)
+    header(s, "Bukti Eksekusi", "Tampilan Output: Daftar Stok dan Status Kritis",
+           "Empat kolom terpenting dari Menu 1, diperbesar agar angka dan "
+           "penanda status terbaca.")
+    card(s, Inches(0.8), Inches(1.9), Inches(11.733), Inches(4.5),
+         bg_color=C_WHITE)
+    fit_picture(
+        s, os.path.join(root, "docs", "assets", "cli_tabel_ringkas.png"),
+        Inches(0.95), Inches(2.0), Inches(11.43), Inches(4.3),
     )
+    tf = _textbox(s, Inches(0.8), Inches(6.5), Inches(11.733), Inches(0.5))
+    _para(tf, "Kolom Kategori, Satuan, Harga Beli, dan Harga Jual disembunyikan "
+              "pada slide ini agar teks terbaca. Versi lengkap ada di README.",
+          "Calibri", 11, C_MUTED, first=True)
 
     # ------------------------------------------------------------------
-    # 9. SILABUS
+    # 9. TAMPILAN OUTPUT: ANTI STOK MINUS
+    # ------------------------------------------------------------------
+    s = prs.slides.add_slide(blank)
+    background(s)
+    header(s, "Bukti Eksekusi", "Tampilan Output: Anti Stok Minus",
+           "Satu transaksi ditolak karena melebihi stok, satu transaksi "
+           "diterima karena masih dalam batas.")
+    card(s, Inches(0.8), Inches(1.9), Inches(11.733), Inches(4.5),
+         bg_color=C_WHITE)
+    fit_picture(
+        s, os.path.join(root, "docs", "assets", "cli_anti_minus.png"),
+        Inches(0.95), Inches(2.0), Inches(11.43), Inches(4.38),
+    )
+    tf = _textbox(s, Inches(0.8), Inches(6.5), Inches(11.733), Inches(0.5))
+    _para(tf, "Perhatikan satuan pada pesan penolakan sudah konsisten: "
+              "Rim, bukan unit.", "Calibri", 11, C_MUTED, first=True)
+
+    # ------------------------------------------------------------------
+    # 10. SILABUS
     # ------------------------------------------------------------------
     s = prs.slides.add_slide(blank)
     background(s)
@@ -545,7 +598,7 @@ def create_deck(output_path, root=None):
                 p.alignment = PP_ALIGN.CENTER
 
     # ------------------------------------------------------------------
-    # 10. HASIL UJI
+    # 11. HASIL UJI
     # ------------------------------------------------------------------
     s = prs.slides.add_slide(blank)
     background(s)
@@ -572,7 +625,7 @@ def create_deck(output_path, root=None):
             p = cell.text_frame.paragraphs[0]
             p.text = val
             p.font.name = "Consolas" if j in (0, 4) else "Calibri"
-            p.font.size = Pt(9.5)
+            p.font.size = Pt(10.5)
             if j == 4:
                 p.font.bold = True
                 p.font.color.rgb = C_GREEN
@@ -583,7 +636,7 @@ def create_deck(output_path, root=None):
                     p.alignment = PP_ALIGN.CENTER
 
     # ------------------------------------------------------------------
-    # 11. FORMULA ASET
+    # 12. FORMULA ASET
     # ------------------------------------------------------------------
     s = prs.slides.add_slide(blank)
     background(s)
@@ -610,7 +663,7 @@ def create_deck(output_path, root=None):
     _para(tf1,
           "Nilai uang modal usaha yang tertanam pada setiap jenis barang "
           f"fisik di gudang.\n\nData bawaan:\n{contoh}",
-          "Calibri", 11, C_SLATE)
+          "Calibri", 12, C_SLATE)
 
     tf2 = card(s, Inches(4.8), top, col_w, col_h).text_frame
     tf2.word_wrap = True
@@ -618,7 +671,7 @@ def create_deck(output_path, root=None):
     tf2.margin_top = Inches(0.3)
     _para(tf2, "2. TOTAL ESTIMASI ASET", "Trebuchet MS", 12, C_NAVY, bold=True,
           after=10, first=True)
-    _para(tf2, "Total_Aset = Sigma (Stok_i x Harga_Beli_i)", "Consolas", 12,
+    _para(tf2, "Total_Aset = \u03a3 (Stok_i x Harga_Beli_i)", "Consolas", 11.5,
           C_TEAL_DARK, bold=True, after=10)
     ringkas = (
         "Teknik akumulator pada perulangan for menghitung total keseluruhan "
@@ -627,7 +680,7 @@ def create_deck(output_path, root=None):
         f"Total aset   : Rp {TOTAL_MODAL:,}".replace(",", ".")
         + "\n\nDihitung otomatis tanpa keterlambatan data."
     )
-    _para(tf2, ringkas, "Calibri", 11, C_SLATE)
+    _para(tf2, ringkas, "Calibri", 12, C_SLATE)
 
     tf3 = card(s, Inches(8.8), top, col_w, col_h).text_frame
     tf3.word_wrap = True
@@ -642,10 +695,10 @@ def create_deck(output_path, root=None):
           "Jika stok fisik menyentuh atau berada di bawah batas minimum, sistem "
           "memberi tag visual KRITIS.\n\nOperator dapat segera membuat pesanan "
           "pengadaan ulang sebelum barang habis total.",
-          "Calibri", 11, C_SLATE)
+          "Calibri", 12, C_SLATE)
 
     # ------------------------------------------------------------------
-    # 12. DOKUMENTASI
+    # 13. DOKUMENTASI
     # ------------------------------------------------------------------
     s = prs.slides.add_slide(blank)
     background(s)
@@ -666,12 +719,12 @@ def create_deck(output_path, root=None):
                     foto_w - Inches(0.44), Inches(3.85))
         tf = _textbox(s, left + Inches(0.25), top_foto + Inches(4.15),
                       foto_w - Inches(0.5), Inches(0.75))
-        _para(tf, judul, "Trebuchet MS", 11.5, C_NAVY, bold=True, after=2, first=True)
-        _para(tf, orang, "Calibri", 9.5, C_TEAL_DARK, bold=True, after=2)
-        _para(tf, keterangan, "Calibri", 8.5, C_MUTED)
+        _para(tf, judul, "Trebuchet MS", 12, C_NAVY, bold=True, after=2, first=True)
+        _para(tf, orang, "Calibri", 10.5, C_TEAL_DARK, bold=True, after=2)
+        _para(tf, keterangan, "Calibri", 10, C_MUTED)
 
     # ------------------------------------------------------------------
-    # 13. ROADMAP
+    # 14. ROADMAP
     # ------------------------------------------------------------------
     s = prs.slides.add_slide(blank)
     background(s)
@@ -702,10 +755,10 @@ def create_deck(output_path, root=None):
         tf.margin_top = Inches(0.35)
         _para(tf, tag, "Arial", 11, C_TEAL, bold=True, after=8, first=True)
         _para(tf, judul, "Trebuchet MS", 13.5, C_NAVY, bold=True, after=12)
-        _para(tf, isi, "Calibri", 11, C_SLATE)
+        _para(tf, isi, "Calibri", 12.5, C_SLATE)
 
     # ------------------------------------------------------------------
-    # 14. KESIMPULAN
+    # 15. KESIMPULAN
     # ------------------------------------------------------------------
     s = prs.slides.add_slide(blank)
     background(s)
@@ -727,10 +780,10 @@ def create_deck(output_path, root=None):
         "tanpa galat, membuktikan keandalan anti stok minus.",
         "3. Dependensi Minimal: hanya pandas untuk Menu 6 analisis tabular; "
         "menu lain berjalan dengan pustaka bawaan Python.",
-        "4. Kesiapan Evaluasi: berkas tanya jawab teknis DOSEN-ASK.txt sudah ada "
-        "dan draf naskah makalah akademik sudah disusun.",
+        "4. Berkas Terbuka: 7 skenario uji, 15 unit test, dan draf makalah "
+        "tersedia di repositori publik GitHub.",
     ]:
-        _para(tf_sum, teks, "Calibri", 11, C_SLATE, after=10)
+        _para(tf_sum, teks, "Calibri", 12, C_SLATE, after=12)
 
     tf_qa = card(s, Inches(6.8), Inches(1.95), Inches(5.733), Inches(4.9),
                  bg_color=C_WHITE).text_frame
@@ -748,7 +801,7 @@ def create_deck(output_path, root=None):
          "Pelaporan tabular Pandas P07, naskah makalah UBSI"),
     ]:
         _para(tf_qa, nama, "Trebuchet MS", 11, C_NAVY, bold=True)
-        _para(tf_qa, f"Tanggung jawab: {tugas}", "Calibri", 10.5, C_SLATE, after=8)
+        _para(tf_qa, f"Tanggung jawab: {tugas}", "Calibri", 11.5, C_SLATE, after=10)
 
     _para(tf_qa, "SESI DISKUSI DAN TANYA JAWAB DIBUKA", "Trebuchet MS", 12,
           C_TEAL_DARK, bold=True, after=4)
@@ -756,6 +809,16 @@ def create_deck(output_path, root=None):
           "Terima kasih kepada Dosen Pengampu Ali Mustopa, M.Kom atas "
           "bimbingan dan arahan akademiknya.",
           "Calibri", 10.5, C_MUTED)
+
+    # ------------------------------------------------------------------
+    # NOMOR SLIDE (mulai slide 2)
+    # ------------------------------------------------------------------
+    total = len(prs.slides)
+    for nomor in range(2, total + 1):
+        slide = prs.slides[nomor - 1]
+        tf_no = _textbox(slide, Inches(11.9), Inches(7.02), Inches(1.13), Inches(0.32))
+        _para(tf_no, f"{nomor} / {total}", "Calibri", 10.5, C_MUTED,
+              first=True, align=PP_ALIGN.RIGHT)
 
     # ------------------------------------------------------------------
     # CATATAN PEMBICARA (PIC dan poin kunci per slide)

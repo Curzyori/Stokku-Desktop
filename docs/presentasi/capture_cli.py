@@ -45,7 +45,7 @@ FG_WARN = (251, 191, 36)
 FG_ERR = (251, 113, 133)
 
 FONT_SIZE = 19
-LINE_HEIGHT = 26
+LINE_HEIGHT = 23
 PAD_X = 26
 PAD_Y = 20
 CHROME_H = 36
@@ -193,18 +193,52 @@ def slice_between(lines, start_pred, stop_pred, include_stop=True):
     return lines[start:]
 
 
+
+def trim_table(block, keep):
+    """Menyisakan kolom tertentu dari tabel teks bergaris."""
+    if not block:
+        return block
+    separators = [ln for ln in block if ln.strip().startswith("+")]
+    if not separators:
+        return block
+    seg = separators[0].split("+")[1:-1]
+    if not keep or max(keep) >= len(seg):
+        return block
+
+    out = []
+    for ln in block:
+        if ln.strip().startswith("+"):
+            out.append("+" + "+".join(seg[i] for i in keep) + "+")
+        elif ln.strip().startswith("|"):
+            cells = ln.split("|")[1:-1]
+            if len(cells) != len(seg):
+                out.append(ln)
+                continue
+            out.append("|" + "|".join(cells[i] for i in keep) + "|")
+        else:
+            out.append(ln)
+    return out
+
+
 def main():
-    # 1. Banner dan menu utama
+    # 1. Banner dan menu utama (untuk README)
     menu = run_cli([])
-    render(
-        slice_between(
-            menu,
-            lambda ln: "STOKKU DESKTOP" in ln,
-            lambda ln: ln.strip().startswith("Pilih menu"),
-        ),
-        os.path.join(ASSETS, "cli_menu.png"),
-        "Stokku Desktop: menu utama",
+    banner_menu = slice_between(
+        menu,
+        lambda ln: "STOKKU DESKTOP" in ln,
+        lambda ln: ln.strip().startswith("Pilih menu"),
     )
+    render(banner_menu, os.path.join(ASSETS, "cli_menu.png"),
+           "Stokku Desktop: menu utama")
+
+    # 1b. Menu saja tanpa banner (untuk slide, agar huruf lebih besar)
+    menu_only = slice_between(
+        menu,
+        lambda ln: ln.strip().startswith("MENU OPERASIONAL"),
+        lambda ln: ln.strip().startswith("Pilih menu"),
+    )
+    render(menu_only, os.path.join(ASSETS, "cli_menu_only.png"),
+           "Stokku Desktop: menu operasional")
 
     # 2. Tabel persediaan (Menu 1)
     tabel = run_cli(["1"])
@@ -220,6 +254,11 @@ def main():
             break
     render(blok, os.path.join(ASSETS, "cli_tabel.png"),
            "Stokku Desktop: Menu 1 daftar stok", wrap_cols=None)
+
+    # 2b. Versi ringkas: hanya kolom kode, nama, stok, dan status
+    render(trim_table(blok, keep=[0, 1, 6, 8]),
+           os.path.join(ASSETS, "cli_tabel_ringkas.png"),
+           "Stokku Desktop: stok dan status kritis", wrap_cols=None)
 
     # 3. Mutasi keluar: satu ditolak, satu berhasil
     keluar = run_cli(
@@ -237,8 +276,7 @@ def main():
     uji = run_cli(["7"])
     ringkas = [
         ln for ln in uji
-        if ln.strip().startswith(("[TC-", "HASIL AKHIR", "KESIMPULAN", " PENGUJIAN", "Status:"))
-        or ln.strip().startswith("=" * 20)
+        if ln.strip().startswith(("[TC-", "HASIL AKHIR", "KESIMPULAN"))
     ]
     render(ringkas, os.path.join(ASSETS, "cli_uji.png"),
            "Stokku Desktop: Menu 7 pengujian otomatis")

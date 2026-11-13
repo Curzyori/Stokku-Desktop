@@ -1,30 +1,11 @@
-%%{init: {"flowchart": {"nodeSpacing": 22, "rankSpacing": 30, "padding": 6}, "themeVariables": {"fontSize": "13px"}}}%%
-flowchart TD
-    START([Mulai: python progress_p7/main_p7.py]) --> INIT["Impor modul<br/>data_store menjalankan inisialisasi_log_awal()"]
-    INIT --> BANNER["cetak_banner_bawaan()"]
-    BANNER --> MENU["Tampilkan MENU OPERASIONAL STOKKU 0-7"]
-    MENU --> INPUT["input('Pilih menu 0-7')"]
-    INPUT --> CHK{"Pilihan?"}
-
-    CHK -->|"1"| M1["Menu 1<br/>Lihat Daftar Stok"]
-    CHK -->|"2"| M2["Menu 2<br/>Tambah Barang Baru"]
-    CHK -->|"3"| M3["Menu 3<br/>Barang Masuk"]
-    CHK -->|"4"| M4["Menu 4<br/>Barang Keluar"]
-    CHK -->|"5"| M5["Menu 5<br/>Riwayat Mutasi"]
-    CHK -->|"6"| M6["Menu 6<br/>Laporan Pandas"]
-    CHK -->|"7"| M7["Menu 7<br/>Uji Otomatis"]
-    CHK -->|"0"| EXIT["print 'Terima kasih'<br/>break"]
-    CHK -->|"selain itu"| WARN["print peringatan pilihan tidak valid"]
-
-    M1 --> MENU
-    M2 --> MENU
-    M3 --> MENU
-    M4 --> MENU
-    M5 --> MENU
-    M6 --> MENU
-    M7 --> MENU
-    WARN --> MENU
-    EXIT --> END([Program berhenti])
-
-    style EXIT fill:#d7f0dd
-    style WARN fill:#fbe3e3
+%%{init: {"flowchart": {"nodeSpacing": 22, "rankSpacing": 46, "padding": 8}, "themeVariables": {"fontSize": "13px"}}}%%
+flowchart LR
+    A(["Mulai"]) --> B["tampilkan menu 0-7"]
+    B --> C["input pilihan"]
+    C --> D{"pilihan valid?"}
+    D -- tidak --> E["pesan peringatan"]
+    D -- ya --> F{"pilihan 0?"}
+    F -- tidak --> G["jalankan menu 1-7"]
+    F -- ya --> H(["program ditutup"])
+    E -.-> B
+    G -.-> B
