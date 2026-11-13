@@ -104,11 +104,11 @@ SILABUS = [
 
 DOKUMENTASI = [
     ("docs/assets/P1_2026-11-13.jpg",
-     "Sesi 1: Pengembangan Mesin Inti",
+     "Sesi 1, 13 November 2026: Pengembangan Mesin Inti",
      "Yuken Velino dan Mahardika Athaillah",
      "Modul backend, validasi anti stok minus, dan tabel terminal"),
     ("docs/assets/P2_2026-11-13.jpg",
-     "Sesi 2: Integrasi Modul, Deck Presentasi, dan Draf Makalah",
+     "Sesi 2, 13 November 2026: Integrasi Modul dan Deck",
      "Yuken Velino, Mahardika Athaillah, dan Renkyna Aftania Nasution",
      "Integrasi modul Pandas, deck presentasi, dan draf makalah"),
 ]
