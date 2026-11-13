@@ -124,6 +124,8 @@ Fitur di bawah ini benar-benar tersedia dan sudah diuji saat ini.
 
 ## Arsitektur Sistem
 
+> Kalau sebuah diagram tampil sebagai kotak bertuliskan *Unable to render rich display*, itu layanan render milik GitHub yang gagal memuat gambarnya, bukan kesalahan pada kode diagram. Muat ulang halaman dengan Ctrl+Shift+R. Versi PNG dari seluruh diagram tersedia di [`docs/assets/diagrams/`](docs/assets/diagrams/).
+
 ```mermaid
 flowchart LR
     subgraph Entry["Titik Masuk"]
