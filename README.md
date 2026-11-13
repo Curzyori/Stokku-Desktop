@@ -7,6 +7,42 @@
 [![Tests](https://img.shields.io/badge/Tests-22%2F22%20Lulus-success.svg)](#hasil-pengujian)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
+## Daftar Isi
+
+### Mulai Cepat
+
+| Kebutuhan | Bagian |
+| :--- | :--- |
+| Pasang aplikasi lalu jalankan | [Panduan Instalasi](#panduan-instalasi) |
+| Lihat tampilan program tanpa menjalankan | [Preview Terminal](#preview-terminal) |
+| Cek bukti pengujian | [Hasil Pengujian](#hasil-pengujian) |
+| Pahami menu 0 sampai 7 | [Alur Detail Setiap Menu](#alur-detail-setiap-menu) |
+| Susun atau cetak ulang slide | [Susunan Deck Presentasi](#susunan-deck-presentasi) |
+| Lihat siapa mengerjakan apa | [Informasi Akademik](#informasi-akademik) |
+
+### Seluruh Bagian
+
+| No | Bagian | Isi |
+| :---: | :--- | :--- |
+| 1 | [Informasi Akademik](#informasi-akademik) | Kampus, dosen, NIM, akun GitHub, peran tiap anggota |
+| 2 | [Latar Belakang](#latar-belakang) | Empat kendala pencatatan persediaan manual |
+| 3 | [Status Implementasi](#status-implementasi) | Fase 1 selesai, Fase 2 belum dimulai |
+| 4 | [Fitur yang Sudah Berjalan (Fase 1)](#fitur-yang-sudah-berjalan-fase-1) | Delapan menu dan lima batasan Fase 1 |
+| 5 | [Arsitektur Sistem](#arsitektur-sistem) | Diagram modul dan ketergantungan antarberkas |
+| 6 | [Struktur Data (Variabel dan Alasannya)](#struktur-data-variabel-dan-alasannya) | Variabel utama, skema dictionary, skema tuple |
+| 7 | [Alur Program Utama](#alur-program-utama) | Flowchart siklus menu dan percabangan |
+| 8 | [Alur Detail Setiap Menu](#alur-detail-setiap-menu) | Flowchart Menu 1 sampai Menu 0 |
+| 9 | [Referensi Fungsi](#referensi-fungsi) | 32 fungsi di lima modul |
+| 10 | [Struktur Direktori](#struktur-direktori) | Peta berkas dan pemiliknya |
+| 11 | [Dokumentasi Pengerjaan](#dokumentasi-pengerjaan) | Dua foto sesi kerja beserta tanggal |
+| 12 | [Susunan Deck Presentasi](#susunan-deck-presentasi) | 15 slide, pembagian pembicara, ukuran huruf |
+| 13 | [Panduan Instalasi](#panduan-instalasi) | Prasyarat, unduh kode, pasang pandas, jalankan |
+| 14 | [Preview Terminal](#preview-terminal) | Empat tangkapan layar hasil eksekusi |
+| 15 | [Hasil Pengujian](#hasil-pengujian) | 22 pengujian dan cakupan tujuh kasus uji |
+| 16 | [Pemetaan Silabus](#pemetaan-silabus) | P01 sampai P08 terhadap berkas kode |
+| 17 | [Roadmap Fase 2](#roadmap-fase-2) | Rencana P09 sampai P16 menuju UAS |
+| 18 | [Lisensi](#lisensi) | MIT License |
+
 ---
 
 ## Informasi Akademik
@@ -25,6 +61,8 @@
 | 2 | **15260673** | **MAHARDIKA ATHAILLAH** | [@dikah4300](https://github.com/dikah4300) | Tampilan Antarmuka (UI) & Desain Presentasi |
 | 3 | **15260847** | **RENKYNA AFTANIA NASUTION** | [@renkynatania-dotcom](https://github.com/renkynatania-dotcom) | Modul Analisis Pandas (P7) & Dokumentasi Akademik |
 
+[Kembali ke Daftar Isi](#daftar-isi)
+
 ---
 
 ## Latar Belakang
@@ -38,6 +76,8 @@ Pencatatan persediaan barang pada toko kelontong atau gudang UMKM masih banyak d
 
 Stokku Desktop mencatat barang dan mutasi keluar-masuk secara terstruktur, menolak transaksi yang akan membuat stok minus, dan menghitung total modal persediaan secara otomatis.
 
+[Kembali ke Daftar Isi](#daftar-isi)
+
 ---
 
 ## Status Implementasi
@@ -50,6 +90,8 @@ Proyek ini dibagi dua fase mengikuti silabus perkuliahan.
 | **2.0** | UAS Pertemuan 11 s.d. 16 | P09 s.d. P16 | Desktop Tkinter | SQLite3 (`stok_gudang.db`) | Belum dimulai |
 
 Badge SQLite3 dan Tkinter pada versi sebelumnya sengaja dipindahkan ke tabel ini karena keduanya baru ada di Fase 2. Kode Fase 2 belum ditulis, sehingga direktori `app/` dan `main.py` belum ada di repositori.
+
+[Kembali ke Daftar Isi](#daftar-isi)
 
 ---
 
@@ -75,6 +117,8 @@ Fitur di bawah ini benar-benar tersedia dan sudah diuji saat ini.
 3. **Belum ada Ubah, Hapus, dan Pencarian barang di CLI.** Ketiga fitur tersebut dijadwalkan pada Fase 2 (GUI). Lihat [Roadmap](#roadmap-fase-2).
 4. **Riwayat mutasi berurutan naik** dari entri terlama ke terbaru. Filter per jenis mutasi tersedia di dalam Menu 6 (sub-menu 4, 5, dan 6).
 5. **Menu 1 menampilkan tabel saja**, tanpa kartu ringkasan. Fungsi `tampilkan_ringkasan()` tersedia di `display_cli.py` dan baru akan dipakai pada Fase 2.
+
+[Kembali ke Daftar Isi](#daftar-isi)
 
 ---
 
@@ -134,6 +178,8 @@ main_p7.py
 
 `main_p7.py` memakai blok `try/except ImportError` untuk memanggil `display_cli` dan `laporan_pandas`. Kalau kedua modul itu belum ada, program tetap berjalan memakai tabel cadangan internal. Ini yang membuat program tidak pernah gagal karena satu modul hilang.
 
+[Kembali ke Daftar Isi](#daftar-isi)
+
 ---
 
 ## Struktur Data (Variabel dan Alasannya)
@@ -179,6 +225,8 @@ Setiap elemen `log_mutasi` berbentuk 8-tuple berurutan:
 | 6 | `stok_sesudah` | `int` | `20` |
 | 7 | `keterangan` | `str` | `"Pasokan Pemasok"` |
 
+[Kembali ke Daftar Isi](#daftar-isi)
+
 ---
 
 ## Alur Program Utama
@@ -195,6 +243,8 @@ flowchart LR
     E -.-> B
     G -.-> B
 ```
+
+[Kembali ke Daftar Isi](#daftar-isi)
 
 ---
 
@@ -476,6 +526,8 @@ flowchart LR
     C --> D([Proses Python selesai<br/>seluruh data in-memory hilang])
 ```
 
+[Kembali ke Daftar Isi](#daftar-isi)
+
 ---
 
 ## Referensi Fungsi
@@ -537,6 +589,8 @@ flowchart LR
 | `ringkasan_statistik_deskriptif(df)` | Delapan metrik termasuk produk stok terbanyak dan tersedikit |
 | `tampilkan_laporan_pandas(daftar, log)` | Titik integrasi yang dipanggil `main_p7.py` pada Menu 6 |
 
+[Kembali ke Daftar Isi](#daftar-isi)
+
 ---
 
 ## Struktur Direktori
@@ -561,7 +615,7 @@ Stokku-Desktop/
 │   │   ├── .gitkeep
 │   │   └── MAKALAH_STOKKU_DESKTOP.md           # [RENKYNA] Draf naskah akademik format UBSI
 │   └── presentasi/
-│       ├── STOKKU_DESKTOP_PROGRES_P7.pptx      # [YUKEN] Deck presentasi UTS (14 slide)
+│       ├── STOKKU_DESKTOP_PROGRES_P7.pptx      # [YUKEN] Deck presentasi UTS (15 slide)
 │       ├── STOKKU_DESKTOP_PROGRES_P7.pdf       # [YUKEN] Versi PDF untuk pratinjau
 │       ├── generate_pptx.py                    # [YUKEN] Pembangkit deck presentasi
 │       ├── capture_cli.py                      # [YUKEN] Perekam preview terminal ke PNG
@@ -598,6 +652,8 @@ Belum dibuat (target Fase 2):
 └── main.py                                     # Titik masuk aplikasi desktop
 ```
 
+[Kembali ke Daftar Isi](#daftar-isi)
+
 ---
 
 ## Dokumentasi Pengerjaan
@@ -619,6 +675,8 @@ Penyusunan modul backend, validasi anti stok minus, serta format tabel terminal.
 Penggabungan modul analisis Pandas, penyusunan deck presentasi Slide UTS, serta penyusunan draf naskah akademik.
 
 ![Sesi 2: Yuken Velino, Mahardika Athaillah, dan Renkyna Aftania Nasution](docs/assets/P2_2026-11-13.jpg)
+
+[Kembali ke Daftar Isi](#daftar-isi)
 
 ---
 
@@ -732,6 +790,8 @@ Blok `mermaid` di README ini juga dirender menjadi PNG oleh
 `docs/presentasi/build_diagrams.py` ke folder `docs/assets/diagrams/` untuk dipakai
 di deck presentasi. Sumber diagram tetap satu, yaitu blok mermaid di README.
 
+[Kembali ke Daftar Isi](#daftar-isi)
+
 ---
 
 ## Panduan Instalasi
@@ -837,6 +897,8 @@ Pengujian unit seluruh modul, 15 kasus:
 python -m unittest discover -s tests -v
 ```
 
+[Kembali ke Daftar Isi](#daftar-isi)
+
 ---
 
 ## Preview Terminal
@@ -862,6 +924,8 @@ Transaksi 50 Rim pada barang dengan stok 10 Rim ditolak, lalu transaksi 4 Rim di
 ![Hasil pengujian otomatis pada Menu 7](docs/assets/cli_uji.png)
 
 
+[Kembali ke Daftar Isi](#daftar-isi)
+
 ---
 
 ## Hasil Pengujian
@@ -885,6 +949,8 @@ Transaksi 50 Rim pada barang dengan stok 10 Rim ditolak, lalu transaksi 4 Rim di
 | TC-06 | Deteksi status kritis | Transisi `AMAN` ke `KRITIS` terjadi saat stok menyentuh batas minimum |
 | TC-07 | Akurasi total unit dan nilai modal | Hasil `sum(stok)` dan `sum(stok * harga_beli)` cocok dengan perhitungan manual |
 
+[Kembali ke Daftar Isi](#daftar-isi)
+
 ---
 
 ## Pemetaan Silabus
@@ -899,6 +965,8 @@ Transaksi 50 Rim pada barang dengan stok 10 Rim ditolak, lalu transaksi 4 Rim di
 | P06 | List dan tuple | `daftar_barang` sebagai `list[dict]`, `log_mutasi` sebagai `list[tuple]` |
 | P07 | Matriks dan Pandas | `DataFrame`, `groupby`, `agg`, `idxmax`, `idxmin` di `laporan_pandas.py` |
 | P08 | Evaluasi UTS | Demonstrasi CLI dan eksekusi TC-01 s.d. TC-07 |
+
+[Kembali ke Daftar Isi](#daftar-isi)
 
 ---
 
@@ -915,6 +983,8 @@ Transaksi 50 Rim pada barang dengan stok 10 Rim ditolak, lalu transaksi 4 Rim di
 | Ekspor laporan | P12 | Akan datang |
 | Naskah laporan final dan slide presentasi UAS | P13-P14 | Akan datang |
 | Demonstrasi laboratorium | P15-P16 | Akan datang |
+
+[Kembali ke Daftar Isi](#daftar-isi)
 
 ---
 
