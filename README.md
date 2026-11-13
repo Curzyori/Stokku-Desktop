@@ -81,7 +81,6 @@ Fitur di bawah ini benar-benar tersedia dan sudah diuji saat ini.
 ## Arsitektur Sistem
 
 ```mermaid
-%%{init: {"flowchart": {"nodeSpacing": 22, "rankSpacing": 30, "padding": 6}, "themeVariables": {"fontSize": "13px"}}}%%
 flowchart LR
     subgraph Entry["Titik Masuk"]
         MAIN["main_p7.py<br/>menu literal 0-7"]
@@ -185,7 +184,6 @@ Setiap elemen `log_mutasi` berbentuk 8-tuple berurutan:
 ## Alur Program Utama
 
 ```mermaid
-%%{init: {"flowchart": {"nodeSpacing": 22, "rankSpacing": 46, "padding": 8}, "themeVariables": {"fontSize": "13px"}}}%%
 flowchart LR
     A(["Mulai"]) --> B["tampilkan menu 0-7"]
     B --> C["input pilihan"]
@@ -205,7 +203,6 @@ flowchart LR
 ### Menu 1: Lihat Daftar Stok Barang & Status Kritis
 
 ```mermaid
-%%{init: {"flowchart": {"nodeSpacing": 22, "rankSpacing": 30, "padding": 6}, "themeVariables": {"fontSize": "13px"}}}%%
 flowchart TD
     A([Pilih menu 1]) --> B["Impor cetak_tabel_barang<br/>dari display_cli"]
     B --> C{"Import berhasil?"}
@@ -237,7 +234,6 @@ flowchart TD
 Ini menu paling panjang karena meminta delapan input berurutan, masing-masing dengan validasi sendiri.
 
 ```mermaid
-%%{init: {"flowchart": {"nodeSpacing": 22, "rankSpacing": 30, "padding": 6}, "themeVariables": {"fontSize": "13px"}}}%%
 flowchart TD
     A([Pilih menu 2]) --> B["input Kode Barang"]
     B --> C["validasi_kode_unik(kode, daftar_barang)<br/>strip lalu upper"]
@@ -306,7 +302,6 @@ flowchart TD
 ### Menu 3: Transaksi Barang Masuk (Restock)
 
 ```mermaid
-%%{init: {"flowchart": {"nodeSpacing": 22, "rankSpacing": 30, "padding": 6}, "themeVariables": {"fontSize": "13px"}}}%%
 flowchart TD
     A([Pilih menu 3]) --> B["input Kode Barang"]
     B --> C["cari_barang_by_kode(kode, daftar_barang)"]
@@ -337,7 +332,6 @@ flowchart TD
 Menu ini adalah inti aturan bisnis proyek.
 
 ```mermaid
-%%{init: {"flowchart": {"nodeSpacing": 22, "rankSpacing": 30, "padding": 6}, "themeVariables": {"fontSize": "13px"}}}%%
 flowchart TD
     A([Pilih menu 4]) --> B["input Kode Barang"]
     B --> C["cari_barang_by_kode(kode, daftar_barang)"]
@@ -352,7 +346,7 @@ flowchart TD
     I --> J["transaksi_barang_keluar(...)"]
     J --> K["validasi_stok_keluar(stok, jumlah)"]
     K --> L{"jumlah lebih besar dari stok?"}
-    L -->|"Ya"| M["return False<br/>'Stok tidak mencukupi. Sisa stok: N unit.'"]
+    L -->|"Ya"| M["return False<br/>'Stok tidak mencukupi.<br/>Sisa stok fisik: N satuan'"]
     M --> N["print batal<br/>stok TIDAK berubah<br/>log TIDAK bertambah"]
     L -->|"Tidak"| O["stok_sebelum = item['stok']<br/>item['stok'] -= jumlah"]
     O --> P["append tuple mutasi<br/>jenis KELUAR"]
@@ -374,7 +368,6 @@ flowchart TD
 ### Menu 5: Lihat Riwayat Mutasi Arus Barang
 
 ```mermaid
-%%{init: {"flowchart": {"nodeSpacing": 22, "rankSpacing": 30, "padding": 6}, "themeVariables": {"fontSize": "13px"}}}%%
 flowchart TD
     A([Pilih menu 5]) --> B["Impor cetak_log_mutasi<br/>dari display_cli"]
     B --> C{"Import berhasil?"}
@@ -408,7 +401,6 @@ flowchart TD
 Menu ini punya sub-menu sendiri dan bergantung pada pustaka `pandas`.
 
 ```mermaid
-%%{init: {"flowchart": {"nodeSpacing": 22, "rankSpacing": 30, "padding": 6}, "themeVariables": {"fontSize": "13px"}}}%%
 flowchart TD
     A([Pilih menu 6]) --> B["tampilkan_laporan_pandas(daftar_barang, log_mutasi)"]
     B --> C{"PANDAS_TERSEDIA?"}
@@ -449,7 +441,6 @@ flowchart TD
 ### Menu 7: Jalankan Skrip Uji Otomatis (7 Kasus Uji)
 
 ```mermaid
-%%{init: {"flowchart": {"nodeSpacing": 22, "rankSpacing": 30, "padding": 6}, "themeVariables": {"fontSize": "13px"}}}%%
 flowchart TD
     A([Pilih menu 7]) --> B["Impor jalankan_semua_pengujian<br/>dari test_skenario"]
     B --> C["reset_data()"]
@@ -479,7 +470,6 @@ flowchart TD
 ### Menu 0: Keluar dari Program
 
 ```mermaid
-%%{init: {"flowchart": {"nodeSpacing": 22, "rankSpacing": 30, "padding": 6}, "themeVariables": {"fontSize": "13px"}}}%%
 flowchart LR
     A([Pilih menu 0]) --> B["print 'Terima kasih.<br/>Program Stokku Desktop ditutup.'"]
     B --> C["break dari while True"]
