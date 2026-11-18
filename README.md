@@ -705,7 +705,7 @@ Deck `docs/presentasi/STOKKU_DESKTOP_PROGRES_P7.pptx` berisi 15 slide:
 | 15 | Kesimpulan dan matriks tanggung jawab |
 
 Setiap slide mulai nomor 2 memuat nomor halaman di kanan bawah, dan setiap slide
-punya catatan pembicara berisi nama PIC.
+punya catatan pembicara berisi poin yang perlu disampaikan.
 
 Ukuran huruf efektif pada gambar, dihitung dari lebar berkas dibagi lebar
 penempatan di slide. Ambang baca layar kelas sekitar 14 pt.
@@ -721,14 +721,15 @@ penempatan di slide. Ambang baca layar kelas sekitar 14 pt.
 
 ### Pembagian Slide Presentasi (3 Orang)
 
-Setiap slide punya catatan pembicara di dalam berkas PPTX (Presenter View, panel Notes),
-berisi nama PIC dan poin yang perlu disampaikan.
+Setiap slide punya catatan pembicara di dalam berkas PPTX (Presenter View, panel
+Notes) berisi poin yang perlu disampaikan. Pembagian penyaji di bawah ini catatan
+internal kelompok, tidak dicetak di dalam slide.
 
-| Slide | PIC | Estimasi | Poin utama |
+| Slide | Penyaji | Estimasi | Poin utama |
 | :---: | :--- | :---: | :--- |
-| 1 | Semua | 10 detik | Layar putih, jeda naik panggung |
-| 2 | **Yuken** | 1 menit | Pembukaan, identitas, anggota tim |
-| 3 | Mahardika | 1,5 menit | Empat masalah pencatatan manual + solusi |
+| 1 | Bersama | 10 detik | Layar putih, jeda naik panggung |
+| 2 | Bersama | 1 menit | Pembukaan, identitas, anggota tim |
+| 3 | Yuken | 1,5 menit | Empat masalah pencatatan manual + solusi |
 | 4 | Yuken | 1 menit | Diagram arsitektur enam modul |
 | 5 | Yuken | 1 menit | Flowchart siklus menu |
 | 6 | Yuken | 1,5 menit | Flowchart anti stok minus |
@@ -739,37 +740,36 @@ berisi nama PIC dan poin yang perlu disampaikan.
 | 11 | Renkyna | 1 menit | Tujuh kasus uji otomatis |
 | 12 | Renkyna | 1 menit | Formula aset modal dan ambang kritis |
 | 13 | Renkyna | 1 menit | Dokumentasi dua sesi kerja |
-| 14 | Mahardika | 1,5 menit | Roadmap P09 sampai P16 |
-| 15 | **Yuken** | 1,5 menit | Penutup, kesimpulan, peran, tanya jawab |
+| 14 | Yuken | 1,5 menit | Roadmap P09 sampai P16 |
+| 15 | Bersama | 1,5 menit | Penutup, kesimpulan, peran, tanya jawab |
 
 Rekap jumlah slide per orang:
 
 | Anggota | Slide | Jumlah |
 | :--- | :--- | :---: |
-| Yuken Velino | 2, 4, 5, 6, 15 | 5 |
-| Mahardika Athaillah | 3, 7, 8, 9, 14 | 5 |
+| Yuken Velino | 3, 4, 5, 6, 14 | 5 |
+| Mahardika Athaillah | 7, 8, 9 | 3 |
 | Renkyna Aftania Nasution | 10, 11, 12, 13 | 4 |
-| Bersama | 1 | 1 |
+| Bersama | 1, 2, 15 | 3 |
 
 Dasar pembagian:
 
 | Alasan | Penerapan |
 | :--- | :--- |
-| Yuken buka dan tutup | Slide 2 pembukaan, slide 15 penutup, ditambah blok logika slide 4 sampai 6 |
-| Mahardika pegang tampilan dan output | Slide 3 latar belakang, slide 7 sampai 9 tangkapan layar, slide 14 roadmap |
-| Renkyna pegang akademik dan analitik | Slide 10 silabus, 11 hasil uji yang dia dokumentasikan, 12 formula, 13 dokumentasi |
-| Slide 7 sampai 9 ke Mahardika | Isinya output `display_cli.py` yang dia tulis sendiri |
+| Yuken buka dan tutup | Slide 1 dan 2 dibuka bersama, lalu slide 3 sampai 6 blok arsitektur dan logika, ditutup slide 14 roadmap |
+| Mahardika pegang bukti eksekusi | Slide 7 sampai 9 berisi keluaran `display_cli.py` yang dia tulis sendiri |
+| Renkyna pegang akademik dan analitik | Slide 10 silabus, 11 hasil uji, 12 formula, 13 dokumentasi |
+| Penutup dipegang bersama | Slide 15 memuat kesimpulan dan matriks peran, dibacakan bergantian |
 
 Urutan bicara:
 
 ```text
-Yuken      -> 2
-Mahardika  -> 3
-Yuken      -> 4, 5, 6
+Bersama    -> 1, 2
+Yuken      -> 3, 4, 5, 6
 Mahardika  -> 7, 8, 9
 Renkyna    -> 10, 11, 12, 13
-Mahardika  -> 14
-Yuken      -> 15
+Yuken      -> 14
+Bersama    -> 15
 ```
 
 Cara membuat ulang deck beserta PDF:
@@ -787,6 +787,10 @@ python docs/presentasi/build_diagrams.py --no-readme
 python docs/presentasi/generate_pptx.py
 soffice --headless --convert-to pdf --outdir docs/presentasi docs/presentasi/STOKKU_DESKTOP_PROGRES_P7.pptx
 ```
+
+Deck yang ada di repositori sekarang disunting langsung di PowerPoint, jadi skrip
+di atas hanya untuk membangun ulang dari nol. Menjalankannya akan menimpa
+suntingan manual tersebut.
 
 Blok `mermaid` di README ini juga dirender menjadi PNG oleh
 `docs/presentasi/build_diagrams.py` ke folder `docs/assets/diagrams/` untuk dipakai
